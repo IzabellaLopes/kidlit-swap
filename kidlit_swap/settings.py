@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['kidlit-swap.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['kidlit-swap-96ca222a1195.herokuapp.com', 'localhost']
 
 
 # Application definition
