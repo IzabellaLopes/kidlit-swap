@@ -5,6 +5,13 @@ from django.views import generic
 from .models import Book
 
 
+class Home(generic.TemplateView):
+    """
+    View to display the home page
+    """
+    template_name = "index.html"
+    
+
 class BookList(generic.ListView):
     """
     View to display a paginated list of books in alphabetical order
