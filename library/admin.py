@@ -7,5 +7,5 @@ from .models import Book
 class BookAdmin(admin.ModelAdmin):
     """Allows admin to manage books via the admin panel"""
     list_filter = ('title', 'status')
-    list_display = ('title', 'slug', 'status')
-    search_fields = ('title', 'description')
+    list_display = ('title', 'slug', 'author', 'status', 'return_date', 'added_by')
+    search_fields = ('title', 'author')
