@@ -2,6 +2,7 @@
 
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 from django_extensions.db.fields import AutoSlugField
 from cloudinary.models import CloudinaryField
 
@@ -37,6 +38,12 @@ class Book(models.Model):
     
     class Meta:
         ordering = ['title']
+        
+        
+    def get_absolute_url(self):
+        """Get URL for book detail view."""
+        return reverse('book:book_detail', kwargs={'slug': self.slug})
+        
         
     def __str__(self):
         return f"{self.title}"
