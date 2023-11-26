@@ -11,6 +11,9 @@ class Book(models.Model):
     The 'status' field represents the availability of the book:
     - 'a' stands for "Available" in the database.
     - 'b' stands for "Borrowed" in the database.
+    
+    Meta:
+    To display the books in alphabetical order by title.
     """
     title = models.CharField(max_length=200)
     author = models.CharField(max_length=200)
@@ -29,3 +32,6 @@ class Book(models.Model):
     return_date = models.DateField(
         auto_now=False, auto_now_add=False, null=True, blank=True
     )
+    
+    class Meta:
+        ordering = ['title']
