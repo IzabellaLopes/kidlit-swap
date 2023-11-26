@@ -2,6 +2,7 @@
 
 from django.db import models
 from django.contrib.auth.models import User
+from django_extensions.db.fields import AutoSlugField
 from cloudinary.models import CloudinaryField
 
 class Book(models.Model):
@@ -16,6 +17,7 @@ class Book(models.Model):
     To display the books in alphabetical order by title.
     """
     title = models.CharField(max_length=200)
+    slug = AutoSlugField(populate_from='title', unique=True)
     author = models.CharField(max_length=200)
     added_by = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="user", default=None
