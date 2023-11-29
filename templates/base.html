@@ -1,4 +1,5 @@
 {% load static %}
+{% load cloudinary %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +23,39 @@
 
   <body>
     <div class="content">
-      <h1>Welcome to home page!</h1>
+      <!-- Header starts -->
+      <header class="header">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img class="logo d-inline-block align-text-top" src="https://res.cloudinary.com/dobdtuunf/image/upload/v1701212753/logo-image.png" alt="kidlitswaplogo" height="80" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+              <ul class="navbar-nav mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active animated-zoom" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link animated-zoom" href="#">Books</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle animated-zoom" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">My Account</a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li>
+                      <a class="dropdown-item" href="#">Sign up</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Login</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <!-- End Navigation -->
+      </header>
+      <!-- End Header -->
 
       <main>
         {% block content %}
@@ -32,8 +65,28 @@
     </div>
 
     <!-- Footer -->
-    <footer></footer>
-    <!-- End of Footer -->
+    <footer>
+      <div class="container footer-container">
+        <ul class="social-networks">
+          <li>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Visit our Facebook page (opens in new tab)"><i class="fab fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Visit our Instagram page (opens in new tab)"><i class="fab fa-instagram"></i></a>
+          </li>
+          <li>
+            <a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Visit our Twitter page (opens in new tab)"><i class="fab fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="Visit out Youtube page (opens in new tab)"><i class="fab fa-youtube"></i></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Font Awesome script -->
+    <script src="https://kit.fontawesome.com/08445b6b20.js" crossorigin="anonymous"></script>
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
