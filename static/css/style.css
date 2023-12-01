@@ -1,0 +1,277 @@
+/*---------- GOOGLE FONTS IMPORT ----------*/
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans&family=Potta+One&display=swap');
+
+/* Import the Animate.css library for animations */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+
+
+:root {
+    /*---------- TYPOGRAPHY ----------*/
+    --header-text: 'Potta One', cursive;
+    --content-text: 'Playpen Sans', cursive;
+}
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+
+body,
+header {
+    font-family: var(--content-text);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--header-text);
+}
+
+/*--------------------------------------------------------------
+# Header and Navigation
+--------------------------------------------------------------*/
+
+.header {
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    font-size: large;
+    transition: all 0.5s;
+}
+
+.logo {
+    margin-left: 20px;
+}
+
+.navbar-brand {
+    padding-top: 0;
+}
+
+.navbar-nav {
+  margin-right: 20px;
+}
+
+.navbar-nav li.nav-item {
+    margin-right: 20px;
+}
+
+.navbar-nav .nav-link {
+  color: #2E8B57 !important;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: #143296 !important;
+}
+
+.navbar-nav .nav-link.active {
+    background-color: #143296 !important;
+    color: #fff !important; 
+    border-radius: 8px;
+  }
+
+.dropdown-menu {
+  background-color:#f8f9fa;
+}
+
+.dropdown-menu .dropdown-item {
+  font-size: large;
+  color: #2E8B57;
+}
+
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus {
+  background-color: #143296;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.animated-zoom {
+  transition: transform 0.3s ease;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+  }
+}
+
+/*--------------------------------------------------------------
+# Hero section
+--------------------------------------------------------------*/
+#hero {
+  width: 100%;
+  background: #e3ecfc;
+}
+
+section {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+#hero h1 {
+  text-align: center;
+  line-height: 1.5;
+  color: darkblue;
+}
+
+#hero h1 span {
+  color: darkgreen;
+}
+
+#hero p {
+  font-size: 2rem;
+  text-align: center;
+  line-height: 2;
+  color: darkred;
+}
+
+#hero .animated {
+  animation: up-down 2s ease-in-out infinite alternate-reverse both;
+}
+
+@keyframes up-down {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(20px);
+  }
+}
+
+.img-fluid {
+  border-radius: 8px;
+}
+
+/*--------------------------------------------------------------
+# About
+--------------------------------------------------------------*/
+
+.section-title {
+  color: darkgreen;
+}
+
+.break {
+  margin: auto !important;
+  width: 200px;
+  height: 2px !important;
+  color: darkblue !important;
+  background-color: darkblue !important;
+  opacity: .5
+}
+
+.about-outer {
+  border-radius: 15px;
+  box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
+  padding: 20px 0;
+  background-color: #f8f9fa;
+}
+
+.about-image {
+  text-align: center;
+  color: #2E8B57;
+}
+
+.about-title {
+  color: darkblue;
+  padding-top: 10px;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.about-text {
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+.footer-container {
+  border-top: 1px #143296 solid !important;
+}
+
+.social-networks {
+  text-align: center;
+  padding: 0;
+  margin: 30px 0;
+}
+
+.social-networks li {
+  display: inline;
+}
+
+.social-networks i {
+  font-size: 160%;
+  padding: 0 30px;
+  color: #2E8B57;
+}
+
+.social-networks i:hover {
+  color: #143296;
+}
+
+/*--------------------------------------------------------------
+# Media Queries
+--------------------------------------------------------------*/
+
+/* For Large devices (laptops, less than 1400px) */
+
+@media (max-width: 1400px) {
+  #hero p {
+    font-size: 1.5rem;
+  }
+}
+
+/* For Medium devices (tablets, less than 992px) */
+
+@media (max-width: 991px) {
+  .header {
+    font-size: medium;
+  }
+
+  .navbar-nav {
+    padding-left: 20px;
+  }
+
+  .navbar-nav .nav-link {
+    padding-left: 20px;
+  }
+
+  .navbar-nav .nav-link.animated-zoom {
+    transition: none;
+    transform: none;
+  }
+
+  .dropdown-menu .dropdown-item {
+    font-size: medium;
+  }
+
+  #hero p {
+    font-size: 1.2rem;
+  }
+}
+
+/* Small devices (landscape phones, less than 768px */
+
+@media screen and (max-width: 767.98px) {
+  .header {
+    font-size: small;
+  }
+
+  .dropdown-menu .dropdown-item {
+    font-size: small;
+  }
+
+  .social-networks i {
+    font-size: 120%;
+    padding: 0 20px;
+  }
+
+  #hero h1 {
+    font-size: 1.5rem;
+  }
+}
+
+
+
