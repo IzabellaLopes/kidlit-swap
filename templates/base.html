@@ -33,22 +33,28 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
               <ul class="navbar-nav mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link active animated-zoom" aria-current="page" href="#">Home</a>
+                  <a class="nav-link active animated-zoom" aria-current="page" href="{% url 'home' %}">Home</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link animated-zoom" href="#">Books</a>
                 </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                  <a class="nav-link animated-zoom" href="{% url 'account_logout' %}">Logout</a>
+                </li>
+                {% else %}
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle animated-zoom" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">My Account</a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <li>
-                      <a class="dropdown-item" href="#">Sign up</a>
+                      <a class="dropdown-item" href="{% url 'account_signup' %}">Sign up</a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#">Login</a>
+                      <a class="dropdown-item" href="{% url 'account_login' %}">Login</a>
                     </li>
                   </ul>
                 </li>
+                {% endif %}
               </ul>
             </div>
           </div>
@@ -59,7 +65,7 @@
 
       <main>
         {% block content %}
-
+        <!-- Content Goes here -->
         {% endblock %}
       </main>
     </div>
