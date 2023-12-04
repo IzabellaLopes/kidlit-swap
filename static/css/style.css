@@ -29,6 +29,12 @@ h6 {
   font-family: var(--header-text);
 }
 
+.page-title {
+  padding-top: 5px;
+  color: #2E8B57;
+  text-align: center;
+}
+
 /*--------------------------------------------------------------
 # Header and Navigation
 --------------------------------------------------------------*/
@@ -181,6 +187,21 @@ section {
 .about-text {
   text-align: center;
   font-size: 1.1rem;
+}
+
+/*--------------------------------------------------------------
+# Log In
+--------------------------------------------------------------*/
+
+.btn-signup {
+  background-color: #143296;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.btn-signup:hover,
+.btn-signup:active {
+  background-color: #2E8B57;
 }
 
 /*--------------------------------------------------------------
