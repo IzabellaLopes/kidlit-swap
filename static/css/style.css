@@ -1,5 +1,5 @@
 /*---------- GOOGLE FONTS IMPORT ----------*/
-@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans&family=Potta+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Potta+One&family=Shantell+Sans&display=swap');
 
 /* Import the Animate.css library for animations */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
@@ -8,7 +8,7 @@
 :root {
     /*---------- TYPOGRAPHY ----------*/
     --header-text: 'Potta One', cursive;
-    --content-text: 'Playpen Sans', cursive;
+    --content-text: 'Shantell Sans', cursive;
 }
 
 /*--------------------------------------------------------------
