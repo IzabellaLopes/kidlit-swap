@@ -37,14 +37,7 @@ class BookList(generic.ListView):
         context['available_count'] = Book.objects.filter(status='a').count()
         context['borrowed_count'] = Book.objects.filter(status='b').count()
         context['books'] = context['object_list']      
-        context['page_range'] = self.get_page_range()
-        return context
-    
-    def get_page_range(self):
-        current_page = int(self.request.GET.get('page', 1))
-        num_pages = (self.get_queryset().count() - 1) // self.paginate_by + 1
-        return list(range(max(current_page - 2, 1), min(current_page + 2, num_pages) + 1))
-    
+        return context    
 
 class BookDetail(generic.DetailView):
     """

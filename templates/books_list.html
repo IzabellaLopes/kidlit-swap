@@ -25,27 +25,8 @@
         </div>
       {% endfor %}
     </div>
-
-    <div class="pagination">
-      <span class="step-links">
-        {% if object_list.has_previous %}
-          <a href="{% url 'book_list' page=1 %}">&laquo; first</a>
-          <a href="{% url 'book_list' page=object_list.previous_page_number %}">previous</a>
-        {% endif %}
-
-        {% for page in page_range %}
-          {% if object_list.number == page %}
-            <span class="current">Page {{ object_list.number }} of {{ object_list.paginator.num_pages }}.</span>
-          {% else %}
-            <a href="{% url 'book_list' page=page %}">{{ page }}</a>
-          {% endif %}
-        {% endfor %}
-
-        {% if object_list.has_next %}
-          <a href="{% url 'book_list' page=object_list.next_page_number %}">next</a>
-          <a href="{% url 'book_list' page=object_list.paginator.num_pages %}">last &raquo;</a>
-        {% endif %}
-      </span>
-    </div>
   </div>
+  
+{% include "paginator.html" %}
+
 {% endblock %}
