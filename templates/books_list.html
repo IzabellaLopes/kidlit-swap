@@ -1,11 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Hello World!</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}
+  KidLit Swap | Books
+{% endblock %}
+
+{% block head_title %}
+  Books
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h1 class="page-title">Book List</h1>
+    <hr class="break" />
+    <br />
+
+    <div class="cards__container">
+      {% for book in books %}
+        <div class="card">
+          <img src="{{ book.image.url }}" alt="{{ book.title }}" />
+          <h2><a href="{{ book.get_absolute_url }}">{{ book.title }}</a></h2>
+          <p>Author: {{ book.author }}</p>
+          <p>Status: {{ book.get_status_display }}</p>
+          <a href="{% url 'book_detail' slug=book.slug %}"><button class="book_btn">View Details</button></a>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="pagination">
+      <span class="step-links">
+        {% if object_list.has_previous %}
+          <a href="{% url 'book_list' page=1 %}">&laquo; first</a>
+          <a href="{% url 'book_list' page=object_list.previous_page_number %}">previous</a>
+        {% endif %}
+
+        {% for page in page_range %}
+          {% if object_list.number == page %}
+            <span class="current">Page {{ object_list.number }} of {{ object_list.paginator.num_pages }}.</span>
+          {% else %}
+            <a href="{% url 'book_list' page=page %}">{{ page }}</a>
+          {% endif %}
+        {% endfor %}
+
+        {% if object_list.has_next %}
+          <a href="{% url 'book_list' page=object_list.next_page_number %}">next</a>
+          <a href="{% url 'book_list' page=object_list.paginator.num_pages %}">last &raquo;</a>
+        {% endif %}
+      </span>
+    </div>
+  </div>
+{% endblock %}

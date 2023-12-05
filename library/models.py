@@ -57,8 +57,8 @@ class Book(models.Model):
         
         
     def get_absolute_url(self):
-        """Get URL for book detail view."""
-        return reverse('book:book_detail', kwargs={'slug': self.slug})
+        """Get URL for book detail view"""
+        return reverse('book_detail', kwargs={'slug': self.slug})
         
         
     def __str__(self):
