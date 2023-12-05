@@ -6,6 +6,20 @@ from django.urls import reverse
 from django_extensions.db.fields import AutoSlugField
 from cloudinary.models import CloudinaryField
 
+class Category(models.Model):
+    """
+    Model representing a category for organizing books
+
+    Attributes:
+        name (str): The name of the category.
+        description (str): A brief description of the category.
+    """
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+
+    def __str__(self):
+        return self.name
+    
 class Book(models.Model):
     """
     Model for Book
@@ -35,6 +49,8 @@ class Book(models.Model):
     return_date = models.DateField(
         auto_now=False, auto_now_add=False, null=True, blank=True
     )
+    category = models.ForeignKey(
+        Category, on_delete=models.CASCADE, related_name="books", null=True)
     
     class Meta:
         ordering = ['title']
