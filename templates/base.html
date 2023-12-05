@@ -43,7 +43,7 @@
                     <a class="nav-link dropdown-toggle animated-zoom" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ user.username }}</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                       <li>
-                        <a class="dropdown-item" href="#">Profile</a>
+                        <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
                       </li>
                       <li>
                         <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>

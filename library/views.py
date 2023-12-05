@@ -1,6 +1,8 @@
 """Views"""
 
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 from django.views import generic
 from .models import Book
 
@@ -35,3 +37,7 @@ class BookList(generic.ListView):
         context['available_count'] = Book.objects.filter(status='a').count()
         context['borrowed_count'] = Book.objects.filter(status='b').count()
         return context
+
+@method_decorator(login_required, name='dispatch')
+class ProfileView(generic.TemplateView):
+    template_name = 'profile.html'
