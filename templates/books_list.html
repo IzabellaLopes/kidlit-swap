@@ -13,20 +13,44 @@
     <h1 class="page-title">Book List</h1>
     <hr class="break" />
     <br />
-
+    <!-- Books Cards -->
     <div class="cards__container">
       {% for book in books %}
         <div class="card">
-          <img src="{{ book.image.url }}" alt="{{ book.title }}" />
-          <h2><a href="{{ book.get_absolute_url }}">{{ book.title }}</a></h2>
-          <p>Author: {{ book.author }}</p>
-          <p>Status: {{ book.get_status_display }}</p>
-          <a href="{% url 'book_detail' slug=book.slug %}"><button class="book_btn">View Details</button></a>
+          {% if "placeholder" in book.image.url %}
+            <!-- Placeholder Image if Image is Not Available -->
+            <img src="https://res.cloudinary.com/dobdtuunf/image/upload/v1701900777/Book_img.png" class="book_img" alt="placeholder image">
+          {% else %}
+            <!-- Display Book Image -->
+            <img src=" {{ book.image.url }}" alt="{{ book.title }}" class="book_img">
+          {% endif %}
+          <!-- Book Title -->
+          <p class = "book_title">{{ book.title }}</p>
+          <!-- Author -->
+          <p class = "author">Author: {{ book.author }}</p>
+          <!-- Book Status -->
+          <p class="status {% if book.status == 'Available' %}available{% elif book.status == 'Borrowed' %}borrowed{% endif %}">Status: {{ book.status }}</p>
+          <!-- Link to Book Detail Page -->
+          <a href="{% url 'book_detail' slug=book.slug %}">
+            <button class="details_btn">
+              <i class="fa-solid fa-book"></i>
+            </button>
+          </a>
+          <!-- Added by -->
+          <p class="added_by_flag">{{ book.added_by }}</p>
         </div>
       {% endfor %}
     </div>
   </div>
   
+<!-- Include Paginator -->  
 {% include "paginator.html" %}
 
 {% endblock %}
+
+<!-- JavaScript to toggle the form visibility -->
+<script>
+  document.getElementById('addBookBtn').addEventListener('click', function () {
+    document.getElementById('addBookForm').style.display = 'block';
+  });
+</script>

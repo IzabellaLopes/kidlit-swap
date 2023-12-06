@@ -222,36 +222,92 @@ section {
 }
 
 .card {
-  position: relative;
   width: 200px;
   height: 270px;
   margin: 15px;
-  background-color: transparent;
+  background-color: whitesmoke;
   border-radius: 5px;
   box-shadow: 0 0 3px 0px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
   cursor: pointer;
+  text-align: center;
 }
 
 .card:hover {
   transform: scale(1.075);
 }
 
-.book_btn {
+.book_img {
+  display: block;
+  margin: 10px auto;
+  max-width: 100%;
+  height: 60%;
+  border-radius: 5px;
+  margin-bottom: 0;
+}
+
+.book_title {
+  color: #232f3e;
+  font-weight: bold;
+}
+
+.author {
+  color: #232f3e;
+  font-style: italic;
+  font-size: 0.7rem;
+}
+
+.book_title,
+.author {
+  padding: 0 10px;
+  overflow: hidden;
+  margin-bottom: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.status {
+  font-size: 0.7rem;
+  font-weight: bold;
   position: absolute;
-  right: 15px;
-  bottom: 12px;
-  background-color: transparent;
+  left: 15px;
+  bottom: 2px;
+}
+
+.status.available {
+  color: green; 
+}
+
+.status.borrowed {
+  color: red;
+}
+
+.details_btn {
+  right: 20px;
+  bottom: 20px;
   border: none;
   outline: none;
-  cursor: pointer;
-  font-size: 0.8rem;
   color: #131a22;
   transition: color 0.3s ease;
 }
 
-.book_btn:hover {
-  color: #f09f09;
+.details_btn:hover {
+  color: blue;
+}
+
+.details_btn,
+.added_by_flag {
+  position: absolute;
+  font-size: 0.8rem;
+}
+
+.added_by_flag {
+  right: 15px;
+  bottom: 0px;
+  margin-bottom: 5px;
+  background-color: #e3ecfc;
+  color: darkblue;
+  border-radius: 5px;
 }
 
 /*--------------------------------------------------------------
