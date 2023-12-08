@@ -16,32 +16,29 @@
     <!-- Book Details -->
     <div class="cards__container">
         <div class="book-details__container row">
-            <div class="book-details__image col-md-4 order-1 order-md-1">
+            <div class="col-md-4 text-center mx-auto">
              {% if "placeholder" in book.image.url %}
                  <!-- Placeholder Image if Image is Not Available -->
-                 <img src="https://res.cloudinary.com/dobdtuunf/image/upload/v1701900777/Book_img.png" class="book_img img-fluid" alt="placeholder image">
+                 <img src="https://res.cloudinary.com/dobdtuunf/image/upload/v1701900777/book_placeholder.png" class="book-details__img img-fluid" alt="placeholder image">
               {% else %}
                  <!-- Display Book Image -->
-                 <img src=" {{ book.image.url }}" alt="{{ book.title }}" class="book_img">
+                 <img src=" {{ book.image.url }}" alt="{{ book.title }}" class="book-details__img img-fluid">
                {% endif %}
            </div>
-          <div class="book-details__info col-md-8 order-2 order-md-2">
+          <div class="col-md-8">
                 <!-- Book Title -->
-                <p class = "book-details__title">{{ book.title }}</p>
+                <p class = "book-details__title text-center text-uppercase">{{ book.title }}</p>
                 <!-- Author -->
                 <p class = "book-details__author">Author: {{ book.author }}</p>
-                <!-- Category -->
-                <p class="cat">Category: {{object.category}} </p>
                 <!-- Description -->
                 <p class="desc">Description: {{object.description}} </p>
+                <!-- Category -->
+                <p class="cat">Category: {{object.category}} </p>
                 <!-- Book Status -->
                 <p class="status {% if book.status == 'Available' %}available{% elif book.status == 'Borrowed' %}borrowed{% endif %}">Status: {{ book.status }}</p>
                 <!-- Added by -->
-                <p class = "added_by_flag">Added by: {{ book.added_by }}</p>
+                <p class = "added_by_flag text-center">Added by: {{ book.added_by }}</p>
             </div>
         </div>
     </div>
-  
-
-
 {% endblock %}

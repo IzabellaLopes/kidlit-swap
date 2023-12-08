@@ -208,25 +208,15 @@ section {
 # Books 
 --------------------------------------------------------------*/
 .cards__container {
-  width: 90%;
   background-color: #e3ecfc;
   border-radius: 8px;
-  margin: 20px auto 40px;
-  padding: 20px 0;
-  display: flex;
   box-shadow: 0 0 3px 0px rgba(0, 0, 0, 0.3);
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  position: relative;
 }
 
 .card {
-  width: 200px;
-  height: 270px;
   margin: 15px;
   background-color: whitesmoke;
-  border-radius: 5px;
+  border-radius: 8px;
   box-shadow: 0 0 3px 0px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
   cursor: pointer;
@@ -234,7 +224,8 @@ section {
 }
 
 .card:hover {
-  transform: scale(1.075);
+  transform: scale(1.05);
+  border-color: #2E8B57;
 }
 
 .card-link {
@@ -245,15 +236,6 @@ section {
 .card-link:hover {
   text-decoration: none;
   color: inherit;
-}
-
-.book_img {
-  display: block;
-  margin: 10px auto;
-  max-width: 100%;
-  height: 60%;
-  border-radius: 5px;
-  margin-bottom: 0;
 }
 
 .book_title {
@@ -270,7 +252,6 @@ section {
 .author {
   padding: 0 10px;
   overflow: hidden;
-  margin-bottom: 0;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
@@ -290,17 +271,13 @@ section {
 }
 
 .added_by_flag {
-  right: 15px;
-  bottom: 0px;
-  margin-bottom: 5px;
-  background-color: #e3ecfc;
+  background-color: sandybrown;
   color: darkblue;
   border-radius: 5px;
 }
 
 .status,
 .added_by_flag {
-  position: absolute;
   font-size: 0.7rem;
 }
 
@@ -317,21 +294,6 @@ section {
   width: 90%;
 }
 
-.book-details__image {
-  flex-basis: 40%;
-}
-
-.book-details__image img {
-  height: auto;
-}
-
-.book-details__info {
-  flex-basis: 50%;
-  padding: 20px;
-  overflow-wrap: break-word;
-  max-width: 100%;
-}
-
 .book-details__title {
   font-size: 1.5rem;
   font-weight: bold;
@@ -341,14 +303,26 @@ section {
 .book_title,
 .book-details__title {
   color: darkblue;
-  text-align: center;
-  text-transform: uppercase;
+}
+
+.book-details__img,
+.book-details__title {
+  padding-top: 10px;
 }
 
 .book-details__author {
   font-style: italic;
   font-size: 1rem;
   color: #555;
+}
+
+.book-details__author,
+.desc {
+  padding-bottom: 15px;
+}
+
+.cat {
+  color: darkblue;
 }
 
 /*--------------------------------------------------------------
@@ -438,11 +412,6 @@ section {
 
   #hero h1 {
     font-size: 1.5rem;
-  }
-
-  .book-details__image,
-  .book-details__info {
-    flex-basis: 100%;
   }
 
   .book-details__info {

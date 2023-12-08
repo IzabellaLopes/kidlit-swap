@@ -14,38 +14,44 @@
     <hr class="break" />
     <br />
     <!-- Books Cards -->
-    <div class="cards__container">
+    <div class="cards__container row">
       {% for book in books %}
-      <a href="{% url 'book_detail' slug=book.slug %}" class="card-link">
-        <div class="card">
-          {% if "placeholder" in book.image.url %}
-            <!-- Placeholder Image if Image is Not Available -->
-            <img src="https://res.cloudinary.com/dobdtuunf/image/upload/v1701900777/Book_img.png" class="book_img" alt="placeholder image">
-          {% else %}
-            <!-- Display Book Image -->
-            <img src=" {{ book.image.url }}" alt="{{ book.title }}" class="book_img">
-          {% endif %}
-          <!-- Book Title -->
-          <p class = "book_title">{{ book.title }}</p>
-          <!-- Author -->
-          <p class = "author">Author: {{ book.author }}</p>
-          <!-- Book Status -->
-          <p class="status {% if book.status == 'Available' %}available{% elif book.status == 'Borrowed' %}borrowed{% endif %}">Status: {{ book.status }}</p>
-          <!-- Added by -->
-          <p class = "added_by_flag">{{ book.added_by }}</p>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-2">
+          <a href="{% url 'book_detail' slug = book.slug %}" class="card-link">
+            <div class="card">
+              {% if 'placeholder' in book.image.url %}
+                <!-- Placeholder Image if Image is Not Available -->
+                <img src="https://res.cloudinary.com/dobdtuunf/image/upload/v1701900777/book_placeholder.png" class="img-fluid" alt="placeholder image" />
+              {% else %}
+                <!-- Display Book Image -->
+                <img src=" {{ book.image.url }}" alt="{{ book.title }}" class="img-fluid" />
+              {% endif %}
+              <!-- Book Title -->
+              <p class="book_title text-center text-uppercase">{{ book.title }}</p>
+              <!-- Author -->
+              <p class="author">Author: {{ book.author }}</p>
+              <!-- Book Status -->
+              <p class="status {% if book.status == 'Available' %}
+
+                {% elif book.status == 'Borrowed' %}
+
+                {% endif %}">Status: {{ book.status }}</p>
+              <!-- Added by -->
+              <p class="added_by_flag text-center">Added by: {{ book.added_by }}</p>
+            </div>
+          </a>
         </div>
       {% endfor %}
     </div>
   </div>
-  
-<!-- Include Paginator -->  
-{% include "paginator.html" %}
 
+  <!-- Include Paginator -->
+  {% include 'paginator.html' %}
 {% endblock %}
 
 <!-- JavaScript to toggle the form visibility -->
 <script>
   document.getElementById('addBookBtn').addEventListener('click', function () {
-    document.getElementById('addBookForm').style.display = 'block';
-  });
+    document.getElementById('addBookForm').style.display = 'block'
+  })
 </script>
