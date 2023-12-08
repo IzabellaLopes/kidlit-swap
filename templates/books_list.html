@@ -16,6 +16,7 @@
     <!-- Books Cards -->
     <div class="cards__container">
       {% for book in books %}
+      <a href="{% url 'book_detail' slug=book.slug %}" class="card-link">
         <div class="card">
           {% if "placeholder" in book.image.url %}
             <!-- Placeholder Image if Image is Not Available -->
@@ -30,14 +31,8 @@
           <p class = "author">Author: {{ book.author }}</p>
           <!-- Book Status -->
           <p class="status {% if book.status == 'Available' %}available{% elif book.status == 'Borrowed' %}borrowed{% endif %}">Status: {{ book.status }}</p>
-          <!-- Link to Book Detail Page -->
-          <a href="{% url 'book_detail' slug=book.slug %}">
-            <button class="details_btn">
-              <i class="fa-solid fa-book"></i>
-            </button>
-          </a>
           <!-- Added by -->
-          <p class="added_by_flag">{{ book.added_by }}</p>
+          <p class = "added_by_flag">{{ book.added_by }}</p>
         </div>
       {% endfor %}
     </div>

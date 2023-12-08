@@ -20,7 +20,7 @@ class BookList(generic.ListView):
     """
     model = Book
     template_name = 'books_list.html'
-    paginate_by = 10
+    paginate_by = 8
     
     def get_queryset(self):
         """

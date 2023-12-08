@@ -1,11 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Book detail</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}
+  KidLit Swap | Book Details
+{% endblock %}
+
+{% block head_title %}
+  Book Details
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h1 class="page-title">Book Details</h1>
+    <hr class="break" />
+    <br />
+    <!-- Book Details -->
+    <div class="cards__container">
+        <div class="book-details__container row">
+            <div class="book-details__image col-md-4 order-1 order-md-1">
+             {% if "placeholder" in book.image.url %}
+                 <!-- Placeholder Image if Image is Not Available -->
+                 <img src="https://res.cloudinary.com/dobdtuunf/image/upload/v1701900777/Book_img.png" class="book_img img-fluid" alt="placeholder image">
+              {% else %}
+                 <!-- Display Book Image -->
+                 <img src=" {{ book.image.url }}" alt="{{ book.title }}" class="book_img">
+               {% endif %}
+           </div>
+          <div class="book-details__info col-md-8 order-2 order-md-2">
+                <!-- Book Title -->
+                <p class = "book-details__title">{{ book.title }}</p>
+                <!-- Author -->
+                <p class = "book-details__author">Author: {{ book.author }}</p>
+                <!-- Category -->
+                <p class="cat">Category: {{object.category}} </p>
+                <!-- Description -->
+                <p class="desc">Description: {{object.description}} </p>
+                <!-- Book Status -->
+                <p class="status {% if book.status == 'Available' %}available{% elif book.status == 'Borrowed' %}borrowed{% endif %}">Status: {{ book.status }}</p>
+                <!-- Added by -->
+                <p class = "added_by_flag">Added by: {{ book.added_by }}</p>
+            </div>
+        </div>
+    </div>
+  
+
+
+{% endblock %}

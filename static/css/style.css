@@ -237,6 +237,16 @@ section {
   transform: scale(1.075);
 }
 
+.card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-link:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
 .book_img {
   display: block;
   margin: 10px auto;
@@ -247,14 +257,13 @@ section {
 }
 
 .book_title {
-  color: #232f3e;
   font-weight: bold;
 }
 
 .author {
-  color: #232f3e;
   font-style: italic;
   font-size: 0.7rem;
+  color: #232f3e;
 }
 
 .book_title,
@@ -267,9 +276,7 @@ section {
 }
 
 .status {
-  font-size: 0.7rem;
   font-weight: bold;
-  position: absolute;
   left: 15px;
   bottom: 2px;
 }
@@ -282,25 +289,6 @@ section {
   color: red;
 }
 
-.details_btn {
-  right: 20px;
-  bottom: 20px;
-  border: none;
-  outline: none;
-  color: #131a22;
-  transition: color 0.3s ease;
-}
-
-.details_btn:hover {
-  color: blue;
-}
-
-.details_btn,
-.added_by_flag {
-  position: absolute;
-  font-size: 0.8rem;
-}
-
 .added_by_flag {
   right: 15px;
   bottom: 0px;
@@ -308,6 +296,59 @@ section {
   background-color: #e3ecfc;
   color: darkblue;
   border-radius: 5px;
+}
+
+.status,
+.added_by_flag {
+  position: absolute;
+  font-size: 0.7rem;
+}
+
+.pagination {
+  gap: 8px;
+}
+
+/*--------------------------------------------------------------
+# Book Details
+--------------------------------------------------------------*/
+
+.book-details__container {
+  margin: 20px auto;
+  width: 90%;
+}
+
+.book-details__image {
+  flex-basis: 40%;
+}
+
+.book-details__image img {
+  height: auto;
+}
+
+.book-details__info {
+  flex-basis: 50%;
+  padding: 20px;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+.book-details__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  overflow-wrap: break-word;
+}
+
+.book_title,
+.book-details__title {
+  color: darkblue;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.book-details__author {
+  font-style: italic;
+  font-size: 1rem;
+  color: #555;
 }
 
 /*--------------------------------------------------------------
@@ -397,6 +438,25 @@ section {
 
   #hero h1 {
     font-size: 1.5rem;
+  }
+
+  .book-details__image,
+  .book-details__info {
+    flex-basis: 100%;
+  }
+
+  .book-details__info {
+    padding: 10px;
+  }
+
+  .book-details__title {
+    font-size: 1.2rem;
+  }
+
+  .book-details__author,
+  .cat,
+  .desc {
+    font-size: 0.9rem;
   }
 }
 
