@@ -285,6 +285,29 @@ section {
   gap: 8px;
 }
 
+.break-lg {
+  width: 400px !important;
+}
+
+.add__container {
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 3px 0px rgba(0, 0, 0, 0.3);
+  
+}
+
+.container.add__container h3 {
+  color: #495057;
+}
+
+.container.add__container .btn-primary {
+  background-color: teal; 
+}
+
+.container.add__container .btn-primary:hover {
+  background-color: #0056b3; 
+}
+
 /*--------------------------------------------------------------
 # Book Details
 --------------------------------------------------------------*/
@@ -323,6 +346,55 @@ section {
 
 .cat {
   color: darkblue;
+}
+
+/*--------------------------------------------------------------
+# Add Book
+--------------------------------------------------------------*/
+
+.add-book-form {
+  background-color: #e3ecfc;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.add-book-form form {
+  max-width: 90%; 
+  margin: 0 auto;
+}
+
+.add-book-form button {
+  margin-top: 10px;
+}
+
+.add-book-form input[type="text"],
+.add-book-form textarea,
+.add-book-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+}
+
+.add-book-form label {
+  font-weight: bold;
+}
+
+.file-input-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.file-input-label {
+  display: block;
+  padding: 8px;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 /*--------------------------------------------------------------
@@ -427,7 +499,14 @@ section {
   .desc {
     font-size: 0.9rem;
   }
+
+  .add-book-form,
+  .img-add {
+    width: 100%;
+    margin: 0;
+  }
+
+  .file-input-label {
+    word-wrap: break-word;
 }
-
-
-
+}

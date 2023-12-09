@@ -3,8 +3,11 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.urls import reverse_lazy
 from django.views import generic
 from .models import Book
+from .forms import BookForm
 
 
 class Home(generic.TemplateView):
@@ -36,8 +39,10 @@ class BookList(generic.ListView):
         context = super().get_context_data(**kwargs)
         context['available_count'] = Book.objects.filter(status='a').count()
         context['borrowed_count'] = Book.objects.filter(status='b').count()
-        context['books'] = context['object_list']      
+        context['books'] = context['object_list']
+        context['form'] = BookForm()
         return context    
+
 
 class BookDetail(generic.DetailView):
     """
@@ -52,9 +57,28 @@ class BookDetail(generic.DetailView):
         Get the book based on the slug
         """
         slug = self.kwargs.get('slug')
-        return get_object_or_404(Book, slug=slug)
-    
+        return get_object_or_404(Book, slug=slug)    
 
+
+class AddBook(LoginRequiredMixin, UserPassesTestMixin, generic.CreateView):
+    """
+    View to allow logged in users to add a book
+    """
+    model = Book
+    form_class = BookForm
+    template_name = 'add_book.html'
+    success_url = reverse_lazy('book_list')
+
+
+    def form_valid(self, form):
+        form.instance.added_by = self.request.user
+        return super().form_valid(form)
+
+
+    def test_func(self):
+        return self.request.user.is_authenticated
+    
+    
 @method_decorator(login_required, name='dispatch')
 class ProfileView(generic.TemplateView):
     template_name = 'profile.html'
