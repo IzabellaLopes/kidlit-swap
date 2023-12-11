@@ -11,12 +11,14 @@
     <br />
 
     <section class="delete-book-section">
-      <p>Are you sure you want to delete the book "{{ book.title }}"?</p>
+      <div class="cards__container">
+        <p>Are you sure you want to delete the book "{{ book.title }}"?</p>
       <form method="post" action="{% url 'delete_book' slug=book.slug %}">
         {% csrf_token %}
         <button type="submit" class="btn btn-danger">Delete</button>
         <a href="{% url 'my_books' %}" class="btn btn-secondary">Cancel</a>
       </form>
+    </div>
     </section>
   </div>
 {% endblock %}

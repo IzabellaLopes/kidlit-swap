@@ -14,7 +14,8 @@
     <br />
 
     <section class="edit-book-section">
-      <div class="row">
+      <div class="cards__container">
+        <div class="row">
         <div class="col-md-6">
           <div class="edit-book-form">
             {% if user.is_authenticated and book.added_by == user %}
@@ -35,6 +36,7 @@
           </div>
         </div>
       </div>
+    </div>
     </section>
   </div>
 {% endblock %}

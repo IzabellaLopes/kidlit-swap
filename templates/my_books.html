@@ -12,6 +12,7 @@
 
     <section class="my-books-section">
       {% if user.is_authenticated %}
+      <div class="cards__container">
         <div class="row">
           {% for book in user_books %}
             <div class="col-md-4 mb-4">
@@ -28,6 +29,7 @@
             </div>
           {% endfor %}
         </div>
+      </div>
       {% endif %}
     </section>
   </div>
