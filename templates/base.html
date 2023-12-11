@@ -11,7 +11,7 @@
     <meta name="keywords" content="KidLit Swap, children's books, young readers, share books, book exchange, reading group" />
     <meta name="author" content="Izabella Lopes" />
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />   
     <!-- CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <title>
@@ -32,13 +32,18 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
               <ul class="navbar-nav mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link active animated-zoom" aria-current="page" href="{% url 'home' %}">Home</a>
+                <li class="nav-item {% block navbar_home_active %}
+                  {% endblock %}">
+                  <a class="nav-link animated-zoom" aria-current="page" href="{% url 'home' %}">Home</a>
                 </li>
-                <li class="nav-item {% if user.is_authenticated %}dropdown{% endif %}">
-                  <a class="nav-link {% if user.is_authenticated %}dropdown-toggle{% endif %} animated-zoom" href="{% url 'book_list' %}" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Books</a>
-                  {% if user.is_authenticated %}
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li class="nav-item {% block navbar_book_list_active %}
+                  {% endblock %}">
+                  <a class="nav-link animated-zoom" href="{% url 'book_list' %}">Books</a>
+                </li>
+                {% if user.is_authenticated %}
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle animated-zoom" href="#" id="manageBooksDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Manage Books</a>
+                    <ul class="dropdown-menu" aria-labelledby="manageBooksDropdown">
                       <li>
                         <a class="dropdown-item" href="{% url 'add_book' %}">Add Book</a>
                       </li>
@@ -46,9 +51,7 @@
                         <a class="dropdown-item" href="{% url 'my_books' %}">My Books</a>
                       </li>
                     </ul>
-                  {% endif %}
-                </li>
-                {% if user.is_authenticated %}
+                  </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle animated-zoom" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ user.username }}</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -118,5 +121,24 @@
     <script src="https://kit.fontawesome.com/d0b182acbf.js" crossorigin="anonymous"></script>
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <script>
+      // Add active class to the current navigation item based on the URL
+      document.addEventListener('DOMContentLoaded', function () {
+        var url = window.location.pathname;
+        var activeNavLink = document.querySelector('a.nav-link[href="' + url + '"]');
+    
+        if (activeNavLink) {
+          // Find the closest ancestor <li> with class 'nav-item' and add the class
+          var closestNavItem = activeNavLink.closest('.nav-item');
+          if (closestNavItem) {
+            closestNavItem.classList.add('nav-active');
+          }
+        }
+      });
+    </script>
+    
+    
+    
   </body>
 </html>

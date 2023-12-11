@@ -70,11 +70,10 @@ h6 {
   color: #143296 !important;
 }
 
-.navbar-nav .nav-link.active {
-    background-color: #143296 !important;
-    color: #fff !important; 
-    border-radius: 8px;
-  }
+.nav-active {
+  background-color: #e3ecfc !important;
+  border-radius: 8px;
+}
 
 .dropdown-menu {
   background-color:#f8f9fa;
