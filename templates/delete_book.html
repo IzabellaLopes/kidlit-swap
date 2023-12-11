@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  KidLit Swap | Delete Book
+{% endblock %}
+
+{% block head_title %}
+  Delete Book
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h1 class="page-title">Delete Book</h1>
+    <hr class="break" />
+    <br />
+
+    <section class="delete-book-section">
+      <p>Are you sure you want to delete the book "{{ book.title }}"?</p>
+      <form method="post" action="{% url 'delete_book' slug=book.slug %}">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a href="{% url 'my_books' %}" class="btn btn-secondary">Cancel</a>
+      </form>
+    </section>
+  </div>
+{% endblock %}

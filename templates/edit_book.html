@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  KidLit Swap | Edit Book
+{% endblock %}
+
+{% load crispy_forms_tags %}
+
+
+{% block head_title %}
+  Edit Book
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h1 class="page-title">Edit Book</h1>
+    <hr class="break" />
+    <br />
+
+    <section class="edit-book-section">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="edit-book-form">
+            {% if user.is_authenticated and book.added_by == user %}
+            <!-- Checks the user is signed in and the book they're trying to access is owned by them -->
+            {% load cloudinary %}
+            <div class="col-11 col-md-8 col-lg-6 mt-3">
+              <form method="post" action="{% url 'edit_book' slug=book.slug %}" enctype="multipart/form-data">
+                {{ form | crispy }}
+                {% csrf_token %}
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary">Save Changes</button>
+                </div>
+              </form>
+            </div>
+            {% else %}
+              <p>You do not have permission to edit this book.</p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+{% endblock %}

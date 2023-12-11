@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  KidLit Swap | My Books
+{% endblock %}
+
+{% block head_title %}
+  My Books
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h1 class="page-title">My Books</h1>
+    <hr class="break" />
+    <br />
+
+    <section class="my-books-section">
+      {% if user.is_authenticated %}
+        <div class="row">
+          {% for book in user_books %}
+            <div class="col-md-4 mb-4">
+              <div class="card">
+                <img src="{{ book.image.url }}" class="card-img-top" alt="{{ book.title }}">
+                <div class="card-body">
+                  <h5 class="card-title">{{ book.title }}</h5>
+                  <p class="card-text">{{ book.description }}</p>
+                  <a href="{% url 'book_detail' slug=book.slug %}" class="btn btn-primary">View Details</a>
+                  <a href="{% url 'edit_book' slug=book.slug %}" class="btn btn-secondary">Edit</a>
+                  <a href="{% url 'delete_book' slug=book.slug %}" class="btn btn-danger">Delete</a>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </section>
+  </div>
+{% endblock %}
