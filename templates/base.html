@@ -35,8 +35,18 @@
                 <li class="nav-item">
                   <a class="nav-link active animated-zoom" aria-current="page" href="{% url 'home' %}">Home</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link animated-zoom" href="{% url 'book_list' %}">Books</a>
+                <li class="nav-item {% if user.is_authenticated %}dropdown{% endif %}">
+                  <a class="nav-link {% if user.is_authenticated %}dropdown-toggle{% endif %} animated-zoom" href="{% url 'book_list' %}" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Books</a>
+                  {% if user.is_authenticated %}
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <li>
+                        <a class="dropdown-item" href="{% url 'add_book' %}">Add Book</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="{% url 'my_books' %}">My Books</a>
+                      </li>
+                    </ul>
+                  {% endif %}
                 </li>
                 {% if user.is_authenticated %}
                   <li class="nav-item dropdown">
