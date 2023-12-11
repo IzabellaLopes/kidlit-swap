@@ -1,0 +1,1 @@
+web: gunicorn kidlit_swap.wsgi
