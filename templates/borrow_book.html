@@ -17,7 +17,7 @@
 
         <!-- Display return date selection for authenticated users -->
         <label for="returnDate">Select return date:</label>
-        <input type="date" id="returnDate" name="return_date" required />
+        <input type="date" id="returnDate" name="return_date" min="{% now 'Y-m-d' %}" required />
         <button type="submit" class="btn btn-primary">Confirm Borrow</button>
       </form>
     {% else %}
