@@ -11,13 +11,20 @@
     <br />
 
     <section class="my-books-section">
+      <h2>Added Books</h2>
       {% if user.is_authenticated %}
       <div class="cards__container">
         <div class="row">
           {% for book in user_books %}
             <div class="col-md-4 mb-4">
               <div class="card">
-                <img src="{{ book.image.url }}" class="card-img-top" alt="{{ book.title }}">
+                {% if 'placeholder' in book.image.url %}
+                  <!-- Placeholder Image if Image is Not Available -->
+                  <img src="https://res.cloudinary.com/dobdtuunf/image/upload/v1701900777/book_placeholder.png" class="img-fluid" alt="placeholder image" />
+                {% else %}
+                  <!-- Display Book Image -->
+                  <img src="{{ book.image.url }}" alt="{{ book.title }}" class="img-fluid" />
+                {% endif %}
                 <div class="card-body">
                   <h5 class="card-title">{{ book.title }}</h5>
                   <p class="card-text">{{ book.description }}</p>
@@ -34,30 +41,29 @@
     </section>
 
     <section class="borrowed-books-section">
-      {% if borrowed_books %}
       <h2>Borrowed Books</h2>
       <div class="cards__container">
         <div class="row">
-          {% for borrowed_book in borrowed_books %}
+          {% for book in borrowed_books %}
             <div class="col-md-4 mb-4">
               <div class="card">
-                <img src="{{ borrowed_book.book.image.url }}" class="card-img-top" alt="{{ borrowed_book.book.title }}">
+                {% if 'placeholder' in book.image.url %}
+                  <!-- Placeholder Image if Image is Not Available -->
+                  <img src="https://res.cloudinary.com/dobdtuunf/image/upload/v1701900777/book_placeholder.png" class="img-fluid" alt="placeholder image" />
+                {% else %}
+                  <!-- Display Book Image -->
+                  <img src="{{ book.image.url }}" alt="{{ book.title }}" class="img-fluid" />
+                {% endif %}
                 <div class="card-body">
-                  <h5 class="card-title">{{ borrowed_book.book.title }}</h5>
-                  <p class="card-text">{{ borrowed_book.book.description }}</p>
-                  <p>Borrowed by: {{ borrowed_book.borrower.username }}</p>
-                  <p>Return Date: {{ borrowed_book.return_date }}</p>
-                  <!-- Add more details if needed -->
+                  <h5 class="card-title">{{ book.title }}</h5>
+                  <p>Owner of the book: {{ book.added_by.username }}</p>
+                  <p>Return Date: {{ book.return_date }}</p>
                 </div>
               </div>
             </div>
           {% endfor %}
         </div>
       </div>
-      {% else %}
-      <p>You haven't borrowed any books yet.</p>
-      {% endif %}
-    </section>
-
+    </section>    
   </div>
 {% endblock %}

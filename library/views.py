@@ -82,13 +82,33 @@ class AddBook(LoginRequiredMixin, UserPassesTestMixin, generic.CreateView):
 
 
 class MyBooks(LoginRequiredMixin, generic.ListView):
+    """
+    View to display a list of books added and borrowed by the logged-in user
+    """
     model = Book
     template_name = 'my_books.html'
     context_object_name = 'user_books'
 
     def get_queryset(self):
-        return Book.objects.filter(added_by=self.request.user)
+        # Retrieve books added by the logged-in user
+        user_books = Book.objects.filter(added_by=self.request.user)
 
+        # Retrieve books borrowed by the logged-in user
+        borrowed_books = Book.objects.filter(borrower=self.request.user, status='Borrowed')
+
+        # Combine the two querysets
+        all_books = user_books | borrowed_books
+
+        return all_books
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        # Filter borrowed books separately for display in the template
+        borrowed_books = context['user_books'].filter(status='Borrowed')
+        context['borrowed_books'] = borrowed_books
+
+        return context
 
 class EditBook(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView):
     model = Book
