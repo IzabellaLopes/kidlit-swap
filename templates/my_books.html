@@ -32,5 +32,32 @@
       </div>
       {% endif %}
     </section>
+
+    <section class="borrowed-books-section">
+      {% if borrowed_books %}
+      <h2>Borrowed Books</h2>
+      <div class="cards__container">
+        <div class="row">
+          {% for borrowed_book in borrowed_books %}
+            <div class="col-md-4 mb-4">
+              <div class="card">
+                <img src="{{ borrowed_book.book.image.url }}" class="card-img-top" alt="{{ borrowed_book.book.title }}">
+                <div class="card-body">
+                  <h5 class="card-title">{{ borrowed_book.book.title }}</h5>
+                  <p class="card-text">{{ borrowed_book.book.description }}</p>
+                  <p>Borrowed by: {{ borrowed_book.borrower.username }}</p>
+                  <p>Return Date: {{ borrowed_book.return_date }}</p>
+                  <!-- Add more details if needed -->
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% else %}
+      <p>You haven't borrowed any books yet.</p>
+      {% endif %}
+    </section>
+
   </div>
 {% endblock %}
