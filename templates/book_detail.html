@@ -1,6 +1,4 @@
 {% extends 'base.html' %}
-{% load static %}
-
 
 {% block title %}
   KidLit Swap | Book Details
@@ -47,8 +45,9 @@
             {% elif book.status == 'Available' %}
                 {% if user.is_authenticated %}
                 <!-- Button to navigate to the borrow_book page with the book's slug -->
-                <form method="get" action="{% url 'borrow_book' slug=book.slug %}">
-                  <button type="submit" class="btn btn-primary">Borrow This Book</button>
+                  <button type="button" class="btn btn-primary" id="borrowButton" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    Borrow This Book
+                  </button>
                 </form>
                 {% else %}
                     <!-- Prompt non-authenticated users to log in -->
@@ -74,6 +73,35 @@
     </div>
   </div>
 
-  <script src="{% static 'js/book_detail.js' %}"></script>
+<!-- Modal -->
+<div class="modal fade" id="borrowModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Confirm borrow details</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="borrowForm" method="post" action="{% url 'borrow_book' slug=book.slug %}">
+          {% csrf_token %}
+          <label for="returnDate">Select return date:</label>
+          <input type="date" id="returnDate" name="return_date" min="{% now 'Y-m-d' %}" required />
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Confirm</button>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Add JavaScript to open the modal when the "Borrow This Book" button is clicked
+  document.getElementById('borrowButton').addEventListener('click', function() {
+    var myModal = new bootstrap.Modal(document.getElementById('borrowModal'));
+    myModal.show();
+  });
+</script>
 
 {% endblock %}

@@ -148,8 +148,8 @@ class BorrowBookView(LoginRequiredMixin, View):
             form = BookBorrowForm()
             return render(
                 request,
-                'borrow_book.html',
-                {'book': book, 'form': form}
+                'book_detail.html',
+                {'book': book, 'form': form, 'modal_open': True}
             )
         else:
             messages.error(
@@ -186,7 +186,7 @@ class BorrowBookView(LoginRequiredMixin, View):
                     request, 'Invalid form data. Please try again.'
                     )
                 return render(
-                    request, 'borrow_book.html', {'book': book, 'form': form}
+                    request, 'book_detail.html', {'book': book, 'form': form}
                     )
         else:
             messages.error(
