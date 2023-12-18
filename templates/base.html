@@ -34,44 +34,44 @@
               <ul class="navbar-nav mb-2 mb-lg-0">
                 <li class="nav-item {% block navbar_home_active %}
                   {% endblock %}">
-                  <a class="nav-link animated-zoom" aria-current="page" href="{% url 'home' %}">Home</a>
+                  <a class="nav-link animated-zoom text-uppercase" aria-current="page" href="{% url 'home' %}">Home</a>
                 </li>
                 <li class="nav-item {% block navbar_book_list_active %}
                   {% endblock %}">
-                  <a class="nav-link animated-zoom" href="{% url 'book_list' %}">Books</a>
+                  <a class="nav-link animated-zoom text-uppercase" href="{% url 'book_list' %}">Books</a>
                 </li>
                 {% if user.is_authenticated %}
                   <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle animated-zoom" href="#" id="manageBooksDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Manage Books</a>
+                    <a class="nav-link dropdown-toggle animated-zoom text-uppercase" href="#" id="manageBooksDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Manage Books</a>
                     <ul class="dropdown-menu" aria-labelledby="manageBooksDropdown">
                       <li>
-                        <a class="dropdown-item" href="{% url 'add_book' %}">Add Book</a>
+                        <a class="dropdown-item text-uppercase" href="{% url 'add_book' %}">Add Book</a>
                       </li>
                       <li>
-                        <a class="dropdown-item" href="{% url 'my_books' %}">My Books</a>
+                        <a class="dropdown-item text-uppercase" href="{% url 'my_books' %}">My Books</a>
                       </li>
                     </ul>
                   </li>
                   <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle animated-zoom" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ user.username }}</a>
+                    <a class="nav-link dropdown-toggle animated-zoom text-uppercase" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ user.username }}</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                       <li>
-                        <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
+                        <a class="dropdown-item text-uppercase" href="{% url 'profile' %}">Profile</a>
                       </li>
                       <li>
-                        <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
+                        <a class="dropdown-item text-uppercase" href="{% url 'account_logout' %}">Logout</a>
                       </li>
                     </ul>
                   </li>
                 {% else %}
                   <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle animated-zoom" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">My Account</a>
+                    <a class="nav-link dropdown-toggle animated-zoom text-uppercase" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">My Account</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                       <li>
-                        <a class="dropdown-item" href="{% url 'account_signup' %}">Sign up</a>
+                        <a class="dropdown-item text-uppercase" href="{% url 'account_signup' %}">Sign up</a>
                       </li>
                       <li>
-                        <a class="dropdown-item" href="{% url 'account_login' %}">Login</a>
+                        <a class="dropdown-item text-uppercase" href="{% url 'account_login' %}">Login</a>
                       </li>
                     </ul>
                   </li>
@@ -83,6 +83,20 @@
         <!-- End Navigation -->
       </header>
       <!-- End Header -->
+
+      <!-- Messages - Code Institute's "I Think Therefore I Blog" project -->
+      <div class="container text-center mt-3">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
+                    {{ message | safe }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+      </div>
 
       <main>
         {% block content %}
@@ -117,6 +131,17 @@
     </footer>
     <!-- End Footer -->
 
+    <!-- Script to manage messages fading -->
+    <script>
+      setTimeout(function () {
+        let messages = document.querySelectorAll(".alert:not(.message-no-fade)");
+        messages.forEach(function (message) {
+          let alert = new bootstrap.Alert(message);
+          alert.close();
+        });
+      }, 3000);
+    </script>
+
     <!-- Font Awesome script -->
     <script src="https://kit.fontawesome.com/d0b182acbf.js" crossorigin="anonymous"></script>
     <!-- Bootstrap Bundle with Popper -->
@@ -137,8 +162,6 @@
         }
       });
     </script>
-    
-    
-    
+
   </body>
 </html>
