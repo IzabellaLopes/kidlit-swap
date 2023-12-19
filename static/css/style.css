@@ -189,18 +189,54 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Log In
+# Log in and Sign up
 --------------------------------------------------------------*/
 
-.btn-signup {
+.auth__container {
+  margin-bottom: 20px;
+}
+
+.signup, 
+.login {
+  text-align: center;
+  padding: 20px 0;
+  border-radius: 8px;
+  border: 1px solid darkblue;
+}
+
+.signup input,
+.login input {
+  width: 90%;
+  border: 1px solid darkgreen;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px 0 10px 0;
+}
+
+.form-group {
+  color: #442E10;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.login #id_remember {
+  width: 20px;
+  display: inline;
+}
+
+.btn-account {
   background-color: #143296;
   color: #fff;
   border-radius: 8px;
 }
 
-.btn-signup:hover,
-.btn-signup:active {
+.btn-account:hover,
+.btn-account:active {
   background-color: #2E8B57;
+}
+
+.login-error {
+  margin-bottom: 0;
 }
 
 /*--------------------------------------------------------------
