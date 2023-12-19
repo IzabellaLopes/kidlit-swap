@@ -9,6 +9,22 @@
 {% endblock %}
 
 {% block content %}
+  <!-- Display login errors -->
+  {% if form.non_field_errors %}
+  <div class="container text-center mt-3">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          {% for error in form.non_field_errors %}
+            <p class="login-error">{{ error }}</p>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  
   <!-- Login Form Container -->
   <div class="container auth__container">
     <h1 class="page-title">{% trans 'Log In' %}</h1>
