@@ -35,11 +35,10 @@
           <p class="status {% if book.status == 'Available' %}available{% elif book.status == 'Borrowed' %}borrowed{% endif %}">Status: {{ book.status }}</p>
           <!-- Added by -->
           <p class="added_by_flag text-center">Added by: {{ book.added_by.username }}</p>
-          <!-- Borrow Book -->
-          <div class="borrow-section">
+          <!-- Borrow Book -->     
             {% if request.user == book.added_by and book.status == 'Available' %}
               <!-- Display a message for the book owner -->
-              <div class="alert alert-success" role="alert">
+              <div class="alert alert-success message-no-fade" role="alert">
                 <p class="mb-0 text-center">Thank you for sharing your book on KidLitSwap!</p>
               </div>
             {% elif book.status == 'Available' %}
@@ -48,17 +47,16 @@
                   <button type="button" class="btn btn-primary" id="borrowButton" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                     Borrow This Book
                   </button>
-                </form>
                 {% else %}
                     <!-- Prompt non-authenticated users to log in -->
-                    <div class="alert alert-info" role="alert">
+                    <div class="alert alert-info message-no-fade" role="alert">
                       <p class="mb-0">Do you want to borrow this book?</p>
                       <a href="{% url 'account_login' %}" class="btn btn-primary mt-2">Log In</a>
                     </div>
                 {% endif %}
             {% elif book.status == 'Borrowed' %}
               <!-- Display a message for borrowed books -->
-              <div class="alert alert-warning" role="alert">
+              <div class="alert alert-warning message-no-fade" role="alert">
                 <p class="mb-0">
                   This book is currently borrowed by
                   <span class="fw-bold">{{ book.borrower.username }}</span>
