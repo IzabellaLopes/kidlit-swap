@@ -9,7 +9,25 @@
     /*---------- TYPOGRAPHY ----------*/
     --header-text: 'Potta One', cursive;
     --content-text: 'Shantell Sans', cursive;
+
+    /*---------- COLOURS ----------*/
+    --green: #2E8B57;
+    --blue: #143296;
+    --light-blue: #e3ecfc;
+    --light-grey: #f8f9fa;
+    --dark-blue: darkblue;
+    --dark-green: darkgreen;
+    --white: #fff;
+    --dark-red: darkred;
+    --dark-brown: #442E10;
+    --red: red;
+    --antiquewhite: antiquewhite;
+    --dark-grey: #495057;
+    --teal: teal;
+    --navy-blue: #0056b3;
 }
+
+
 
 /*--------------------------------------------------------------
 # General
@@ -30,9 +48,7 @@ h6 {
 }
 
 .page-title {
-  padding-top: 5px;
-  color: #2E8B57;
-  text-align: center;
+  color: var(--green);
 }
 
 /*--------------------------------------------------------------
@@ -62,32 +78,32 @@ h6 {
 }
 
 .navbar-nav .nav-link {
-  color: #2E8B57 !important;
+  color: var(--green) !important;
 }
 
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link:focus {
-  color: #143296 !important;
+  color: var(--blue) !important;
 }
 
 .nav-active {
-  background-color: #e3ecfc !important;
+  background-color: var(--light-blue) !important;
   border-radius: 8px;
 }
 
 .dropdown-menu {
-  background-color:#f8f9fa;
+  background-color: var(--light-grey);
 }
 
 .dropdown-menu .dropdown-item {
   font-size: large;
-  color: #2E8B57;
+  color: var(--green);
 }
 
 .dropdown-menu .dropdown-item:hover,
 .dropdown-menu .dropdown-item:focus {
-  background-color: #143296;
-  color: #fff;
+  background-color: var(--blue);
+  color: var(--white);
   border-radius: 8px;
 }
 
@@ -105,7 +121,7 @@ h6 {
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  background: #e3ecfc;
+  background: var(--light-blue);
 }
 
 section {
@@ -116,18 +132,18 @@ section {
 #hero h1 {
   text-align: center;
   line-height: 1.5;
-  color: darkblue;
+  color: var(--dark-blue);
 }
 
 #hero h1 span {
-  color: darkgreen;
+  color: var(--dark-green);
 }
 
 #hero p {
   font-size: 2rem;
   text-align: center;
   line-height: 2;
-  color: darkred;
+  color: var(--dark-red);
 }
 
 #hero .animated {
@@ -152,15 +168,14 @@ section {
 --------------------------------------------------------------*/
 
 .section-title {
-  color: darkgreen;
+  color: var(--dark-green);
 }
 
 .break {
   margin: auto !important;
   width: 200px;
   height: 2px !important;
-  color: darkblue !important;
-  background-color: darkblue !important;
+  background-color: var(--dark-blue) !important;
   opacity: .5
 }
 
@@ -168,16 +183,16 @@ section {
   border-radius: 15px;
   box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
   padding: 20px 0;
-  background-color: #f8f9fa;
+  background-color: var(--light-grey);
 }
 
 .about-image {
   text-align: center;
-  color: #2E8B57;
+  color: var(--green);
 }
 
 .about-title {
-  color: darkblue;
+  color: var(--dark-blue);
   padding-top: 10px;
   text-align: center;
   font-size: 1.5rem;
@@ -201,20 +216,20 @@ section {
   text-align: center;
   padding: 20px 0;
   border-radius: 8px;
-  border: 1px solid darkblue;
+  border: 1px solid var(--dark-blue);
 }
 
 .signup input,
 .login input {
   width: 90%;
-  border: 1px solid darkgreen;
+  border: 1px solid var(--dark-green);
   border-radius: 5px;
   padding: 5px;
   margin: 5px 0 10px 0;
 }
 
 .form-group {
-  color: #442E10;
+  color: var(--dark-brown);
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
@@ -225,14 +240,14 @@ section {
 }
 
 .btn-account {
-  background-color: #143296;
-  color: #fff;
+  background-color: var(--blue);
+  color: var(--white);
   border-radius: 8px;
 }
 
 .btn-account:hover,
 .btn-account:active {
-  background-color: #2E8B57;
+  background-color: var(--green);
 }
 
 .login-error {
@@ -243,24 +258,20 @@ section {
 # Books 
 --------------------------------------------------------------*/
 .cards__container {
-  background-color: #e3ecfc;
-  border-radius: 8px;
+  background-color: var(--light-blue);
   box-shadow: 0 0 3px 0px rgba(0, 0, 0, 0.3);
 }
 
 .card {
-  margin: 15px;
-  background-color: whitesmoke;
-  border-radius: 8px;
+  background-color: var(--light-grey);
   box-shadow: 0 0 3px 0px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
   cursor: pointer;
-  text-align: center;
 }
 
 .card:hover {
   transform: scale(1.05);
-  border-color: #2E8B57;
+  border-color: var(--green);
 }
 
 .card-link {
@@ -273,51 +284,30 @@ section {
   color: inherit;
 }
 
-.book_title {
-  font-weight: bold;
+.card-title {
+  color: var(--dark-blue);
 }
 
 .author {
-  font-style: italic;
   font-size: 0.7rem;
-  color: #232f3e;
-}
-
-.book_title,
-.author {
-  padding: 0 10px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-.status {
-  font-weight: bold;
-  left: 15px;
-  bottom: 2px;
 }
 
 .status.available {
-  color: green; 
+  color: var(--green); 
 }
 
 .status.borrowed {
-  color: red;
+  color: var(--red);
 }
 
-.added_by_flag {
-  background-color: sandybrown;
-  color: darkblue;
-  border-radius: 5px;
+.added {
+  background-color: var(--antiquewhite);
+  color: var(--dark-blue);
 }
 
 .status,
-.added_by_flag {
-  font-size: 0.7rem;
-}
-
-.pagination {
-  gap: 8px;
+.added {
+  font-size: 0.8rem;
 }
 
 .break-lg {
@@ -325,62 +315,40 @@ section {
 }
 
 .add__container {
-  padding: 40px;
-  border-radius: 8px;
   box-shadow: 0 0 3px 0px rgba(0, 0, 0, 0.3);
-  
 }
 
 .container.add__container h3 {
-  color: #495057;
+  color: var(--dark-grey);
 }
 
-.container.add__container .btn-primary {
-  background-color: teal; 
+.add-btn {
+  background-color: var(--teal); 
 }
 
-.container.add__container .btn-primary:hover {
-  background-color: #0056b3; 
+.add-btn:hover {
+  background-color: var(--navy-blue); 
 }
 
 /*--------------------------------------------------------------
 # Book Details
 --------------------------------------------------------------*/
 
-.book-details__container {
+.details-container {
   margin: 20px auto;
   width: 90%;
 }
 
-.book-details__title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  overflow-wrap: break-word;
-}
-
-.book_title,
-.book-details__title {
-  color: darkblue;
-}
-
-.book-details__img,
-.book-details__title {
-  padding-top: 10px;
-}
-
-.book-details__author {
-  font-style: italic;
-  font-size: 1rem;
-  color: #555;
-}
-
-.book-details__author,
-.desc {
-  padding-bottom: 15px;
+.details-image {
+  background-color: var(--light-grey);
 }
 
 .cat {
-  color: darkblue;
+  color: var(--dark-blue);
+}
+
+.alert-info {
+  background-color: var(--light-grey);
 }
 
 /*--------------------------------------------------------------
@@ -388,7 +356,7 @@ section {
 --------------------------------------------------------------*/
 
 .add-book-form {
-  background-color: #e3ecfc;
+  background-color: var(--light-blue);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -426,24 +394,40 @@ section {
 .file-input-label {
   display: block;
   padding: 8px;
-  background-color: #fff;
+  background-color: var(--white);
   border: 1px solid #ced4da;
   border-radius: 5px;
   cursor: pointer;
 }
 
 /*--------------------------------------------------------------
+# My Books
+--------------------------------------------------------------*/
+
+.my-books-title {
+  color: var(--dark-red);
+}
+
+.static-card {
+  background-color: var(--light-grey);
+  box-shadow: 0 0 3px 0px rgba(0, 0, 0, 0.3);
+}
+
+.owner {
+  color: var(--dark-red);
+}
+
+.return-date {
+  color: var(--teal);
+}
+
+
+/*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
 
 .footer-container {
-  border-top: 1px #143296 solid !important;
-}
-
-.social-networks {
-  text-align: center;
-  padding: 0;
-  margin: 30px 0;
+  border-top: 1px var(--blue) solid !important;
 }
 
 .social-networks li {
@@ -453,11 +437,11 @@ section {
 .social-networks i {
   font-size: 160%;
   padding: 0 30px;
-  color: #2E8B57;
+  color: var(--green);
 }
 
 .social-networks i:hover {
-  color: #143296;
+  color: var(--blue);
 }
 
 /*--------------------------------------------------------------
@@ -525,11 +509,7 @@ section {
     padding: 10px;
   }
 
-  .book-details__title {
-    font-size: 1.2rem;
-  }
-
-  .book-details__author,
+  .details-author,
   .cat,
   .desc {
     font-size: 0.9rem;
