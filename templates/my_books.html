@@ -6,63 +6,78 @@
 
 {% block content %}
   <div class="container">
-    <h1 class="page-title">My Books</h1>
+    <h1 class="page-title text-center pt-1">My Books</h1>
     <hr class="break" />
     <br />
-
+    <!-- Added Books section -->
     <section class="my-books-section">
-      <h2>Added Books</h2>
+      <div class="static-card py-3">
+        <h2 class="my-books-title text-center">Added Books</h2>
+      </div>
       {% if user.is_authenticated %}
-      <div class="cards__container">
-        <div class="row">
-          {% for book in user_books %}
-            <div class="col-md-4 mb-4">
-              <div class="card">
-                {% if 'placeholder' in book.image.url %}
-                  <!-- Placeholder Image if Image is Not Available -->
-                  <img src="https://res.cloudinary.com/dobdtuunf/image/upload/v1701900777/book_placeholder.png" class="img-fluid" alt="placeholder image" />
-                {% else %}
-                  <!-- Display Book Image -->
-                  <img src="{{ book.image.url }}" alt="{{ book.title }}" class="img-fluid" />
-                {% endif %}
-                <div class="card-body">
-                  <h5 class="card-title text-uppercase">{{ book.title }}</h5>
-                  <p class="card-text">{{ book.description }}</p>
-                  <a href="{% url 'book_detail' slug=book.slug %}" class="btn btn-primary">View Details</a>
-                  <a href="{% url 'edit_book' slug=book.slug %}" class="btn btn-secondary">Edit</a>
-                  <a href="{% url 'delete_book' slug=book.slug %}" class="btn btn-danger">Delete</a>
-                </div>
+      <div class="cards__container row g-2 g-sm-3 rounded">
+        {% for book in user_books %}
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+          <div class="card rounded m-3 text-center position-relative">
+            <div class="ratio ratio-1x1 mt-1">
+              {% if 'placeholder' in book.image.url %}
+              <!-- Placeholder Image if Image is Not Available -->
+              <img src="https://res.cloudinary.com/dobdtuunf/image/upload/v1701900777/book_placeholder.png" class="img-fluid" alt="placeholder image" style="object-fit: contain;" />
+              {% else %}
+              <!-- Display Book Image -->
+              <img src="{{ book.image.url }}" alt="{{ book.title }}" class="img-fluid" style="object-fit: contain;" />
+              {% endif %}
+            </div>
+            <!-- Card Body -->
+            <div class="card-body d-flex flex-column justify-content-between">
+              <!-- Book Title -->
+              <p class="card-title fw-bold text-center text-uppercase text-truncate px-2 py-2">{{ book.title }}</p>
+              <!-- Author -->
+              <p class="author fst-italic text-truncate px-2 py-0 mb-3">Author: {{ book.author }}</p>
+              <!-- Buttons -->
+              <div class="d-grid gap-2">
+                <a href="{% url 'book_detail' slug=book.slug %}" class="btn btn-primary btn-sm"><i class="fas fa-info-circle"></i> View Details</a>
+                <a href="{% url 'edit_book' slug=book.slug %}" class="btn btn-secondary btn-sm"><i class="fas fa-edit"></i> Edit</a>
+                <a href="{% url 'delete_book' slug=book.slug %}" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Delete</a>
               </div>
             </div>
-          {% endfor %}
+          </div>
         </div>
+        {% endfor %}
       </div>
       {% endif %}
     </section>
-
+    
+    <!-- Borrowed Books section -->
     <section class="borrowed-books-section">
-      <h2>Borrowed Books</h2>
-      <div class="cards__container">
-        <div class="row">
-          {% for book in borrowed_books %}
-            <div class="col-md-4 mb-4">
-              <div class="card">
-                {% if 'placeholder' in book.image.url %}
-                  <!-- Placeholder Image if Image is Not Available -->
-                  <img src="https://res.cloudinary.com/dobdtuunf/image/upload/v1701900777/book_placeholder.png" class="img-fluid" alt="placeholder image" />
-                {% else %}
-                  <!-- Display Book Image -->
-                  <img src="{{ book.image.url }}" alt="{{ book.title }}" class="img-fluid" />
-                {% endif %}
-                <div class="card-body">
-                  <h5 class="card-title text-uppercase">{{ book.title }}</h5>
-                  <p>Owner of the book: {{ book.added_by.username }}</p>
-                  <p>Return Date: {{ book.return_date }}</p>
-                </div>
-              </div>
+      <div class="static-card py-3">
+        <h2 class="my-books-title text-center">Borrowed Books</h2>
+      </div>
+      <div class="cards__container row g-2 g-sm-3 rounded">
+        {% for book in borrowed_books %}
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+          <div class="card rounded m-3 text-center position-relative">
+            <div class="ratio ratio-1x1 mt-1">
+              {% if 'placeholder' in book.image.url %}
+              <!-- Placeholder Image if Image is Not Available -->
+              <img src="https://res.cloudinary.com/dobdtuunf/image/upload/v1701900777/book_placeholder.png" class="img-fluid" alt="placeholder image" style="object-fit: contain;" />
+              {% else %}
+              <!-- Display Book Image -->
+              <img src="{{ book.image.url }}" alt="{{ book.title }}" class="img-fluid" style="object-fit: contain;" />
+              {% endif %}
             </div>
-          {% endfor %}
+            <!-- Card Body -->
+            <div class="card-body d-flex flex-column justify-content-between">
+              <!-- Book Title -->
+              <p class="card-title fw-bold text-center text-uppercase text-truncate px-2 py-2">{{ book.title }}</p>
+              <!-- Owner -->
+              <p class="owner text-truncate py-0 mb-3">Owner: {{ book.added_by.username }}</p>
+              <!-- Return Date -->
+              <p class="return-date fw-bold py-0 mb-3">Return Date: {{ book.return_date }}</p>
+            </div>
+          </div>
         </div>
+        {% endfor %}
       </div>
     </section>    
   </div>
