@@ -7,34 +7,34 @@
 {% block content %}
   <!-- Book Details -->
   <div class="container">
-    <h1 class="page-title">Book Details</h1>
+    <h1 class="page-title text-center pt-1">Book Details</h1>
     <hr class="break" />
     <br />
 
     <div class="cards__container">
-      <div class="book-details__container row">
-        <div class="col-md-4 text-center mx-auto">
+      <div class="details-container row">
+        <div class="col-md-4 text-center mx-auto details-image d-flex align-items-center justify-content-center rounded mt-1">
           {% if 'placeholder' in book.image.url %}
             <!-- Placeholder Image if Image is Not Available -->
-            <img src="https://res.cloudinary.com/dobdtuunf/image/upload/v1701900777/book_placeholder.png" class="book-details__img img-fluid" alt="placeholder image" />
+            <img src="https://res.cloudinary.com/dobdtuunf/image/upload/v1701900777/book_placeholder.png" class="img-fluid pt-2" alt="placeholder image" />
           {% else %}
             <!-- Display Book Image -->
-            <img src=" {{ book.image.url }}" alt="{{ book.title }}" class="book-details__img img-fluid" />
+            <img src=" {{ book.image.url }}" alt="{{ book.title }}" class="img-fluid pt-2" />
           {% endif %}
         </div>
         <div class="col-md-8">
           <!-- Book Title -->
-          <p class="book-details__title text-center text-uppercase">{{ book.title }}</p>
+          <p class="card-title fs-4 fw-bold text-center text-uppercase text-break pt-2">{{ book.title }}</p>
           <!-- Author -->
-          <p class="book-details__author">Author: {{ book.author }}</p>
+          <p class="details-author fs-5 fst-italic text-break pb-2">Author: {{ book.author }}</p>
           <!-- Description -->
-          <p class="desc">Description: {{ book.description }}</p>
+          <p class="desc pb-3 text-break">Description: {{ book.description }}</p>
           <!-- Category -->
-          <p class="cat">Category: {{ book.category }}</p>
+          <p class="cat text-break">Category: {{ book.category }}</p>
           <!-- Book Status -->
-          <p class="status {% if book.status == 'Available' %}available{% elif book.status == 'Borrowed' %}borrowed{% endif %}">Status: {{ book.status }}</p>
+          <p class="status fw-bold text-center {% if book.status == 'Available' %}available{% elif book.status == 'Borrowed' %}borrowed{% endif %}">Status: {{ book.status }}</p>
           <!-- Added by -->
-          <p class="added_by_flag text-center">Added by: {{ book.added_by.username }}</p>
+          <p class="card-text added text-center text- px-1 py-0 rounded">Added by: {{ book.added_by.username }}</p>
           <!-- Borrow Book -->     
             {% if request.user == book.added_by and book.status == 'Available' %}
               <!-- Display a message for the book owner -->
@@ -44,19 +44,23 @@
             {% elif book.status == 'Available' %}
                 {% if user.is_authenticated %}
                 <!-- Button to navigate to the borrow_book page with the book's slug -->
-                  <button type="button" class="btn btn-primary" id="borrowButton" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <div class="d-flex justify-content-center pb-2">
+                  <button type="button" class="btn btn-primary add-btn" id="borrowButton" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                     Borrow This Book
                   </button>
+                </div>
                 {% else %}
                     <!-- Prompt non-authenticated users to log in -->
-                    <div class="alert alert-info message-no-fade" role="alert">
+                    <div class="alert alert-info message-no-fade text-center" role="alert">
                       <p class="mb-0">Do you want to borrow this book?</p>
-                      <a href="{% url 'account_login' %}" class="btn btn-primary mt-2">Log In</a>
+                      <div class="d-flex justify-content-center">
+                        <a href="{% url 'account_login' %}" class="btn btn-primary mt-2">Log In</a>
+                      </div>
                     </div>
                 {% endif %}
             {% elif book.status == 'Borrowed' %}
               <!-- Display a message for borrowed books -->
-              <div class="alert alert-warning message-no-fade" role="alert">
+              <div class="alert alert-secondary message-no-fade text-center" role="alert">
                 <p class="mb-0">
                   This book is currently borrowed by
                   <span class="fw-bold">{{ book.borrower.username }}</span>
