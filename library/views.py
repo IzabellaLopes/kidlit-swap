@@ -3,6 +3,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.db.models import Count
 from datetime import datetime
 from django.utils.decorators import method_decorator
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
@@ -289,6 +290,20 @@ class CustomSignupView(SignupView):
         return response
 
 
-@method_decorator(login_required, name='dispatch')
-class ProfileView(generic.TemplateView):
+class ProfileView(LoginRequiredMixin, generic.TemplateView):
+    """
+    View to display the user profile page
+    """
     template_name = 'profile.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        # Retrieve books added by the logged-in user and count
+        user_books = Book.objects.filter(added_by=self.request.user)
+        books_added_count = user_books.count()
+
+        # Add the count to the context
+        context['books_added_count'] = books_added_count
+
+        return context

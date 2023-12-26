@@ -6,16 +6,45 @@
 
 {% block content %}
   <div class="container">
-    <h1 class="page-title">Profile</h1>
+    <h1 class="page-title text-center pt-1">Profile</h1>
     <hr class="break" />
     <br />
-    <div class="row justify-content-center">
-      <div class="col-11 col-md-6 col-lg-4 mt-3 mb-3">
-        <div class="profile_info">
-            <p>Username: {{ user.username }}</p>            
-
+    <div class="cards__container rounded">
+      <!-- Welcome user -->
+      <div class="row justify-content-center pt-3">
+        <div class="col-12 col-md-6">
+          <div class="static-card text-center mb-3">
+            <div class="card-body">
+              <h5 class="card-title">Welcome, {{ user.username }}!</h5>
+            </div>
+          </div>
         </div>
-        <!-- Add -->
+      </div>
+
+      <!-- Books Added and Books Borrowed -->
+      <div class="row justify-content-center mb-3">
+        <div class="col-12 col-md-6 col-lg-8 mt-3">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <div class="card h-100">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Books Added</h5>
+                  <p class="card-text">You've added {{ books_added_count }} book{{ books_added_count|pluralize:"(s)" }} to the library</p>
+                  <a href="{% url 'my_books' %}" class="btn btn-primary add-btn mt-3">View My Books</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div class="card h-100">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Books Borrowed</h5>
+                  <p class="card-text">You've borrowed {{ user.borrowed_books.count }} book{{ user.borrowed_books.count|pluralize:"(s)" }}</p>
+                  <a href="{% url 'borrowed_books' %}" class="btn btn-primary add-btn mt-3">View Borrowed Books</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
