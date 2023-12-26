@@ -62,6 +62,9 @@ class Book(models.Model):
     def get_absolute_url(self):
         """Get URL for book detail view"""
         return reverse('book_detail', kwargs={'slug': self.slug})
+    
+    def can_delete(self):
+        return self.status != 'Borrowed'
 
     def __str__(self):
         return f"{self.title}"

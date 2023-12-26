@@ -137,12 +137,25 @@ class EditBook(NewCategoryMixin, LoginRequiredMixin, UserPassesTestMixin, generi
 
 
 class DeleteBook(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
+    """
+    View for deleting a book
+    """
     model = Book
     template_name = 'delete_book.html'
     success_url = reverse_lazy('my_books')
 
     def test_func(self):
         return self.request.user == self.get_object().added_by
+    
+    def get(self, request, *args, **kwargs):
+        book = self.get_object()
+        if not book.can_delete():
+            messages.error(
+                self.request,
+                f'You cannot delete this book because it is borrowed to {book.borrower.username}'
+            )
+            return redirect('my_books')
+        return super().get(request, *args, **kwargs)
 
 # Date validation
 
