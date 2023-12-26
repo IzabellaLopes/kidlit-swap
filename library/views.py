@@ -196,6 +196,24 @@ class BorrowBookView(LoginRequiredMixin, View):
             return redirect('book_detail', slug=slug)
 
 
+class ReturnBookView(LoginRequiredMixin, View):
+    def get(self, request, slug):
+        book = get_object_or_404(Book, slug=slug)
+
+        # Check if the book is borrowed by the logged-in user
+        if book.status == 'Borrowed' and book.borrower == request.user:
+            book.status = 'Available'
+            book.borrower = None
+            book.return_date = None
+            book.save()
+
+            messages.success(request, f'You have successfully returned the book "{book.title.upper()}".')
+        else:
+            messages.error(request, 'This book cannot be returned.')
+
+        return redirect('my_books')
+
+
 class CustomSignupView(SignupView):
     """
     Sign up form validation and displaying error messages
