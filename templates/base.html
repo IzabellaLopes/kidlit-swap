@@ -45,11 +45,15 @@
                     <a class="nav-link dropdown-toggle animated-zoom text-uppercase" href="#" id="manageBooksDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Manage Books</a>
                     <ul class="dropdown-menu" aria-labelledby="manageBooksDropdown">
                       <li>
-                        <a class="dropdown-item text-uppercase" href="{% url 'add_book' %}">Add Book</a>
-                      </li>
-                      <li>
                         <a class="dropdown-item text-uppercase" href="{% url 'my_books' %}">My Books</a>
                       </li>
+                      <li>
+                        <a class="dropdown-item text-uppercase" href="{% url 'borrowed_books' %}">Borrowed Books</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item text-uppercase" href="{% url 'add_book' %}">Add Book</a>
+                      </li>
+
                     </ul>
                   </li>
                   <li class="nav-item dropdown">

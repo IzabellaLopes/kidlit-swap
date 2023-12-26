@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  KidLit Swap | Borrowed Books
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h1 class="page-title text-center pt-1">Borrowed Books</h1>
+    <hr class="break" />
+    <br />
+    <!-- Borrowed Books section -->
+    <section class="borrowed-books-section">
+      {% if borrowed_books %}
+        <div class="cards__container row g-2 g-sm-3 rounded">
+          {% for book in borrowed_books %}
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+              <div class="card rounded m-3 text-center position-relative">
+                <div class="ratio ratio-1x1 mt-1">
+                  {% if 'placeholder' in book.image.url %}
+                    <!-- Placeholder Image if Image is Not Available -->
+                    <img src="https://res.cloudinary.com/dobdtuunf/image/upload/v1701900777/book_placeholder.png" class="img-fluid" alt="placeholder image" style="object-fit: contain;" />
+                  {% else %}
+                    <!-- Display Book Image -->
+                    <img src="{{ book.image.url }}" alt="{{ book.title }}" class="img-fluid" style="object-fit: contain;" />
+                  {% endif %}
+                </div>
+                <!-- Card Body -->
+                <div class="card-body d-flex flex-column justify-content-between">
+                  <!-- Book Title -->
+                  <p class="card-title fw-bold text-center text-uppercase text-truncate px-2 py-2">{{ book.title }}</p>
+                  <!-- Owner -->
+                  <p class="owner text-truncate py-0 mb-3">Owner: {{ book.added_by.username }}</p>
+                  <!-- Return Date -->
+                  <p class="return-date fw-bold py-0 mb-3">Return Date: {{ book.return_date }}</p>
+                </div>
+                <!-- Return Book Button -->
+                <div class="d-grid gap-2">
+                  <a href="{% url 'return_book' slug=book.slug %}" class="btn btn-success btn-sm"><i class="fas fa-undo"></i> Return Book</a>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+      <div class="container mt-4">
+        <div class="alert alert-info message-no-fade text-center" role="alert">
+            You currently don't have any borrowed books
+        </div>
+        <!-- Button to redirect to Books_list.html -->
+        <div class="text-center mt-3">
+            <a href="{% url 'book_list' %}" class="btn btn-primary add-btn">Do you want to borrow a book?</a>
+        </div>
+      </div>
+      {% endif %}
+    </section>
+  </div>
+{% endblock %}

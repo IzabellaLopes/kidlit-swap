@@ -34,6 +34,10 @@
               <p class="card-title fw-bold text-center text-uppercase text-truncate px-2 py-2">{{ book.title }}</p>
               <!-- Author -->
               <p class="author fst-italic text-truncate px-2 py-0 mb-3">Author: {{ book.author }}</p>
+              <!-- Book Status -->
+              <p class="status fw-bold {% if book.status == 'Available' %}available
+              {% elif book.status == 'Borrowed' %}borrowed{% endif %}">
+              Status: {{ book.status }}</p>
               <!-- Buttons -->
               <div class="d-grid gap-2">
                 <a href="{% url 'book_detail' slug=book.slug %}" class="btn btn-primary btn-sm"><i class="fas fa-info-circle"></i> View Details</a>
@@ -47,38 +51,5 @@
       </div>
       {% endif %}
     </section>
-    
-    <!-- Borrowed Books section -->
-    <section class="borrowed-books-section">
-      <div class="static-card py-3">
-        <h2 class="my-books-title text-center">Borrowed Books</h2>
-      </div>
-      <div class="cards__container row g-2 g-sm-3 rounded">
-        {% for book in borrowed_books %}
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-          <div class="card rounded m-3 text-center position-relative">
-            <div class="ratio ratio-1x1 mt-1">
-              {% if 'placeholder' in book.image.url %}
-              <!-- Placeholder Image if Image is Not Available -->
-              <img src="https://res.cloudinary.com/dobdtuunf/image/upload/v1701900777/book_placeholder.png" class="img-fluid" alt="placeholder image" style="object-fit: contain;" />
-              {% else %}
-              <!-- Display Book Image -->
-              <img src="{{ book.image.url }}" alt="{{ book.title }}" class="img-fluid" style="object-fit: contain;" />
-              {% endif %}
-            </div>
-            <!-- Card Body -->
-            <div class="card-body d-flex flex-column justify-content-between">
-              <!-- Book Title -->
-              <p class="card-title fw-bold text-center text-uppercase text-truncate px-2 py-2">{{ book.title }}</p>
-              <!-- Owner -->
-              <p class="owner text-truncate py-0 mb-3">Owner: {{ book.added_by.username }}</p>
-              <!-- Return Date -->
-              <p class="return-date fw-bold py-0 mb-3">Return Date: {{ book.return_date }}</p>
-            </div>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-    </section>    
   </div>
 {% endblock %}

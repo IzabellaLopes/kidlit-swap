@@ -10,6 +10,7 @@ urlpatterns = [
     path('profile/', views.ProfileView.as_view(), name='profile'),
     path('add_book/', views.AddBook.as_view(), name='add_book'),
     path('my_books/', views.MyBooks.as_view(), name='my_books'),
+    path('borrowed_books/', views.BorrowedBooks.as_view(), name='borrowed_books'),
     path('edit_book/<slug:slug>/', views.EditBook.as_view(), name='edit_book'),
     path('delete_book/<slug:slug>/', views.DeleteBook.as_view(), name='delete_book'),
     path('books/<slug:slug>/borrow/', views.BorrowBookView.as_view(), name='borrow_book'),

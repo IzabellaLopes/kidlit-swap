@@ -97,7 +97,7 @@ class AddBook(NewCategoryMixin, LoginRequiredMixin, UserPassesTestMixin, generic
 
 class MyBooks(LoginRequiredMixin, generic.ListView):
     """
-    View to display a list of books added and borrowed by the logged-in user
+    View to display a list of books added by the logged-in user
     """
     model = Book
     template_name = 'my_books.html'
@@ -105,24 +105,26 @@ class MyBooks(LoginRequiredMixin, generic.ListView):
 
     def get_queryset(self):
         # Retrieve books added by the logged-in user
-        user_books = Book.objects.filter(added_by=self.request.user)
+        return Book.objects.filter(added_by=self.request.user)
+    
 
+class BorrowedBooks(generic.ListView):
+    """
+    View to display a list of books borrowed by the logged-in user
+    """
+    model = Book
+    template_name = 'borrowed_books.html'
+    context_object_name = 'borrowed_books'
+
+    def get_queryset(self):
         # Retrieve books borrowed by the logged-in user
-        borrowed_books = Book.objects.filter(borrower=self.request.user, status='Borrowed')
-
-        # Combine the two querysets
-        all_books = user_books | borrowed_books
-
-        return all_books
+        return Book.objects.filter(borrower=self.request.user, status='Borrowed')
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        # Filter borrowed books separately for display in the template
-        borrowed_books = context['user_books'].filter(status='Borrowed')
-        context['borrowed_books'] = borrowed_books
-
         return context
+
 
 class EditBook(NewCategoryMixin, LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView):
     model = Book
@@ -224,7 +226,7 @@ class ReturnBookView(LoginRequiredMixin, View):
         else:
             messages.error(request, 'This book cannot be returned.')
 
-        return redirect('my_books')
+        return redirect('borrowed_books')
 
 
 class CustomSignupView(SignupView):
