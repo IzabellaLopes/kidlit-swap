@@ -12,30 +12,34 @@
 
     <section class="add-book-section">
         {% if user.is_authenticated %}
-        <div class="row">
-            <div class="mb-3">
-                <div class="add-book-form">
+        <div class="row justify-content-center">
+            <div class="col-md-8 mb-3">
+                <div class="book-form">
                     <form method="post" action="{% url 'add_book' %}" enctype="multipart/form-data">
                         {% csrf_token %}
                         <div class="mb-3">
-                            {{ form.title.label_tag }}
+                            <label for="{{ form.title.id }}" class="form-label">Title*</label>
                             {{ form.title }}
                         </div>
                         <div class="mb-3">
-                            {{ form.author.label_tag }}
+                            <label for="{{ form.author.id }}" class="form-label">Author*</label>
                             {{ form.author }}
                         </div>
                         <div class="mb-3">
-                            {{ form.description.label_tag }}
+                            <label for="{{ form.description.id }}" class="form-label">Description*</label>
                             {{ form.description }}
                         </div>
                         <div class="mb-3">
-                            {{ form.image.label_tag }}
+                            <label for="{{ form.image.id }}" class="form-label">Image</label>
                             {{ form.image }}
                         </div>
                         <div class="mb-3">
-                            {{ form.category.label_tag }}
+                            <label for="{{ form.category.id }}" class="form-label">Category</label>
                             {{ form.category }}
+                        </div>
+                        <div class="mb-3 new-category">
+                            <label for="{{ form.new_category.id }}" class="form-label">Do you want to add a new Category?</label>
+                            {{ form.new_category }}
                         </div>
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary add-btn">Add Book</button>

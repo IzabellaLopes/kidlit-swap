@@ -6,7 +6,6 @@
 
 {% load crispy_forms_tags %}
 
-
 {% block content %}
   <div class="container">
     <h1 class="page-title text-center pt-1">Edit Book</h1>
@@ -14,21 +13,21 @@
     <br />
 
     <section class="edit-book-section">
-      <div class="row">
-        <div class="mb-3">
-            <div class="book-form">
+      <div class="row justify-content-center">
+        <div class="col-md-8 mb-3">
+          <div class="book-form">
             {% if user.is_authenticated and book.added_by == user %}
-            <!-- Checks the user is signed in and the book they're trying to access is owned by them -->
-            {% load cloudinary %}
-            <div class="mb-3">
-              <form method="post" action="{% url 'edit_book' slug=book.slug %}" enctype="multipart/form-data">
-                {{ form | crispy }}
-                {% csrf_token %}
-                <div class="text-center">
-                  <button type="submit" class="btn btn-primary add-btn">Save Changes</button>
-                </div>
-              </form>
-            </div>
+              <!-- Checks if the user is signed in and the book they're trying to access is owned by them -->
+              {% load cloudinary %}
+              <div class="mb-3">
+                <form method="post" action="{% url 'edit_book' slug=book.slug %}" enctype="multipart/form-data" id="editBookForm">
+                  {{ form | crispy }}
+                  {% csrf_token %}
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-primary add-btn">Save Changes</button>
+                  </div>
+                </form>
+              </div>
             {% else %}
               <p>You do not have permission to edit this book.</p>
             {% endif %}

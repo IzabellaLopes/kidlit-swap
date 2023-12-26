@@ -53,7 +53,7 @@ class Book(models.Model):
         auto_now=False, auto_now_add=False, null=True, blank=True
     )
     category = models.ForeignKey(
-        Category, on_delete=models.CASCADE, related_name="books", null=True)
+        Category, on_delete=models.CASCADE, related_name="books", null=True, blank=True)
 
     class Meta:
         """Display the books in alphabetical order by title"""

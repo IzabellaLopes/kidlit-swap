@@ -9,7 +9,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from allauth.account.views import SignupView
 from django.urls import reverse_lazy
 from django.views import generic, View
-from .models import Book
+from .models import Book, Category
 from .forms import BookForm, BookBorrowForm
 
 
@@ -76,6 +76,17 @@ class AddBook(LoginRequiredMixin, UserPassesTestMixin, generic.CreateView):
 
     def form_valid(self, form):
         form.instance.added_by = self.request.user
+        
+        # Check if the user entered a new category
+        new_category = form.cleaned_data.get('new_category', '').strip()
+        if new_category:
+            # Create a new Category instance
+            category = Category.objects.create(name=new_category, description='')
+            form.instance.category = category
+        else:
+            # Use the existing category selected in the form
+            form.instance.category = form.cleaned_data.get('category')
+
         return super().form_valid(form)
 
     def test_func(self):
@@ -116,6 +127,21 @@ class EditBook(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView):
     form_class = BookForm
     template_name = 'edit_book.html'
     success_url = reverse_lazy('my_books')
+    
+    def form_valid(self, form):
+        form.instance.added_by = self.request.user
+        
+        # Check if the user entered a new category
+        new_category = form.cleaned_data.get('new_category', '').strip()
+        if new_category:
+            # Create a new Category instance
+            category = Category.objects.create(name=new_category, description='')
+            form.instance.category = category
+        else:
+            # Use the existing category selected in the form
+            form.instance.category = form.cleaned_data.get('category')
+
+        return super().form_valid(form)
 
     def test_func(self):
         return self.request.user == self.get_object().added_by

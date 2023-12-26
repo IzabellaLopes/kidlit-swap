@@ -1,7 +1,7 @@
 """Forms for Books"""
 
 from django import forms
-from .models import Book
+from .models import Book, Category
 
 
 class BookForm(forms.ModelForm):
@@ -14,7 +14,10 @@ class BookForm(forms.ModelForm):
         description (str): A description of the book.
         image (Image): The image associated with the book.
         category (Category): The category to which the book belongs.
+        new_category (str): A field to allow the user to enter a new category.
     """
+    
+    new_category = forms.CharField(max_length=100, required=False, label='New Category')
 
     def __init__(self, *args, **kwargs):
         super(BookForm, self).__init__(*args, **kwargs)
@@ -31,6 +34,7 @@ class BookForm(forms.ModelForm):
         }
         widgets = {
             'description': forms.Textarea(attrs={'rows': 5}),
+            'category': forms.Select(choices=Category.objects.all())
         }
 
 
