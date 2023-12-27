@@ -1,40 +1,17 @@
 {% extends 'base.html' %}
 
 {% block title %}
-  KidLit Swap | Books
+  Books - {{ category_name }}
 {% endblock %}
 
 {% block content %}
-<div class="container">
-  <div class="add__container row mb-4 p-2">
-    <div class="col">
-      <!-- Category Dropdown -->
-      <div class="dropdown">
-        <button class="btn btn-light btn-outline-success dropdown-toggle" type="button" id="categoryDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Select a Category
-        </button>
-        <div class="dropdown-menu" aria-labelledby="categoryDropdown">
-          {% for category in categories %}
-            <a class="dropdown-item" href="{% url 'category_books' category_name=category.name %}">{{ category.name }}</a>
-          {% endfor %}
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <!-- Search Books -->
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search Books" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-  </div>
-
-  <h1 class="page-title text-center pt-1">Book List</h1>
+<div class="container pb-3">
+  <h1 class="page-title text-center pt-1">Books - {{ category_name }}</h1>
   <hr class="break" />
   <br />
-  <!-- Books Cards -->
+
   <div class="cards__container row g-0 rounded">
-    {% for book in books %}
+    {% for book in object_list %}
       <div class="col-lg-3 col-md-4 col-sm-6 mb-2">
         <a href="{% url 'book_detail' slug=book.slug %}" class="card-link">
           <div class="card rounded m-3 text-center position-relative">
@@ -74,18 +51,9 @@
 <!-- Paginator -->
 {% include 'paginator.html' %}
 
-<hr class="break break-lg">
-
-<!-- Add Book -->
-<div class="container add__container mt-5 mb-5 p-4 rounded">
-  <div class="row">
-    <div class="text-center">
-        <h2 class="page-title text-center pt-1">Hello {{user.username}}!</h2>
-        <h3 class="pt-3">Do you want to add a book to our library?</h3>
-        <br />
-        <a href="{% url 'add_book' %}" class="btn btn-primary add-btn">Add Book</a>
-    </div>
-  </div>
+<!-- Back Button -->
+<div class="text-center">
+    <a href="{% url 'book_list' %}" class="btn btn-light btn-outline-success mb-3">Back to Book List</a>
 </div>
 
 {% endblock %}

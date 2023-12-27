@@ -47,6 +47,25 @@ class BookList(generic.ListView):
             Book.objects.filter(status='borrowed').count())
         context['books'] = context['object_list']
         context['form'] = BookForm()
+        context['categories'] = Category.objects.all()
+        return context
+
+
+class CategoryBookList(generic.ListView):
+    """
+    View to display a paginated list of books in alphabetical order based on category
+    """
+    template_name = 'category_books.html'
+    paginate_by = 8
+
+    def get_queryset(self):
+        category_name = self.kwargs.get('category_name')
+        category = get_object_or_404(Category, name=category_name)
+        return Book.objects.filter(category=category).order_by('status', 'title')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['category_name'] = self.kwargs.get('category_name')
         return context
 
 
