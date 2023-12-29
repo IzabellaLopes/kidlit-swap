@@ -66,7 +66,21 @@ Join KidLit Swap and let's make reading magical for our little ones!
 
 The KidLit Swap project was developed with the following goals in mind:
 
+1. Create Account & Log In: Easily set up an account and log in to access KidLit Swap's vibrant community.
+   
+2. Add Books: Share your favorite children's books by adding them to our virtual library.
+   
+3. Check Book Details: Explore detailed information about each book to find the perfect story for your child.
 
+4. Borrow Books: Borrow books from other parents, promoting a sense of community and sharing.
+
+5. Select Return Date: Choose a return date that suits you, making the borrowing process flexible and convenient.
+
+6. Return Borrowed Books: Easily return the books you've borrowed, ensuring a smooth exchange process.
+
+7. Log Out: Safely log out when you're done, knowing your account is secure.
+
+KidLit Swap aims to create a welcoming space for parents to share children's books, fostering a love for reading, and simplifying the process of swapping stories to make it both enjoyable and easy.
 
 [Back to Contents](#contents)
 
