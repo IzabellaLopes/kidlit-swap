@@ -302,16 +302,15 @@ The 7 Epics mentioned earlier were documented as Milestones within the GitHub pr
 
 ## Data Model
 
-I used principles of Object-Oriented Programming throughout this project and Django’s Class-Based Generic Views.  
+The data model for the KidLit Swap project follows principles of Object-Oriented Programming and leverages Django’s Class-Based Generic Views. Django AllAuth is employed for the user authentication system.
 
-Django AllAuth was used for the user authentication system.
+To enable users to contribute to the community, a custom Book model was implemented. Each book entry includes details such as title, author, description, image, and category. The 'added_by' field links to the User model, ensuring that each book has a dedicated owner.
 
+Additionally, the project incorporates features such as borrowing and returning books. The Book model includes fields for 'status,' 'borrower,' and 'return_date,' facilitating a streamlined book borrowing system. Users can view their borrowed books and manage their book inventory through dedicated views.
 
+The database schema is structured to provide a robust foundation for the KidLit Swap platform:
 
-
-The diagram below details the database schema.
-
-![Database Schema]()
+![Database Schema](documentation/readme_images/database/database_schema.png)
 
 
 [Back to Contents](#contents)
