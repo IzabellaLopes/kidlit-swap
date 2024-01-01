@@ -1,0 +1,21 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+<!--Box shown for 404 error  -->
+<div class="container pb-3">
+    <div class="row justify-content-md-center">
+        <div class="col-md-6 mt-5 text-center">
+            <h1 class="page-title text-center pt-1">404 Not Found</h1>
+            <hr class="break">
+            <br />
+            <h3 class="mt-3 error">Oops! Page Not Found</h3>
+            <br>
+            <p>The page you're looking for doesn't exist.
+                <br>Return to the home page using the link below.</p>
+            <a href="{% url 'home' %}" class="btn btn-outline-dark d-inline m-2">Home</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
