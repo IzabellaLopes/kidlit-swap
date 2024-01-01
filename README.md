@@ -35,7 +35,8 @@ Join KidLit Swap and let's make reading magical for our little ones!
     - [User Authentication](#user-authentication)
     - [Form Validation](#form-validation)
     - [Database Security](#database-security)
-    - [Custom error pages:](#custom-error-pages)
+    - [Cross-Site Request Forgery (CSRF) Protection](#cross-site-request-forgery-csrf-protection)
+    - [Custom Error Pages](#custom-error-pages)
   - [Features](#features)
     - [Existing Features](#existing-features)
       - [Favicon](#favicon)
@@ -319,23 +320,40 @@ The database schema is structured to provide a robust foundation for the KidLit 
 
 ## Security Features and Defensive Design
 
+In the KidLit Swap project, robust user authentication and security features have been implemented to ensure a secure and reliable user experience.
+
 ### User Authentication
 
+In KidLit Swap, I've implemented robust security measures for user authentication.
 
+- LoginRequiredMixin: Employing Django's `LoginRequiredMixin`, any attempt by non-authenticated users to access secure pages results in an automatic redirection to the login page. This ensures that sensitive sections of the application are accessible only to authenticated users.
+
+- UserPassesTestMixin: To finely control access based on specific permissions, I utilize Django's `UserPassesTestMixin`. For example, users can only perform actions like adding books, borrowing books, or returning books if they meet certain criteria. If a user fails these tests, a clear HTTP 403 Forbidden error is displayed, maintaining a secure environment.
 
 ### Form Validation
 
+I've implemented thorough form validation mechanisms to enhance data integrity.
+
+- If incorrect or empty data is detected in a form submission, the form prevents submission, and a user-friendly warning appears. This approach ensures that users receive prompt feedback about the specific fields causing errors.
+
 ### Database Security
 
+My approach to database security prioritizes confidentiality and protection against unauthorized access.
 
-### Custom error pages:
+- The database URL and secret key are stored in a separate env.py file, preventing unintended database connections. This practice was established before the initial push to Github, safeguarding sensitive information.
+
+### Cross-Site Request Forgery (CSRF) Protection
+
+KidLit Swap employs CSRF tokens on all forms throughout the site, providing an additional layer of defense against cross-site request forgery attacks.
+
+### Custom Error Pages
 
 Custom Error Pages were created to give the user more information on the error and to provide them with buttons to guide them back to the site.
 
-- 400 Bad Request - The KidLit Swap is unable to handle this request.
-- 403 Page Forbidden - Looks like you're trying to access forbidden content. Please log out and sign in to the correct account.
-- 404 Page Not Found - The page you're looking for doesn't exist.
-- 500 Server Error - The KidLit Swap is currently unable to handle this request
+- 400 Bad Request: The KidLit Swap is unable to process a request, providing a clear message to the user.
+- 403 Forbidden: In cases of attempting to access forbidden content, the user is guided to log out and sign in to the correct account through a custom 403 Forbidden page.
+- 404 Not Found: A custom 404 page assists users in navigating back to the site when the requested page doesn't exist.
+- 500 Internal Server Error:  During server errors, users are informed through a custom 500 Internal Server Error, helping them understand the temporary unavailability of certain functionalities.
 
 [Back to Contents](#contents)
 
