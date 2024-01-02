@@ -43,6 +43,8 @@ Join KidLit Swap and let's make reading magical for our little ones!
       - [Header](#header)
       - [Footer](#footer)
     - [Home Page](#home-page)
+      - [Hero Call-to-Action section](#hero-call-to-action-section)
+      - [About section](#about-section)
     - [User Account Pages](#user-account-pages)
     - [Error Pages](#error-pages)
     - [Future Implementations](#future-implementations)
@@ -414,6 +416,25 @@ The website features a favicon that is visible in the browser tab.
 - Clicking these links in the footer opens a new browser tab to prevent the user from being redirected away from the site.
 
 ### Home Page
+
+#### Hero Call-to-Action section
+
+The home page features a hero call-to-action with the title 'KidLit Swap: Exchange the Magic of Kids' Literature' and an animated jumping image. 
+
+- For non-logged-in users, an invitation encourages signing up for a chance to 'Join, share, borrow, and let the enchanting adventures begin!'. It includes a 'Sign Up' button leading to the sign up page.
+
+![Hero](documentation/readme_images/features/hero.png)
+
+- When logged in, the message transforms to 'Welcome back to KidLit Swap!' and prompts the user to add a new book. The sign up button is replaced with an 'Add Book' button, directing the user to the 'Add Book' page.
+
+![Hero_auth](documentation/readme_images/features/hero_auth.png)
+
+#### About section
+
+The 'About' section provides a concise overview of the site's offerings, summarizing key features through three simple steps accompanied by Font Awesome icons.
+
+![About](documentation/readme_images/features/about.png)
+
 
 ### User Account Pages
 
