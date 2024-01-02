@@ -408,6 +408,11 @@ The website features a favicon that is visible in the browser tab.
 
 #### Footer
 
+![Footer](documentation/readme_images/features/footer.png)
+
+- The footer section provides links to Facebook, Instagram, Twitter, and Youtube.
+- Clicking these links in the footer opens a new browser tab to prevent the user from being redirected away from the site.
+
 ### Home Page
 
 ### User Account Pages
