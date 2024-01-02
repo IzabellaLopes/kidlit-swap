@@ -51,41 +51,21 @@
     <!-- Discover Our Features -->
     <div class="container-fluid mx-auto w-80">
       <div class="row about-outer p-4">
-        <!-- Explore Our Library -->
-        <div class="col-12 col-md-4 mb-2">
-          <div class="about-image text-center mb-2 text-sm">
-            <i class="fa-solid fa-book fa-6x"></i>
+        {% for feature in features %}
+          <div class="col-12 col-md-4 mb-2">
+            <div class="about-image text-center mb-2 text-sm">
+              <i class="fa-solid fa-{{ feature.icon }} fa-6x"></i>
+            </div>
+            <div class="about-content">
+              <h3 class="about-title">{{ feature.title }}</h3>
+              <p class="about-text text-center text-m">{{ feature.description1 }}</p>
+              <p class="about-text text-center text-m">{{ feature.description2 }}</p>
+            </div>
           </div>
-          <div class="about-content">
-            <h3 class="about-title">Explore Our Library</h3>
-            <p class="about-text text-center text-m ">Find books for kids and add your favorites to our collection</p>
-            <p class="about-text text-center text-m ">Be part of our growing community of young readers</p>
-          </div>
-        </div>
-        <!-- See What's Available and Borrow -->
-        <div class="col-12 col-md-4 mb-2">
-          <div class="about-image text-center mb-2 text-sm">
-            <i class="fa-solid fa-book-open-reader fa-6x"></i>
-          </div>
-          <div class="about-content">
-            <h3 class="about-title">See What's Available and Borrow</h3>
-            <p class="about-text text-center text-m">Check which books are ready to borrow</p>
-            <p class="about-text text-center text-m">Pick a date that works for you to enjoy a smooth borrowing process</p>
-          </div>
-        </div>
-        <!-- Enjoy Quality Time with Your Kids -->
-        <div class="col-12 col-md-4 mb-2">
-          <div class="about-image text-center mb-2 text-sm">
-            <i class="fa-solid fa-child-reaching fa-6x"></i>
-          </div>
-          <div class="about-content">
-            <h3 class="about-title">Enjoy Quality Time with Your Kids</h3>
-            <p class="about-text text-center text-m ">Have fun reading with your children</p>
-            <p class="about-text text-center text-m ">Create wonderful memories with enchanting stories</p>
-          </div>
-        </div>
+        {% endfor %}
       </div>
     </div>
     <!-- End Discover Our Features -->
+
   </section>
 {% endblock %}

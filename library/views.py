@@ -19,6 +19,20 @@ class Home(generic.TemplateView):
     View to display the home page
     """
     template_name = "index.html"
+    
+    def get_context_data(self, **kwargs):
+        """
+        Discover Our Features
+        """
+        features = [
+            {"icon": "book", "title": "Explore Our Library", "description1": "Find books for kids and add your favorites to our collection", "description2": "Be part of our growing community of young readers"},
+            {"icon": "book-open-reader", "title": "See What's Available and Borrow", "description1": "Check which books are ready to borrow", "description2": "Pick a date that works for you to enjoy a smooth borrowing process"},
+            {"icon": "child-reaching", "title": "Enjoy Quality Time with Your Kids", "description1": "Have fun reading with your children", "description2": "Create wonderful memories with enchanting stories"},
+        ]
+
+        context = super().get_context_data(**kwargs)
+        context['features'] = features
+        return context
 
 
 class BookList(generic.ListView):
