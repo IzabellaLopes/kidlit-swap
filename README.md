@@ -46,6 +46,9 @@ Join KidLit Swap and let's make reading magical for our little ones!
       - [Hero Call-to-Action section](#hero-call-to-action-section)
       - [About section](#about-section)
     - [User Account Pages](#user-account-pages)
+      - [Sign Up](#sign-up)
+      - [Log In](#log-in)
+      - [Log Out](#log-out)
     - [Error Pages](#error-pages)
     - [Future Implementations](#future-implementations)
   - [Technologies Used](#technologies-used)
@@ -438,11 +441,17 @@ The 'About' section provides a concise overview of the site's offerings, summari
 
 ### User Account Pages
 
-**Sign Up**
+- Django Allauth was installed and utilized to implement Sign Up, Log In, and Log Out functionalities. 
+- Success messages inform users about successful login and logout actions, while error messages notify them of any unsuccessful attempts during these processes.
 
-**Log In**
+#### Sign Up
+![Sign up](documentation/readme_images/features/signup.png)
 
-**Log Out**
+#### Log In
+![Log in](documentation/readme_images/features/login.png)
+
+#### Log Out
+![Log out](documentation/readme_images/features/logout.png)
 
 ### Error Pages
 
