@@ -367,13 +367,44 @@ Custom Error Pages were created to give the user more information on the error a
 
 The website features a favicon that is visible in the browser tab.
 
-![favicon](documentation/favicon-image.png)
+![Favicon](documentation/readme_images/features/favicon.png)
 
 #### Header
 
 **Logo**
 
+![Logo](documentation/readme_images/features/logo.png)
+
+- I designed a custom logo using Canva.
+- I incorporated an image from Lexica, an AI free art generator, representing five children reading books and the title "KidLit Swap", an abbreviation for Kids' Literature Swap.
+- The logo is situated in the top-left corner of the navigation bar and serves as a clickable link to the home page, enhancing user navigation.
+
 **Navigation Bar**
+
+- The navigation bar is consistently located at the top of each page, providing easy access to various sections.
+  
+- **For Users Not Logged In**:
+  - For users who are not logged in, navigation options include 'Home,' 'Books,' and 'My Account.'
+  ![Header - Not Logged in](documentation/readme_images/features/header.png)
+
+  - The 'My Account' link expands into a dropdown menu offering 'Sign up' and 'Log in' choices.
+  ![Header - My Account](documentation/readme_images/features/header_account.png)
+
+- **For Logged-In Users**:
+  - Upon logging in, the navigation options expand to 'Home,' 'Books,' 'Manage Books,' and 'User's name with a profile icon.'
+  ![Header - Logged in](documentation/readme_images/features/header_auth.png)
+
+  - 'Manage Books' features a dropdown menu with 'My Books,' 'Borrowed Books,' and 'Add Book' options.
+  ![Header - Manage Books](documentation/readme_images/features/header_manage.png)
+
+  - 'User's name with a profile icon' includes a dropdown with 'Profile' and 'Log out' choices. Sign-up or Log-in options change to 'Log out' after user login.
+  ![Header - Profile](documentation/readme_images/features/header_profile.png)
+
+- The navigation bar is fully responsive, transitioning into a hamburger menu on smaller screens.
+
+- Hovering over links triggers a color change to blue accompanied by a zoom effect.
+
+- Moreover, when 'Home' and 'Books' are active, they will be highlighted as light blue rounded boxes for visual emphasis.
 
 #### Footer
 
@@ -462,6 +493,10 @@ include:
 - [Cloudinary](https://cloudinary.com/): the image hosting service used to upload images
 - [Bootstrap 4.6](https://getbootstrap.com/docs/4.6/getting-started/introduction/): CSS Framework for developing responsiveness and styling
 - [Tables Generator](https://www.tablesgenerator.com/markdown_tables): Used to convert excel testing tables to markdown
+
+
+
+https://webformatter.com/html
 
 
 - [Google Developer Tools](https://developers.google.com/web/tools) - To troubleshoot and test features, resolve issues related to responsiveness and styling.
