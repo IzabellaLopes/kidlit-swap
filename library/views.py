@@ -2,10 +2,7 @@
 
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
-from django.contrib.auth.decorators import login_required
-from django.db.models import Count
 from datetime import datetime
-from django.utils.decorators import method_decorator
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from allauth.account.views import SignupView
 from django.urls import reverse_lazy
@@ -311,10 +308,10 @@ class CustomSignupView(SignupView):
         # Check if passwords do not match
         if form.cleaned_data.get('password1') != form.cleaned_data.get('password2'):
             error_messages.append('Passwords do not match.')
-
-        # Check for blank or whitespace username
+            
+        # Check for existing username or blank/whitespace
         if not form.cleaned_data.get('username') or form.cleaned_data.get('username').isspace():
-            error_messages.append('Username cannot be blank or consist of only whitespace characters.')
+            error_messages.append('Username error: Check availability and avoid blank or whitespace characters.')
 
         # Display all error messages
         for error_message in error_messages:
