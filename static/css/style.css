@@ -8,7 +8,7 @@
 :root {
     /*---------- TYPOGRAPHY ----------*/
     --header-text: 'Potta One', cursive;
-    --content-text: 'Shantell Sans', cursive;
+    --content-text: 'Shantell Sans', sans-serif;
 
     /*---------- COLOURS ----------*/
     --green: #2E8B57;
@@ -26,8 +26,6 @@
     --teal: teal;
     --navy-blue: #0056b3;
 }
-
-
 
 /*--------------------------------------------------------------
 # General
@@ -51,27 +49,21 @@ h6 {
   color: var(--green);
 }
 
+.content {
+  min-height: calc(100vh - 90px)
+}
+
+.break {
+  margin: auto !important;
+  width: 200px;
+  height: 2px !important;
+  background-color: var(--dark-blue) !important;
+  opacity: .5
+}
+
 /*--------------------------------------------------------------
 # Header and Navigation
 --------------------------------------------------------------*/
-
-.header {
-    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-    font-size: large;
-    transition: all 0.5s;
-}
-
-.logo {
-    margin-left: 20px;
-}
-
-.navbar-brand {
-    padding-top: 0;
-}
-
-.navbar-nav {
-  margin-right: 20px;
-}
 
 .navbar-nav li.nav-item {
     margin-right: 20px;
@@ -96,7 +88,6 @@ h6 {
 }
 
 .dropdown-menu .dropdown-item {
-  font-size: large;
   color: var(--green);
 }
 
@@ -117,20 +108,19 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Hero section
+# Hero Call to Action section
 --------------------------------------------------------------*/
-#hero {
-  width: 100%;
-  background: var(--light-blue);
-}
-
 section {
   padding: 60px 0;
   overflow: hidden;
 }
 
+#hero {
+  width: 100%;
+  background: var(--light-blue);
+}
+
 #hero h1 {
-  text-align: center;
   line-height: 1.5;
   color: var(--dark-blue);
 }
@@ -141,7 +131,6 @@ section {
 
 #hero p {
   font-size: 2rem;
-  text-align: center;
   line-height: 2;
   color: var(--dark-red);
 }
@@ -167,27 +156,13 @@ section {
 # About
 --------------------------------------------------------------*/
 
-.section-title {
-  color: var(--dark-green);
-}
-
-.break {
-  margin: auto !important;
-  width: 200px;
-  height: 2px !important;
-  background-color: var(--dark-blue) !important;
-  opacity: .5
-}
-
 .about-outer {
   border-radius: 15px;
   box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
-  padding: 20px 0;
   background-color: var(--light-grey);
 }
 
 .about-image {
-  text-align: center;
   color: var(--green);
 }
 
@@ -199,7 +174,6 @@ section {
 }
 
 .about-text {
-  text-align: center;
   font-size: 1.1rem;
 }
 
@@ -355,7 +329,7 @@ section {
 # Add Book
 --------------------------------------------------------------*/
 
-.add-book-form {
+.book-form {
   background-color: var(--light-blue);
   padding: 20px;
   border-radius: 10px;
@@ -363,18 +337,18 @@ section {
   margin-bottom: 20px;
 }
 
-.add-book-form form {
+.book-form form {
   max-width: 90%; 
   margin: 0 auto;
 }
 
-.add-book-form button {
+.book-form button {
   margin-top: 10px;
 }
 
-.add-book-form input[type="text"],
-.add-book-form textarea,
-.add-book-form select {
+.book-form input[type="text"],
+.book-form textarea,
+.book-form select {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
@@ -382,7 +356,7 @@ section {
   border-radius: 5px;
 }
 
-.add-book-form label {
+.book-form label {
   font-weight: bold;
 }
 
@@ -398,6 +372,10 @@ section {
   border: 1px solid #ced4da;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.new-category {
+  color: var(--green)
 }
 
 /*--------------------------------------------------------------
@@ -421,6 +399,13 @@ section {
   color: var(--teal);
 }
 
+/*--------------------------------------------------------------
+# Profile
+--------------------------------------------------------------*/
+
+.custom-width-80 {
+  width: 80%;
+}
 
 /*--------------------------------------------------------------
 # Footer
@@ -445,6 +430,14 @@ section {
 }
 
 /*--------------------------------------------------------------
+# Error pages
+--------------------------------------------------------------*/
+
+.error {
+  color: var(--dark-red);
+}
+
+/*--------------------------------------------------------------
 # Media Queries
 --------------------------------------------------------------*/
 
@@ -460,7 +453,7 @@ section {
 
 @media (max-width: 991px) {
   .header {
-    font-size: medium;
+    font-size: small;
   }
 
   .navbar-nav {
@@ -477,7 +470,7 @@ section {
   }
 
   .dropdown-menu .dropdown-item {
-    font-size: medium;
+    font-size: small;
   }
 
   #hero p {
@@ -488,14 +481,6 @@ section {
 /* Small devices (landscape phones, less than 768px */
 
 @media screen and (max-width: 767.98px) {
-  .header {
-    font-size: small;
-  }
-
-  .dropdown-menu .dropdown-item {
-    font-size: small;
-  }
-
   .social-networks i {
     font-size: 120%;
     padding: 0 20px;
@@ -503,6 +488,14 @@ section {
 
   #hero h1 {
     font-size: 1.5rem;
+  }
+
+  .text-m {
+    font-size: medium;
+  }
+
+  .text-sm {
+    font-size: small;
   }
 
   .book-details__info {
@@ -515,13 +508,15 @@ section {
     font-size: 0.9rem;
   }
 
-  .add-book-form,
-  .img-add {
-    width: 100%;
-    margin: 0;
-  }
-
   .file-input-label {
     word-wrap: break-word;
+  }
 }
+
+/* Small devices (phones, less than 600px */
+
+@media screen and (max-width: 600px) {
+  .w-80 {
+  width: 80%;
+  }
 }

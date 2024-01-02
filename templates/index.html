@@ -5,13 +5,23 @@
 {% endblock %}
 
 {% block content %}
-  <!-- Hero section -->
+  <!--  Hero Call to Action section -->
   <section id="hero" class="d-flex align-items-center">
     <div class="container">
       <div class="row gy-4">
         <div class="col-lg-6 order-lg-1 order-md-1 col-md-12 d-flex flex-column justify-content-center">
-          <h1><span>KidLit Swap:</span><br /> Exchange the Magic of Kids' Literature</h1>
-          <p>Join, share, borrow, and let the enchanting adventures begin!</p>
+          <h1 class="text-center"><span>KidLit Swap:</span><br /> Exchange the Magic of Kids' Literature</h1>
+          {% if user.is_authenticated %}
+            <p class="text-center">Welcome back to KidLit Swap!</p>
+            <div class="text-center">
+              <a href="{% url 'add_book' %}" class="btn btn-primary btn-lg add-btn">Add Book</a>
+            </div>
+          {% else %}
+            <p class="text-center">Join, share, borrow, and let the enchanting adventures begin!</p>
+            <div class="text-center">
+              <a href="{% url 'account_signup' %}" class="btn btn-primary btn-lg add-btn">Sign Up</a>
+            </div>
+          {% endif %}
         </div>
         <div id="hero-img" class="col-lg-6 order-lg-2 order-md-2 col-md-12">
           <img src="https://res.cloudinary.com/dobdtuunf/image/upload/v1701261882/a0b73fb2-40b9-4eaa-8748-36e0af64a964_wztf06.webp" class="img-fluid animated" alt="Happy kids with a book" />
@@ -19,55 +29,63 @@
       </div>
     </div>
   </section>
-  <!-- End Hero section -->
+  <!-- End Hero Call to Action section -->
 
   <!-- About section -->
   <section id="about" class="container px-0">
-    <div class="container">
-      <div class="row">
-        <div class="section-title col-12 my-3 text-center">
-          <h2>About Us</h2>
-        </div>
-      </div>
+    <!-- About Us Content -->
+    <div class="container mx-auto w-80">
+      <div class="page-title col-12 my-3 text-center">
+        <h2>About Us</h2>
       <hr class="break" />
+      </div>
       <div class="row mb-sm-5">
         <div class="col-12 mt-3 my-md-3 text-center lead">
-          <p>KidLit Swap is a vibrant online community for parents passionate about children's literature. Our virtual library encourages free book exchanges among members, fostering a love for reading in young minds. Share your favorite books, borrow others' treasures, and join us in nurturing a future of avid young readers. Explore, share, and delight in the magic of storytelling!</p>
+          <p class="text-m">KidLit Swap is a vibrant online community fostering a passion for children's literature. Our virtual library promotes free book exchanges, nurturing a love for reading in young minds.
+            <br>Join us to share your favorite books, borrow great reads, and help create a future generation of passionate readers.
         </div>
       </div>
     </div>
-    <div class="container-fluid">
-      <div class="row about-outer">
+    <!-- End About Us Content -->
+  
+    <!-- Discover Our Features -->
+    <div class="container-fluid mx-auto w-80">
+      <div class="row about-outer p-4">
         <!-- Explore Our Library -->
         <div class="col-12 col-md-4 mb-2">
-          <div class="about-image mb-2">
+          <div class="about-image text-center mb-2 text-sm">
             <i class="fa-solid fa-book fa-6x"></i>
           </div>
-          <div>
+          <div class="about-content">
             <h3 class="about-title">Explore Our Library</h3>
-            <p class="about-text">Explore our wide range of books crafted for young readers</p>
-            <p class="about-text">Add your favorite books to our growing collection and be part of our literary haven</p>
+            <p class="about-text text-center text-m ">Find books for kids and add your favorites to our collection</p>
+            <p class="about-text text-center text-m ">Be part of our growing community of young readers</p>
           </div>
         </div>
         <!-- See What's Available and Borrow -->
         <div class="col-12 col-md-4 mb-2">
-          <div class="about-image mb-2">
+          <div class="about-image text-center mb-2 text-sm">
             <i class="fa-solid fa-book-open-reader fa-6x"></i>
           </div>
-          <h3 class="about-title">See What's Available and Borrow</h3>
-          <p class="about-text">Easily check the availability of the books you desire</p>
-          <p class="about-text">Choose a convenient date to borrow them, ensuring a smooth reading experience</p>
+          <div class="about-content">
+            <h3 class="about-title">See What's Available and Borrow</h3>
+            <p class="about-text text-center text-m">Check which books are ready to borrow</p>
+            <p class="about-text text-center text-m">Pick a date that works for you to enjoy a smooth borrowing process</p>
+          </div>
         </div>
         <!-- Enjoy Quality Time with Your Kids -->
         <div class="col-12 col-md-4 mb-2">
-          <div class="about-image mb-2">
+          <div class="about-image text-center mb-2 text-sm">
             <i class="fa-solid fa-child-reaching fa-6x"></i>
           </div>
-          <h3 class="about-title">Enjoy Quality Time with Your Kids</h3>
-          <p class="about-text">Immerse yourself in the joy of reading with your children</p>
-          <p class="about-text">Create lasting memories by exploring enchanting stories together</p>
+          <div class="about-content">
+            <h3 class="about-title">Enjoy Quality Time with Your Kids</h3>
+            <p class="about-text text-center text-m ">Have fun reading with your children</p>
+            <p class="about-text text-center text-m ">Create wonderful memories with enchanting stories</p>
+          </div>
         </div>
       </div>
     </div>
+    <!-- End Discover Our Features -->
   </section>
 {% endblock %}
