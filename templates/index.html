@@ -32,7 +32,7 @@
   <!-- End Hero Call to Action section -->
 
   <!-- About section -->
-  <section id="about" class="container px-0">
+  <section id="about" class="container px-0 pt-4">
     <!-- About Us Content -->
     <div class="container mx-auto w-80">
       <div class="page-title col-12 my-3 text-center">
@@ -56,16 +56,19 @@
             <div class="about-image text-center mb-2 text-sm">
               <i class="fa-solid fa-{{ feature.icon }} fa-6x"></i>
             </div>
-            <div class="about-content">
-              <h3 class="about-title">{{ feature.title }}</h3>
-              <p class="about-text text-center text-m">{{ feature.description1 }}</p>
-              <p class="about-text text-center text-m">{{ feature.description2 }}</p>
+            <div class="about-content text-center">
+              <div class="w-title">
+                <h3 class="about-title pt-2">{{ feature.title }}</h3>
+              </div>
+              <p class="about-text text-m">{{ feature.description1 }}</p>
+              <p class="about-text text-m">{{ feature.description2 }}</p>
             </div>
           </div>
         {% endfor %}
       </div>
     </div>
     <!-- End Discover Our Features -->
+
 
   </section>
 {% endblock %}

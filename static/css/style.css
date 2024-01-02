@@ -168,13 +168,15 @@ section {
 
 .about-title {
   color: var(--dark-blue);
-  padding-top: 10px;
-  text-align: center;
   font-size: 1.5rem;
 }
 
 .about-text {
   font-size: 1.1rem;
+}
+
+.w-title {
+  min-height: 90px;
 }
 
 /*--------------------------------------------------------------
@@ -510,6 +512,10 @@ section {
 
   .file-input-label {
     word-wrap: break-word;
+  }
+
+  .w-title {
+    min-height: 0;
   }
 }
 
