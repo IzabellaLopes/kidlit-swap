@@ -12,12 +12,15 @@
     <section class="delete-book-section mt-4">
       <div class="static-card mx-auto">
         <div class="text-center p-4">
-          <p class="text-danger">Are you sure you want to delete the book "{{ book.title|upper }}"?</p>
-          <form method="post" action="{% url 'delete_book' slug=book.slug %}">
-            {% csrf_token %}
-            <button type="submit" class="btn btn-danger mr-2"><i class="fas fa-trash-alt"></i> Delete</button>
-            <a href="{% url 'my_books' %}" class="btn btn-secondary"><i class="fas fa-times"></i> Cancel</a>
-          </form>
+          {% if user.is_authenticated and book.added_by == user %}
+            <p class="text-danger">Are you sure you want to delete the book "{{ book.title|upper }}"?</p>
+            <form method="post" action="{% url 'delete_book' slug=book.slug %}">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-danger mr-2"><i class="fas fa-trash-alt"></i> Delete</button>
+              <a href="{% url 'my_books' %}" class="btn btn-secondary"><i class="fas fa-times"></i> Cancel</a>
+            </form>
+          {% else %}
+            <p class="text-danger">You do not have permission to delete this book.</p>
           {% endif %}
         </div>
       </div>
