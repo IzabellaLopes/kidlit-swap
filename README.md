@@ -185,16 +185,16 @@ KidLit Swap aims to provide an accessible and engaging platform where users can 
    - **USER STORY: Log In [#23](https://github.com/IzabellaLopes/kidlit-swap/issues/23)** - As a User I can log in so that I can access personalized features and participate in the KidLit Swap community
    - **USER STORY: Log Out [#24](https://github.com/IzabellaLopes/kidlit-swap/issues/24)** - As a User I can log out so that I can secure my account and maintain privacy
    - **USER STORY: Sign Up [#25](https://github.com/IzabellaLopes/kidlit-swap/issues/25)** - As a User I can sign up so that I can become a member of the KidLit Swap community and share my love for children's literature
-   - **USER STORY: Profile Page Edit [#26](https://github.com/IzabellaLopes/kidlit-swap/issues/26)** - As a User I can edit my profile page so that I can update my information and preferences within the KidLit Swap community
-   - **USER STORY: Account Deletion [#27](https://github.com/IzabellaLopes/kidlit-swap/issues/27)** - As a User I can delete my account so that I can permanently leave the KidLit Swap community if needed
+   - **USER STORY: Profile Page [#31](https://github.com/IzabellaLopes/kidlit-swap/issues/31)** - As a User I can view and manage my added and borrowed books on my profile page so that I can easily track and organize my book-related activities
 
 6.  [EPIC: Documentation](https://github.com/IzabellaLopes/kidlit-swap/milestone/6)
    - **Documentation [#28](https://github.com/IzabellaLopes/kidlit-swap/issues/28)** - Comprehensive documentation outlines the essential aspects and purposes of the application
    - **Code Documentation [#29](https://github.com/IzabellaLopes/kidlit-swap/issues/29)** - Code documentation of each function/class and module is written for easy legibility/understanding
 
 7. [EPIC: Future Features](https://github.com/IzabellaLopes/kidlit-swap/milestone/7)
-- This milestone centers on the ongoing enhancement and maintenance of KidLit Swap, specifically prioritizing the integration of upcoming features. Some user stories have been excluded from the current project scope due to time constraints and have been labeled as "Won't Have" on the GitHub project board. The intention is to implement these user stories at a later date.
-  
+This milestone centers on the ongoing enhancement and maintenance of KidLit Swap, specifically prioritizing the integration of upcoming features. Some user stories have been excluded from the current project scope due to time constraints and have been labeled as "Won't Have" on the GitHub project board. The intention is to implement these user stories at a later date.
+  - **USER STORY: Profile Page Edit [#26](https://github.com/IzabellaLopes/kidlit-swap/issues/26)** - As a User I can edit my profile page so that I can update my information and preferences within the KidLit Swap community
+  - **USER STORY: Account Deletion [#27](https://github.com/IzabellaLopes/kidlit-swap/issues/27)** - As a User I can delete my account so that I can permanently leave the KidLit Swap community if needed
 
 
 [Back to Contents](#contents)
@@ -583,8 +583,13 @@ As mentioned earlier, Custom Error Pages were designed to offer users additional
 
 ### Future Implementations
 
-The following user stories were scoped out of the project due to time constraints and labelled as "Could Have" on the project board in Github. It is intended that these user stories will be implemented at a later date. 
+As mentioned earlier in [EPIC: Future Features](https://github.com/IzabellaLopes/kidlit-swap/milestone/7), certain user stories have been omitted from the current project due to time constraints. They are marked as "Won't Have" on the GitHub project board with plans for future implementation.
 
+In addition to the user stories outlined in the "Future Features," I also plan to implement two additional features in the future:
+
+1. Develop an alert system to notify the owner of a book (added by) when someone requests to borrow the book and suggest a loan date. This way, the owner can approve or reject the loan, provide details about the book's pickup location, and the response will be sent back to the logged-in user.
+
+2. Create a search bar to allow users to easily locate a book in the Book List.
 
 [Back to Contents](#contents)
 
