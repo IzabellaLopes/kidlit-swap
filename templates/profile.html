@@ -12,7 +12,7 @@
     <div class="cards__container rounded">
       <!-- Welcome user -->
       <div class="row justify-content-center pt-3">
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-6 w-90">
           <div class="static-card text-center mb-3">
             <div class="card-body">
               <h5 class="card-title">Welcome, {{ user.username }}!</h5>
@@ -23,13 +23,13 @@
 
       <!-- Books Added and Books Borrowed -->
       <div class="row justify-content-center mb-3">
-        <div class="col-12 col-md-6 col-lg-8 mt-3">
+        <div class="col-12 col-md-6 col-lg-8 mt-3 w-90">
           <div class="row">
             <div class="col-md-6 mb-3">
               <div class="card h-100">
                 <div class="card-body text-center">
                   <h5 class="card-title">Books Added</h5>
-                  <p class="card-text">You've added {{ books_added_count }} book{{ books_added_count|pluralize:"(s)" }} to the library</p>
+                  <p class="card-text">You've added {{ books_added_count }} book{{ books_added_count|pluralize:"s" }} to the library</p>
                   <a href="{% url 'my_books' %}" class="btn btn-primary add-btn mt-3">View My Books</a>
                 </div>
               </div>
@@ -38,7 +38,7 @@
               <div class="card h-100">
                 <div class="card-body text-center">
                   <h5 class="card-title">Books Borrowed</h5>
-                  <p class="card-text">You've borrowed {{ user.borrowed_books.count }} book{{ user.borrowed_books.count|pluralize:"(s)" }}</p>
+                  <p class="card-text">You've borrowed {{ user.borrowed_books.count }} book{{ user.borrowed_books.count|pluralize:"s" }}</p>
                   <a href="{% url 'borrowed_books' %}" class="btn btn-primary add-btn mt-3">View Borrowed Books</a>
                 </div>
               </div>
