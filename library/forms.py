@@ -16,8 +16,10 @@ class BookForm(forms.ModelForm):
         category (Category): The category to which the book belongs.
         new_category (str): A field to allow the user to enter a new category.
     """
-    
-    new_category = forms.CharField(max_length=100, required=False, label='New Category')
+
+    new_category = forms.CharField(
+        max_length=100, required=False, label='New Category'
+    )
 
     def __init__(self, *args, **kwargs):
         super(BookForm, self).__init__(*args, **kwargs)
