@@ -53,6 +53,7 @@ Join KidLit Swap and let's make reading magical for our little ones!
     - [Book Details](#book-details)
     - [Category](#category)
     - [Manage Books | My Books](#manage-books--my-books)
+    - [Manage Books | Borrowed Books](#manage-books--borrowed-books)
     - [Error Pages](#error-pages)
     - [Future Implementations](#future-implementations)
   - [Technologies Used](#technologies-used)
@@ -522,6 +523,23 @@ The 'About' section provides a concise overview of the site's offerings, summari
 
   - If the book is borrowed, attempting to delete will display an error message: "You cannot delete this book because it is borrowed to {username}."
   ![Error - Delete book](documentation/readme_images/features/error_delete.png)
+
+
+### Manage Books | Borrowed Books
+
+- The Borrowed Books page is personalized for each logged-in user, displaying the borrowed books. 
+- The information presented includes the book title, the owner of the book (added by), and the return date (previously selected by the logged user in the modal).
+  ![Borrowed books](documentation/readme_images/features/borrowed_books.png)
+
+- At the bottom of each card, there is a "Return Book" button with its respective Font Awesome icon. 
+- Upon clicking, a success message appears at the top of the page, stating "You have successfully returned the book 'TITLE OF THE BOOK'." 
+  ![Success message - Borrowed books](documentation/readme_images/features/borrowed_books_msg.png)
+  
+- Additionally, the book will be removed from the "Borrowed Books" section, and its status will be changed from "Borrowed" back to "Available."
+
+
+
+
 
 
 
