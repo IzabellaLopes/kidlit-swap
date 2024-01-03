@@ -171,9 +171,15 @@
             document.addEventListener("DOMContentLoaded", () => {
                 const url = window.location.pathname;
                 const activeNavLink = document.querySelector(`a.nav-link[href="${url}"]`);
-
-                if (activeNavLink) {
-                    activeNavLink.closest(".nav-item")?.classList.add("nav-active");
+            
+                // Check if activeNavLink is not null or undefined before accessing properties
+                if (activeNavLink !== null && activeNavLink !== undefined) {
+                    const closestNav = activeNavLink.closest(".nav-item");
+            
+                    // Check if closestNav is not null or undefined before adding the class
+                    if (closestNav !== null && closestNav !== undefined) {
+                        closestNav.classList.add("nav-active");
+                    }
                 }
             });
         </script>
