@@ -16,6 +16,7 @@
   - [Site Administration](#site-administration)
   - [Validator Testing](#validator-testing)
     - [HTML](#html)
+    - [CSS](#css)
 
 ---
 
@@ -153,3 +154,13 @@ All HTML pages were run through the [W3C HTML Validator](https://validator.w3.or
 | 403.html             | N/A        | No errors |
 | 404.html             | No errors  | No errors |
 | 500.html             | No errors  | No errors |
+
+### CSS
+No errors were detected upon validating my CSS file with the official [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+
+ <details>
+
+ <summary>CSS</summary>
+
+![CSS Validation](testing/testing_images/css_validation.png)
+ </details>
