@@ -50,6 +50,7 @@ Join KidLit Swap and let's make reading magical for our little ones!
       - [Log In](#log-in)
       - [Log Out](#log-out)
     - [Book List](#book-list)
+    - [Book Details](#book-details)
     - [Error Pages](#error-pages)
     - [Future Implementations](#future-implementations)
   - [Technologies Used](#technologies-used)
@@ -469,6 +470,31 @@ The 'About' section provides a concise overview of the site's offerings, summari
 
 - Towards the bottom of the page, an engaging section encourages users to actively participate in the community by adding more books. If a user is logged in, a personalized greeting saying 'Hello username! Do you want to add a book to our library?' is prominently displayed. This makes it easier for users and encourages them to be a part of the community.
   ![Book List - Add Book](documentation/readme_images/features/book_list_auth.png)
+
+### Book Details
+
+- The Book Details page displays comprehensive information about the book, including title, author, description, category, status, and the owner of the book (added by).
+
+- Additionally, the page features three types of messages in the bottom corner:
+
+  - If the logged-in user is the owner of the book (added by) and the status is Available, a message will express gratitude for sharing the book ("Thank you for sharing your book on KidLit Swap!").
+  ![Book Details - Owner](documentation/readme_images/features/detail_owner.png)
+
+  - If the logged-in user is not the owner of the book and the status is Available, a "Borrow This Book" button will appear.
+  ![Book Details - User](documentation/readme_images/features/detail_user.png)
+
+  - Clicking this button redirects the user to a modal for confirming borrowing details, including selecting a return date. Upon confirmation, the book's status changes from Available to Borrowed, and the message updates accordingly.
+  ![Modal - Return date](documentation/readme_images/features/return_date.png)
+
+  - If the logged-in user has borrowed the book, the message will state, "This book is currently borrowed by [username] and is expected to be returned on [date selected in the modal]."
+  ![Book Details - Borrowed](documentation/readme_images/features/detail_borrowed.png)
+
+- Finally, there is a button labeled "Back to Book List" to redirect the user back to the Book List page.
+
+
+
+
+
 
 
 
