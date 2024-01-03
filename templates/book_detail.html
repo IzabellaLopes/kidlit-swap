@@ -5,77 +5,72 @@
 {% endblock %}
 
 {% block content %}
-  <!-- Book Details -->
-  <div class="container">
-    <h1 class="page-title text-center pt-1">Book Details</h1>
-    <hr class="break" />
-    <br />
+<!-- Book Details -->
+<div class="container">
+  <h1 class="page-title text-center pt-1">Book Details</h1>
+  <hr class="break" />
+  <br />
 
-    <div class="cards__container">
+  <div class="cards__container">
       <div class="details-container row">
-        <div class="col-md-4 text-center mx-auto details-image d-flex align-items-center justify-content-center rounded mt-1">
-          {% if 'placeholder' in book.image.url %}
-            <!-- Placeholder Image if Image is Not Available -->
-            <img src="https://res.cloudinary.com/dobdtuunf/image/upload/v1701900777/book_placeholder.png" class="img-fluid pt-2" alt="placeholder image" />
-          {% else %}
-            <!-- Display Book Image -->
-            <img src=" {{ book.image.url }}" alt="{{ book.title }}" class="img-fluid pt-2" />
-          {% endif %}
-        </div>
-        <div class="col-md-8">
-          <!-- Book Title -->
-          <p class="card-title fs-4 fw-bold text-center text-uppercase text-break pt-2">{{ book.title }}</p>
-          <!-- Author -->
-          <p class="details-author fs-5 fst-italic text-break pb-2">Author: {{ book.author }}</p>
-          <!-- Description -->
-          <p class="desc pb-3 text-break">Description: {{ book.description }}</p>
-          <!-- Category -->
-          <p class="cat text-break">Category: {{ book.category }}</p>
-          <!-- Book Status -->
-          <p class="status fw-bold text-center {% if book.status == 'Available' %}available{% elif book.status == 'Borrowed' %}borrowed{% endif %}">Status: {{ book.status }}</p>
-          <!-- Added by -->
-          <p class="card-text added text-center text- px-1 py-0 rounded">Added by: {{ book.added_by.username }}</p>
-          <!-- Borrow Book -->     
-            {% if request.user == book.added_by and book.status == 'Available' %}
+          <div class="col-md-4 text-center mx-auto details-image d-flex align-items-center justify-content-center rounded mt-1">
+              {% if 'placeholder' in book.image.url %}
+              <!-- Placeholder Image if Image is Not Available -->
+              <img src="https://res.cloudinary.com/dobdtuunf/image/upload/v1701900777/book_placeholder.png" class="img-fluid pt-2" alt="placeholder image" />
+              {% else %}
+              <!-- Display Book Image -->
+              <img src=" {{ book.image.url }}" alt="{{ book.title }}" class="img-fluid pt-2" />
+              {% endif %}
+          </div>
+          <div class="col-md-8">
+              <!-- Book Title -->
+              <p class="card-title fs-4 fw-bold text-center text-uppercase text-break pt-2">{{ book.title }}</p>
+              <!-- Author -->
+              <p class="details-author fs-5 fst-italic text-break pb-2">Author: {{ book.author }}</p>
+              <!-- Description -->
+              <p class="desc pb-3 text-break">Description: {{ book.description }}</p>
+              <!-- Category -->
+              <p class="cat text-break">Category: {{ book.category }}</p>
+              <!-- Book Status -->
+              <p class="status fw-bold text-center {% if book.status == 'Available' %}available{% elif book.status == 'Borrowed' %}borrowed{% endif %}">Status: {{ book.status }}</p>
+              <!-- Added by -->
+              <p class="card-text added text-center text- px-1 py-0 rounded">Added by: {{ book.added_by.username }}</p>
+              <!-- Borrow Book -->
+              {% if request.user == book.added_by and book.status == 'Available' %}
               <!-- Display a message for the book owner -->
               <div class="alert alert-success message-no-fade" role="alert">
-                <p class="mb-0 text-center">Thank you for sharing your book on KidLitSwap!</p>
+                  <p class="mb-0 text-center">Thank you for sharing your book on KidLitSwap!</p>
               </div>
-            {% elif book.status == 'Available' %}
-                {% if user.is_authenticated %}
-                <!-- Button to navigate to the borrow_book page with the book's slug -->
-                <div class="d-flex justify-content-center pb-2">
-                  <button type="button" class="btn btn-primary add-btn" id="borrowButton" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                    Borrow This Book
-                  </button>
-                </div>
-                {% else %}
-                    <!-- Prompt non-authenticated users to log in -->
-                    <div class="alert alert-info message-no-fade text-center" role="alert">
-                      <p class="mb-0">Do you want to borrow this book?</p>
-                      <div class="d-flex justify-content-center">
-                        <a href="{% url 'account_login' %}" class="btn btn-primary mt-2">Log In</a>
-                      </div>
-                    </div>
-                {% endif %}
-            {% elif book.status == 'Borrowed' %}
+              {% elif book.status == 'Available' %} {% if user.is_authenticated %}
+              <!-- Button to navigate to the borrow_book page with the book's slug -->
+              <div class="d-flex justify-content-center pb-2">
+                  <button type="button" class="btn btn-primary add-btn" id="borrowButton" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Borrow This Book</button>
+              </div>
+              {% else %}
+              <!-- Prompt non-authenticated users to log in -->
+              <div class="alert alert-info message-no-fade text-center" role="alert">
+                  <p class="mb-0">Do you want to borrow this book?</p>
+                  <div class="d-flex justify-content-center">
+                      <a href="{% url 'account_login' %}" class="btn btn-primary mt-2">Log In</a>
+                  </div>
+              </div>
+              {% endif %} {% elif book.status == 'Borrowed' %}
               <!-- Display a message for borrowed books -->
               <div class="alert alert-secondary message-no-fade text-center" role="alert">
-                <p class="mb-0">
-                  This book is currently borrowed by
-                  <span class="fw-bold">{{ book.borrower.username }}</span>
-                  and is expected to be returned on
-                  <span class="fst-italic">{{ book.return_date|date:"F j, Y" }}.</span>
-                </p>
+                  <p class="mb-0">
+                      This book is currently borrowed by
+                      <span class="fw-bold">{{ book.borrower.username }}</span>
+                      and is expected to be returned on
+                      <span class="fst-italic">{{ book.return_date|date:'F j, Y' }}.</span>
+                  </p>
               </div>
-            {% endif %}
+              {% endif %}
           </div>
-        </div>
       </div>
-    </div>
   </div>
+</div>
 
-  <!-- Back Button -->
+<!-- Back Button -->
 <div class="text-center">
   <a href="{% url 'book_list' %}" class="btn btn-light btn-outline-success mb-3">Back to Book List</a>
 </div>
@@ -83,23 +78,23 @@
 <!-- Modal -->
 <div class="modal fade" id="borrowModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Confirm borrow details</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-content">
+          <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">Confirm borrow details</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="borrowForm" method="post" action="{% url 'borrow_book' slug=book.slug %}">
+              {% csrf_token %}
+              <label for="returnDate">Select return date:</label>
+              <input type="date" id="returnDate" name="return_date" min="{% now 'Y-m-d' %}" required />
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Confirm</button>
+              </div>
+            </form>
+          </div>
       </div>
-      <div class="modal-body">
-        <form id="borrowForm" method="post" action="{% url 'borrow_book' slug=book.slug %}">
-          {% csrf_token %}
-          <label for="returnDate">Select return date:</label>
-          <input type="date" id="returnDate" name="return_date" min="{% now 'Y-m-d' %}" required />
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Confirm</button>
-      </form>
-      </div>
-    </div>
   </div>
 </div>
 
