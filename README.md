@@ -60,7 +60,7 @@ Join KidLit Swap and let's make reading magical for our little ones!
     - [Future Implementations](#future-implementations)
   - [Technologies Used](#technologies-used)
     - [Languages Used](#languages-used)
-    - [Frameworks, Libraries \& Programs Used](#frameworks-libraries--programs-used)
+    - [Frameworks - Libraries - Programs Used](#frameworks---libraries---programs-used)
   - [Testing](#testing)
     - [Bugs](#bugs)
   - [Deployment](#deployment)
@@ -599,80 +599,40 @@ In addition to the user stories outlined in the "Future Features," I also plan t
 
 ### Languages Used
 
-- Python
 - HTML
 - CSS
-- Javascript
+- JavaScript
+- Bootstrap
+- Python
+- Django
 
-### Frameworks, Libraries & Programs Used
+### Frameworks - Libraries - Programs Used
 
 - [VS Code](https://code.visualstudio.com/) - IDE used to create the KidLit Swap.
-- [Github](https://github.com/) - Used for file storage, version control, and agile tool.
+- [GitHub](https://github.com/) - Used for file storage, version control, and agile tool.
 - [Heroku](https://www.heroku.com/) - Used to deploy the project.
 - [Django](https://www.djangoproject.com/) - Main python framework used in the development of this project.
-- [Django-allauth](https://django-allauth.readthedocs.io/en/latest/installation.html) - Authentication library used to create the user accounts.
+- [Django-allauth](https://pypi.org/project/django-allauth/) - Authentication library used to create the user accounts.
+- [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) - Used to manage Django Forms.
+- [Bootstrap 5.1](https://getbootstrap.com/docs/5.1/getting-started/introduction/) - CSS Framework for developing responsiveness and styling.
 - [PostgreSQL](https://www.postgresql.org/) - Used as the database for this project.
+- [Cloudinary](https://cloudinary.com/) - The image hosting service used to upload images.
 - [Balsamiq](https://balsamiq.com/) - Used to generate Wireframes.
 - [Coolors](https://coolors.co/) - Used to create color palette.
 - [Google Fonts](https://fonts.google.com/) - Used to import and alter fonts on the page.
 - [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) - Used to check contrast.
-- [Canva](https://www.canva.com/) - To create the logo.
-
-include:
-- [Code Institute Python Essentials Template](https://github.com/Code-Institute-Org/python-essentials-template) - Served as the foundational structure for this project.
-
-- [Code Institute Python Linter](https://pep8ci.herokuapp.com/) - Verify code conformity with PEP8.
-
-- [Pylance Validator](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
-  
-
-- [TinyPNG](https://tinypng.com/) - To compress images
-
-- [CloudConvert](https://cloudconvert.com/) - To transform a video into a GIF for inclusion in the Readme.md file.
-
+- [Canva](https://www.canva.com/) - To create the logo and the placeholder image.
 - [Favicon.io](https://favicon.io/) - To create favicon.
-
-- [Chat-GPT](https://chat.openai.com/) - Enhance Readme.md readability; streamline content for effective communication.
-
-
-- [Responsinator](http://www.responsinator.com/) - Used to verify responsiveness of website on different devices.
-- [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/) - Used for overall development and tweaking, including testing responsiveness and performance.
-- [Font Awesome](https://fontawesome.com/) - Used for icons in information bar.
-- [W3C](https://www.w3.org/) - Used for HTML & CSS Validation.
-- [PEP8 Online](http://pep8online.com/) - used to validate all the Python code
-- [Jshint](https://jshint.com/) - used to validate javascript
-- [Favicon](https://favicon.io/) - Used to create the favicon.
-- [Lucidchart](https://lucid.app/documents#/dashboard) - used to create the database schema design
-- [Grammerly](https://app.grammarly.com/) - used to proof read the README.md
-- [Summernote](https://summernote.org/): A WYSIWYG editor to allow users to edit their posts
-- [Techsini](https://techsini.com/multi-mockup/index.php) - Site mockup generator
-- [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) used to manage Django Forms
-- [Cloudinary](https://cloudinary.com/): the image hosting service used to upload images
-- [Bootstrap 4.6](https://getbootstrap.com/docs/4.6/getting-started/introduction/): CSS Framework for developing responsiveness and styling
-- [Tables Generator](https://www.tablesgenerator.com/markdown_tables): Used to convert excel testing tables to markdown
-
-
-
-https://webformatter.com/html
-
-
-- [Google Developer Tools](https://developers.google.com/web/tools) - To troubleshoot and test features, resolve issues related to responsiveness and styling.
-
-- [TinyPNG](https://tinypng.com/) To compress images
-
-- [Safeimagekit](https://safeimagekit.com/) To resize images and convert them to the webp format.
-
-- [Ezgif](https://ezgif.com/video-to-gif/) To convert video to gif to include in the Readme.md.
-
+- [Lucidchart](https://lucid.app/documents#/dashboard) - Used to create the database schema design.
+- [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/) - To troubleshoot and test features, resolve issues related to responsiveness and styling.
 - [Font Awesome](https://fontawesome.com/) - For the iconography on the website.
-
-- [Favicon.io](https://favicon.io/) To create favicon.
-
-- [Am I Responsive?](http://ami.responsivedesign.is/) To display the website image across various devices.
-
+- [W3C](https://www.w3.org/) - Used for HTML & CSS Validation.
+- [Code Institute Python Linter](https://pep8ci.herokuapp.com/) - Verify code conformity with PEP8.
+- [Jshint](https://jshint.com/) - Used to validate Javascript.
+- [Responsinator](http://www.responsinator.com/) - Used to verify responsiveness of website on different devices.
+- [Techsini](https://techsini.com/multi-mockup/index.php) - To display the website image across various devices.
+- [Chat GPT](https://chat.openai.com/) - Enhance Readme.md readability; streamline content for effective communication.
 - [Web Disability Simulator](https://chrome.google.com/webstore/detail/web-disability-simulator/olioanlbgbpmdlgjnnampnnlohigkjla) - A Google Chrome extension that allows you to view your site as people with accessibility needs would see it.
-
-- [Webpage Spell-Check](https://chrome.google.com/webstore/detail/webpage-spell-check/mgdhaoimpabdhmacaclbbjddhngchjik/related) - a google chrome extension that allows you to spell check your webpage. Used to check the site and the readme for spelling errors.
 
 
 [Back to Contents](#contents)
