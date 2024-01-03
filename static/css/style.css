@@ -100,12 +100,13 @@ h6 {
 
 .animated-zoom {
   transition: transform 0.3s ease;
-
-  &:hover,
-  &:focus {
-    transform: scale(1.1);
-  }
 }
+
+.animated-zoom:hover,
+.animated-zoom:focus {
+  transform: scale(1.1);
+}
+
 
 /*--------------------------------------------------------------
 # Hero Call to Action section
