@@ -51,6 +51,7 @@ Join KidLit Swap and let's make reading magical for our little ones!
       - [Log Out](#log-out)
     - [Book List](#book-list)
     - [Book Details](#book-details)
+    - [Category](#category)
     - [Error Pages](#error-pages)
     - [Future Implementations](#future-implementations)
   - [Technologies Used](#technologies-used)
@@ -491,7 +492,12 @@ The 'About' section provides a concise overview of the site's offerings, summari
 
 - Finally, there is a button labeled "Back to Book List" to redirect the user back to the Book List page.
 
+### Category
 
+![Category Books](documentation/readme_images/features/category_book.png)
+
+- As mentioned earlier, users can filter their book selection using the "Select a Category" option on the Book List page. This will redirect them to the Book - {Category name} page, which displays all books belonging to that specific category.
+- Finally, there is a button labeled "Back to Book List" to redirect the user back to the Book List page.
 
 
 
