@@ -17,6 +17,7 @@
   - [Validator Testing](#validator-testing)
     - [HTML](#html)
     - [CSS](#css)
+    - [JavaScript](#javascript)
 
 ---
 
@@ -164,3 +165,13 @@ No errors were detected upon validating my CSS file with the official [W3C CSS V
 
 ![CSS Validation](testing/testing_images/css_validation.png)
  </details>
+
+### JavaScript
+No errors were detected upon validating my JavaScript through [JS Hint](https://jshint.com/) 
+
+<details>
+
+<summary>JS Hint</summary>
+
+![JS Hint](testing/testing_images/jshint.png)
+</details>
