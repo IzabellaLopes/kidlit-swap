@@ -52,6 +52,7 @@ Join KidLit Swap and let's make reading magical for our little ones!
     - [Book List](#book-list)
     - [Book Details](#book-details)
     - [Category](#category)
+    - [Manage Books | My Books](#manage-books--my-books)
     - [Error Pages](#error-pages)
     - [Future Implementations](#future-implementations)
   - [Technologies Used](#technologies-used)
@@ -499,6 +500,28 @@ The 'About' section provides a concise overview of the site's offerings, summari
 - As mentioned earlier, users can filter their book selection using the "Select a Category" option on the Book List page. This will redirect them to the Book - {Category name} page, which displays all books belonging to that specific category.
 - Finally, there is a button labeled "Back to Book List" to redirect the user back to the Book List page.
 
+### Manage Books | My Books
+
+- The My Books page can be accessed within the "Manage Books" dropdown, available only to logged-in users.
+- Initially, my project aimed to include both "Added Books" and "Borrowed Books" on the same page. However, as users added more books, the page became cluttered, impacting user experience. Throughout the project, I chose to use large cards with prominent images, given the child-oriented nature of the site. Consequently, I decided to separate the sections. 
+- The My Books page now displays all books added by the logged-in user, featuring three buttons with associated Font Awesome icons: "View Details," "Edit," and "Delete."
+  ![My Books](documentation/readme_images/features/my_books.png)
+
+- Clicking "View Details":
+  - Redirects the user to the "Book Details" page.
+  ![View details](documentation/readme_images/features/view_details.png)
+
+- Clicking "Edit":
+  - Redirects the user to the "Edit Book" page, where the owner of the book can modify book details such as Title, Author, Description, Image, and Category. If no image is added, a placeholder image created using an image from Lexica and designed on Canva will be loaded. Additionally, users can add a new category if desired. The page includes a "Save Changes" button at the bottom.
+  ![Edit book](documentation/readme_images/features/edit_book.png)
+
+- Clicking "Delete":
+  - When the book status is available, redirects the user to the "Delete Book" page. A red alert message prompts the user to confirm the deletion: "Are you sure you want to delete the book 'TITLE OF THE BOOK'?"
+  - The page includes buttons with Font Awesome icons: "Delete" and "Cancel." Clicking "Delete" removes the book from the database, while clicking "Cancel" redirects the user to the "My Books" page. 
+  ![Delete book](documentation/readme_images/features/delete_book.png)
+
+  - If the book is borrowed, attempting to delete will display an error message: "You cannot delete this book because it is borrowed to {username}."
+  ![Error - Delete book](documentation/readme_images/features/error_delete.png)
 
 
 
