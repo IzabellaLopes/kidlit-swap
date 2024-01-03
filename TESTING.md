@@ -14,6 +14,8 @@
     - [EPIC: Book Management System](#epic-book-management-system)
     - [EPIC: User Authentication](#epic-user-authentication)
   - [Site Administration](#site-administration)
+  - [Validator Testing](#validator-testing)
+    - [HTML](#html)
 
 ---
 
@@ -124,3 +126,30 @@ All testing was conducted using Django Allauth, ensuring seamless Sign Up, Log I
 
 ---
 
+## Validator Testing
+
+### HTML
+
+All HTML pages were run through the [W3C HTML Validator](https://validator.w3.org/). See results in below table.
+
+| Page                 | Logged Out | Logged In |
+|----------------------|------------|-----------|
+| add_book.html        | N/A        | No errors |
+| base.html            | No errors  | No errors |
+| book_detail.html     | No errors  | No errors |
+| books_list.html      | No errors  | No errors |
+| borrowed_books.html  | N/A        | No errors |
+| category_books.html  | No errors  | No errors |
+| delete_book.html     | N/A        | No errors |
+| edit_book.html       | N/A        | No errors |
+| index.html           | No errors  | No errors |
+| my_books.html        | N/A        | No errors |
+| paginator.html       | No errors  | No errors |
+| profile.html         | N/A        | No errors |
+| login.html           | No errors  | N/A       |
+| logout.html          | N/A        | No errors |
+| signup.html          | No errors  | N/A       |
+| 400.html             | No errors  | No errors |
+| 403.html             | N/A        | No errors |
+| 404.html             | No errors  | No errors |
+| 500.html             | No errors  | No errors |
