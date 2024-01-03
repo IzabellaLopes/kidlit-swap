@@ -55,6 +55,7 @@ Join KidLit Swap and let's make reading magical for our little ones!
     - [Manage Books | My Books](#manage-books--my-books)
     - [Manage Books | Borrowed Books](#manage-books--borrowed-books)
     - [Manage Books | Add Book](#manage-books--add-book)
+    - [Profile](#profile)
     - [Error Pages](#error-pages)
     - [Future Implementations](#future-implementations)
   - [Technologies Used](#technologies-used)
@@ -551,7 +552,17 @@ The 'About' section provides a concise overview of the site's offerings, summari
 - Regarding the category, users can pick from a dropdown menu containing previously added categories or introduce a new one by filling in the "Do you want to add a new category?" field. If no category is selected, the default category will be set to "None."
 - Clicking the "Add Book" button will insert the book into the Book List.
 
+### Profile
 
+The profile page consists of three sections:
+
+- Welcome, username!
+
+- Books Added: Displays a message "You've added x books to the library," where x represents the number of books the user has added to KidLit Swap. Additionally, there is a "View My Books" button that redirects the user to the "My Books" page.
+
+- Books Borrowed: Displays a message "You've borrowed x books," where x represents the number of books the user has borrowed from other users. There is also a "View Borrowed Books" button that redirects the user to the "Borrowed Books" page.
+
+  ![Profile](documentation/readme_images/features/profile.png)
 
 ### Error Pages
 
