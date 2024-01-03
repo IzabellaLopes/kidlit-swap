@@ -566,14 +566,20 @@ The profile page consists of three sections:
 
 ### Error Pages
 
-Custom Error Pages were created to give the user more information on the error and to guide them back to the site.
+As mentioned earlier, Custom Error Pages were designed to offer users additional information about the error and provide them with buttons for navigating back to the site.
 
-![header]()
+- 400 Bad Request: 
+  ![400](documentation/readme_images/features/400.png)
 
-- 400 Bad Request - The Easy Eater is unable to handle this request.
-- 403 Page Forbidden - Looks like you're trying to access forbidden content. Please log out and sign in to the correct account.
-- 404 Page Not Found - The page you're looking for doesn't exist.
-- 500 Server Error - The Easy Eater is currently unable to handle this request
+- 403 Forbidden:
+  ![403](documentation/readme_images/features/403.png)
+
+- 404 Not Found: 
+  ![404](documentation/readme_images/features/404.png)
+
+- 500 Internal Server Error: 
+  ![500](documentation/readme_images/features/500.png)
+
 
 ### Future Implementations
 
