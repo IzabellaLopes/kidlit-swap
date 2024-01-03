@@ -54,6 +54,7 @@ Join KidLit Swap and let's make reading magical for our little ones!
     - [Category](#category)
     - [Manage Books | My Books](#manage-books--my-books)
     - [Manage Books | Borrowed Books](#manage-books--borrowed-books)
+    - [Manage Books | Add Book](#manage-books--add-book)
     - [Error Pages](#error-pages)
     - [Future Implementations](#future-implementations)
   - [Technologies Used](#technologies-used)
@@ -534,14 +535,21 @@ The 'About' section provides a concise overview of the site's offerings, summari
 - At the bottom of each card, there is a "Return Book" button with its respective Font Awesome icon. 
 - Upon clicking, a success message appears at the top of the page, stating "You have successfully returned the book 'TITLE OF THE BOOK'." 
   ![Success message - Borrowed books](documentation/readme_images/features/borrowed_books_msg.png)
-  
+
 - Additionally, the book will be removed from the "Borrowed Books" section, and its status will be changed from "Borrowed" back to "Available."
 
 
+### Manage Books | Add Book
 
+- The Add Book page presents a form for users to contribute a new book to KidLit Swap.
+- The required fields include title, author, and description, while image and category are optional. 
+  ![Add book](documentation/readme_images/features/add_book.png)
+- If the user wishes to add a new image, they can choose one from their files, which will be stored on Cloudinary. In the absence of a user-selected image, a default image, created by me and featuring the title "KidLit Swap," will be displayed.
 
+  ![Placeholder image](documentation/readme_images/features/placeholder_img.png)
 
-
+- Regarding the category, users can pick from a dropdown menu containing previously added categories or introduce a new one by filling in the "Do you want to add a new category?" field. If no category is selected, the default category will be set to "None."
+- Clicking the "Add Book" button will insert the book into the Book List.
 
 
 
