@@ -13,6 +13,7 @@
   - [User Story Testing](#user-story-testing)
     - [EPIC: Book Management System](#epic-book-management-system)
     - [EPIC: User Authentication](#epic-user-authentication)
+  - [Site Administration](#site-administration)
 
 ---
 
@@ -112,3 +113,14 @@ All testing was conducted using Django Allauth, ensuring seamless Sign Up, Log I
 [Back to Contents](#contents)
 
 ---
+
+## Site Administration
+
+- Admins possess complete access to Create, Read, Update, and Delete (CRUD) functionalities for all books, categories, and users within the admin panel.
+
+![Admin](testing/testing_images/admin.png)
+
+[Back to Contents](#contents)
+
+---
+
