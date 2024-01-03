@@ -49,6 +49,7 @@ Join KidLit Swap and let's make reading magical for our little ones!
       - [Sign Up](#sign-up)
       - [Log In](#log-in)
       - [Log Out](#log-out)
+    - [Book List](#book-list)
     - [Error Pages](#error-pages)
     - [Future Implementations](#future-implementations)
   - [Technologies Used](#technologies-used)
@@ -452,6 +453,24 @@ The 'About' section provides a concise overview of the site's offerings, summari
 
 #### Log Out
 ![Log out](documentation/readme_images/features/logout.png)
+
+
+### Book List
+
+![Book List](documentation/readme_images/features/book_list.png)
+
+- The Book List page in this project showcases an organized collection of books, arranged alphabetically, with a priority on available books.
+- Pagination breaks down the book cards into sets of eight for user-friendly navigation.
+- Each card provides key details such as the book's image, title, author, status (available or borrowed), and the book's owner (added by).
+- A simple click anywhere on a book card directs users to the detailed page for that specific book.
+
+- Located at the top left is a category box, offering users the convenience of selecting a category and being redirected to a dedicated page for filtered book results.
+  ![Book List - Category](documentation/readme_images/features/category.png)
+
+- Towards the bottom of the page, an engaging section encourages users to actively participate in the community by adding more books. If a user is logged in, a personalized greeting saying 'Hello username! Do you want to add a book to our library?' is prominently displayed. This makes it easier for users and encourages them to be a part of the community.
+  ![Book List - Add Book](documentation/readme_images/features/book_list_auth.png)
+
+
 
 ### Error Pages
 
