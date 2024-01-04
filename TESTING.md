@@ -22,6 +22,8 @@
     - [Lighthouse](#lighthouse)
   - [Browser Testing](#browser-testing)
   - [Device Testing](#device-testing)
+  - [Manual Testing](#manual-testing)
+    - [Site Navigation](#site-navigation)
 
 ---
 
@@ -263,8 +265,71 @@ I conducted Lighthouse validation on all pages, including both mobile and deskto
 
 - The KidLit Swap website was tested on a variety of devices, including Desktop, Laptop, iPhone 8, iPhone XR, and iPad, to ensure responsiveness across different screen sizes in both portrait and landscape modes. The website performed as intended, and the responsive design was checked using Chrome developer tools on multiple devices, maintaining structural integrity for various sizes.
 
+## Manual Testing
 
+### Site Navigation
 
+| Element               | Action     | Expected Result                                                    | Pass/Fail |
+|-----------------------|------------|--------------------------------------------------------------------|-----------|
+| NavBar                |            |                                                                    |           |
+| Site Logo	            | Click      | Redirect to home                                                   | Pass      |
+| Home Link             | Click      | Redirect to home                                                   | Pass      |
+| Books Link	          | Click      | Open Books page	                                                  | Pass      |
+| My Account Dropdown   | Click      | Open My Account dropdown                                           | Pass      |
+| My Account Dropdown	  | Display    | Display dropdown with Sign Up and Log In when user is not in session| Pass      |
+| Sign Up Link          | Click      | Open Sign Up page                                                  | Pass      |
+| Sign Up Link          | Display    | Not visible if user in session                                     | Pass      |
+| Log In Link           | Click      | Open Log In page                                                   | Pass      |
+| Log In Link           | Display    | Not visible if user in session                                     | Pass      |
+| Manage Books Dropdown | Click      | Open Manage Books dropdown                                         | Pass      |
+| Manage Books Dropdown	| Display    | Display dropdown with My Books, Borrowed Books, and Add Book when user is in session| Pass      |
+| My Books Link	        | Click	     | Open My Books page	                                                | Pass      |
+| My Books Link         | Display    | Only visible if user in session                                    | Pass      |
+| Borrowed Books Link	  | Click	     | Open Borrowed Books page	                                          | Pass      | 
+| Borrowed Books Link   | Display    | Only visible if user in session                                    | Pass      |
+| Add Book Link	        | Click	     | Open Add Book page	                                                | Pass      |
+| Add Book Link         | Display    | Only visible if user in session                                    | Pass      |
+| User Dropdown         | Click      | Open User dropdown                                                 | Pass      |
+| User Dropdown	        | Display    | Display dropdown with Profile and Log out when user is in session  | Pass      | 
+| Profile Link	        | Click	     | Open Profile page	                                                | Pass      | 
+| Profile Link          | Display    | Only visible if user in session                                    | Pass      |
+| Log Out Link          | Click      | Open log out confirm page                                          | Pass      |
+| Log Out Link          | Display    | Only visible if user in session                                    | Pass      |
+| All Nav Links         | Hover      | Color change to darkblue and zoom effect                           | Pass      |
+| Home Link             | Active     | Blue box border                                                    | Pass      |
+| Books Link            | Active     | Blue box border                                                    | Pass      |
+|                       |            |                                                                    |           |
+| Mobile View           |            |                                                                    |           |
+| Hamburger Menu        | Responsive | Display when screen size reduces to medium size                    | Pass      |
+| Site Logo	            | Click      | Redirect to home                                                   | Pass      |
+| Home Link             | Click      | Redirect to home                                                   | Pass      |
+| Books Link	          | Click      | Open Books page	                                                  | Pass      |
+| My Account Dropdown   | Click      | Open My Account dropdown                                           | Pass      |
+| My Account Dropdown	  | Display    | Display dropdown with Sign Up and Log In when user is not in session| Pass      |
+| Sign Up Link          | Click      | Open Sign Up page                                                  | Pass      |
+| Sign Up Link          | Display    | Not visible if user in session                                     | Pass      |
+| Log In Link           | Click      | Open Log In page                                                   | Pass      |
+| Log In Link           | Display    | Not visible if user in session                                     | Pass      |
+| Manage Books Dropdown | Click      | Open Manage Books dropdown                                         | Pass      |
+| Manage Books Dropdown	| Display    | Display dropdown with My Books, Borrowed Books, and Add Book when user is in session| Pass      |
+| My Books Link	        | Click	     | Open My Books page	                                                | Pass      |
+| My Books Link         | Display    | Only visible if user in session                                    | Pass      |
+| Borrowed Books Link	  | Click	     | Open Borrowed Books page	                                          | Pass      | 
+| Borrowed Books Link   | Display    | Only visible if user in session                                    | Pass      |
+| Add Book Link	        | Click	     | Open Add Book page	                                                | Pass      |
+| Add Book Link         | Display    | Only visible if user in session                                    | Pass      |
+| User Dropdown         | Click      | Open User dropdown                                                 | Pass      |
+| User Dropdown	        | Display    | Display dropdown with Profile and Log out when user is in session  | Pass      | 
+| Profile Link	        | Click	     | Open Profile page	                                                | Pass      | 
+| Profile Link          | Display    | Only visible if user in session                                    | Pass      |
+| Log Out Link          | Click      | Open log out confirm page                                          | Pass      |
+| Log Out Link          | Display    | Only visible if user in session                                    | Pass      |
+| All Nav Links         | Hover      | Color change to darkblue                                           | Pass      |
+| Home Link             | Active     | Blue box border                                                    | Pass      |
+| Books Link            | Active     | Blue box border                                                    | Pass      |
+|                       |            |                                                                    |           |
+| Footer                |            |                                                                    |           |
+| All links             | Click      | Open in new tab and to correct location                            | Pass      |
 
  
 
