@@ -15,15 +15,14 @@
     --blue: #143296;
     --light-blue: #e3ecfc;
     --light-grey: #f8f9fa;
-    --dark-blue: darkblue;
-    --dark-green: darkgreen;
+    --dark-blue: #00008b;
+    --dark-green: #005700;
     --white: #fff;
-    --dark-red: darkred;
+    --dark-red: #8b0000;
     --dark-brown: #442E10;
-    --red: red;
-    --antiquewhite: antiquewhite;
+    --antiquewhite: #faebd7;
     --dark-grey: #495057;
-    --teal: teal;
+    --teal: #008080;
     --navy-blue: #0056b3;
 }
 
@@ -70,7 +69,7 @@ h6 {
 }
 
 .navbar-nav .nav-link {
-  color: var(--green) !important;
+  color: var(--dark-green) !important;
 }
 
 .navbar-nav .nav-link:hover,
@@ -88,7 +87,7 @@ h6 {
 }
 
 .dropdown-menu .dropdown-item {
-  color: var(--green);
+  color: var(--dark-green);
 }
 
 .dropdown-menu .dropdown-item:hover,
@@ -234,6 +233,13 @@ section {
 /*--------------------------------------------------------------
 # Books 
 --------------------------------------------------------------*/
+
+.btn-green {
+  color: #005700;
+  border-color: var(--green);
+  background-color: #f8f9fa;
+}
+
 .cards__container {
   background-color: var(--light-blue);
   box-shadow: 0 0 3px 0px rgba(0, 0, 0, 0.3);
@@ -263,6 +269,7 @@ section {
 
 .card-title {
   color: var(--dark-blue);
+  font-size: 1.25rem;
 }
 
 .author {
@@ -270,11 +277,11 @@ section {
 }
 
 .status.available {
-  color: var(--green); 
+  color: var(--dark-green); 
 }
 
 .status.borrowed {
-  color: var(--red);
+  color: var(--dark-red);
 }
 
 .added {
@@ -378,7 +385,7 @@ section {
 }
 
 .new-category {
-  color: var(--green)
+  color: var(--dark-green)
 }
 
 /*--------------------------------------------------------------
