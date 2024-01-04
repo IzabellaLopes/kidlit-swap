@@ -10,7 +10,7 @@
     <hr class="break" />
     <br />
     <!-- Added Books section -->
-    <section class="my-books-section">
+    <section class="my-books-section pt-0">
       <div class="static-card py-3">
         <h2 class="my-books-title text-center">Added Books</h2>
       </div>
@@ -18,7 +18,7 @@
       <div class="cards__container row g-2 g-sm-3 rounded">
         {% for book in user_books %}
         <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-          <div class="card rounded m-3 text-center position-relative">
+          <div class="card no-pointer rounded m-3 text-center position-relative">
             <div class="ratio ratio-1x1 mt-1">
               {% if 'placeholder' in book.image.url %}
               <!-- Placeholder Image if Image is Not Available -->
