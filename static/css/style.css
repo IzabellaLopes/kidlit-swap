@@ -533,4 +533,8 @@ section {
   .w-80 {
   width: 80%;
   }
+
+  .logo {
+    margin-left: 0 !important;
+  }
 }
