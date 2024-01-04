@@ -16,15 +16,34 @@ class Home(generic.TemplateView):
     View to display the home page
     """
     template_name = "index.html"
-    
+
     def get_context_data(self, **kwargs):
         """
         Discover Our Features
         """
         features = [
-            {"icon": "book", "title": "Explore Our Library", "description1": "Find books for kids and add your favorites to our collection", "description2": "Be part of our growing community of young readers"},
-            {"icon": "book-open-reader", "title": "See What's Available and Borrow", "description1": "Check which books are ready to borrow", "description2": "Pick a date that works for you to enjoy a smooth borrowing process"},
-            {"icon": "child-reaching", "title": "Enjoy Quality Time with Your Kids", "description1": "Have fun reading with your children", "description2": "Create wonderful memories with enchanting stories"},
+            {
+                "icon": "book",
+                "title": "Explore Our Library",
+                "description1": ("Find books for kids and add your favorites "
+                                 "to our collection"),
+                "description2": ("Be part of our growing community of young "
+                                 "readers"),
+            },
+            {
+                "icon": "book-open-reader",
+                "title": "See What's Available and Borrow",
+                "description1": "Check which books are ready to borrow",
+                "description2": ("Pick a date that works for you to enjoy "
+                                 "a smooth borrowing process"),
+            },
+            {
+                "icon": "child-reaching",
+                "title": "Enjoy Quality Time with Your Kids",
+                "description1": "Have fun reading with your children",
+                "description2": ("Create wonderful memories with enchanting "
+                                 "stories"),
+            },
         ]
 
         context = super().get_context_data(**kwargs)
@@ -64,7 +83,8 @@ class BookList(generic.ListView):
 
 class CategoryBookList(generic.ListView):
     """
-    View to display a paginated list of books in alphabetical order based on category
+    View to display a paginated list of books
+    in alphabetical order based on category
     """
     template_name = 'category_books.html'
     paginate_by = 8
@@ -72,7 +92,8 @@ class CategoryBookList(generic.ListView):
     def get_queryset(self):
         category_name = self.kwargs.get('category_name')
         category = get_object_or_404(Category, name=category_name)
-        return Book.objects.filter(category=category).order_by('status', 'title')
+        return Book.objects.filter(category=category).order_by(
+            'status', 'title')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -98,16 +119,18 @@ class BookDetail(generic.DetailView):
 
 class NewCategoryMixin:
     """
-    Mixin to handle the creation of a new category when adding or editing a book
+    Mixin to handle the creation of a new category
+    when adding or editing a book
     """
     def form_valid(self, form):
         form.instance.added_by = self.request.user
-        
+
         # Check if the user entered a new category
         new_category = form.cleaned_data.get('new_category', '').strip()
         if new_category:
             # Create a new Category instance
-            category = Category.objects.create(name=new_category, description='')
+            category = Category.objects.create(
+                name=new_category, description='')
             form.instance.category = category
         else:
             # Use the existing category selected in the form
@@ -116,7 +139,12 @@ class NewCategoryMixin:
         return super().form_valid(form)
 
 
-class AddBook(NewCategoryMixin, LoginRequiredMixin, UserPassesTestMixin, generic.CreateView):
+class AddBook(
+    NewCategoryMixin,
+    LoginRequiredMixin,
+    UserPassesTestMixin,
+    generic.CreateView
+):
     """
     View to allow logged in users to add a book
     """
@@ -140,7 +168,7 @@ class MyBooks(LoginRequiredMixin, generic.ListView):
     def get_queryset(self):
         # Retrieve books added by the logged-in user
         return Book.objects.filter(added_by=self.request.user)
-    
+
 
 class BorrowedBooks(generic.ListView):
     """
@@ -152,15 +180,23 @@ class BorrowedBooks(generic.ListView):
 
     def get_queryset(self):
         # Retrieve books borrowed by the logged-in user
-        return Book.objects.filter(borrower=self.request.user, status='Borrowed')
-    
+        return Book.objects.filter(
+            borrower=self.request.user,
+            status='Borrowed'
+            )
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
         return context
 
 
-class EditBook(NewCategoryMixin, LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView):
+class EditBook(
+    NewCategoryMixin,
+    LoginRequiredMixin,
+    UserPassesTestMixin,
+    generic.UpdateView
+):
     """
     View to edit a book added by the logged-in user
     """
@@ -183,13 +219,14 @@ class DeleteBook(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
 
     def test_func(self):
         return self.request.user == self.get_object().added_by
-    
+
     def get(self, request, *args, **kwargs):
         book = self.get_object()
         if not book.can_delete():
             messages.error(
                 self.request,
-                f'You cannot delete this book because it is borrowed to {book.borrower.username}'
+                f'You cannot delete this book because it is borrowed to '
+                f'{book.borrower.username}'
             )
             return redirect('my_books')
         return super().get(request, *args, **kwargs)
@@ -245,11 +282,13 @@ class BorrowBookView(LoginRequiredMixin, View):
                     book.save()
 
                 messages.success(
-                    request, f'You have successfully borrowed the book "{book.title.upper()}".'
+                    request, (
+                        f'You have successfully borrowed the book '
+                        f'"{book.title.upper()}"'
                     )
-                return redirect(
-                    'book_detail', slug=slug
-                    )
+                )
+
+                return redirect('book_detail', slug=slug)
             else:
                 messages.error(
                     request, 'Invalid form data. Please try again.'
@@ -278,7 +317,10 @@ class ReturnBookView(LoginRequiredMixin, View):
             book.return_date = None
             book.save()
 
-            messages.success(request, f'You have successfully returned the book "{book.title.upper()}".')
+            messages.success(
+                request,
+                f'You have successfully returned the book "{book.title.upper()}"'
+                )
         else:
             messages.error(request, 'This book cannot be returned.')
 
@@ -300,7 +342,8 @@ class CustomSignupView(SignupView):
             form (django.forms.Form): The invalid form submitted by the user
 
         Returns:
-            django.http.HttpResponse: The response generated by the superclass method
+            django.http.HttpResponse:
+            The response generated by the superclass method
         """
         response = super().form_invalid(form)
 
@@ -311,19 +354,34 @@ class CustomSignupView(SignupView):
         password_errors = form.errors.get('password1', [])
         for error in password_errors:
             if 'at least 8 characters' in error:
-                error_messages.append('This password is too short. It must contain at least 8 characters.')
+                error_messages.append(
+                    'This password is too short. '
+                    'It must contain at least 8 characters.'
+                )
             elif 'too common' in error:
-                error_messages.append('This password is too common. Try another one.')
+                error_messages.append(
+                    'This password is too common. Try another one.'
+                )
             elif 'numeric' in error:
                 error_messages.append('This password is entirely numeric.')
 
         # Check if passwords do not match
-        if form.cleaned_data.get('password1') != form.cleaned_data.get('password2'):
+        if (
+            form.cleaned_data.get('password1')
+            !=
+            form.cleaned_data.get('password2')
+        ):
             error_messages.append('Passwords do not match.')
-            
+
         # Check for existing username or blank/whitespace
-        if not form.cleaned_data.get('username') or form.cleaned_data.get('username').isspace():
-            error_messages.append('Username error: Check availability and avoid blank or whitespace characters.')
+        if (
+            not form.cleaned_data.get('username') or
+            form.cleaned_data.get('username').isspace()
+        ):
+            error_messages.append(
+                'Username error: '
+                'Check availability and avoid blank or whitespace characters.'
+            )
 
         # Display all error messages
         for error_message in error_messages:
