@@ -24,6 +24,7 @@
   - [Device Testing](#device-testing)
   - [Manual Testing](#manual-testing)
     - [Site Navigation](#site-navigation)
+    - [Home Page](#home-page)
 
 ---
 
@@ -332,7 +333,14 @@ I conducted Lighthouse validation on all pages, including both mobile and deskto
 | All links             | Click      | Open in new tab and to correct location                            | Pass      |
 
  
+### Home Page
 
+| Element               | Action  | Expected Result                 | Pass/Fail |
+|-----------------------|---------|---------------------------------|-----------|
+| Hero 'Sign Up' Button | Click   | Open Sign up page               | Pass      |
+| Hero 'Sign Up' Button | Display | Not visible if user in session  | Pass      |
+| Hero 'Add Book" Button| Click   | Open Add Book page              | Pass      |
+| Hero 'Add Book" Button| Display | Only visible if user in session | Pass      |
 
 
 
