@@ -97,6 +97,9 @@ class BookDetail(generic.DetailView):
 
 
 class NewCategoryMixin:
+    """
+    Mixin to handle the creation of a new category when adding or editing a book
+    """
     def form_valid(self, form):
         form.instance.added_by = self.request.user
         
@@ -158,6 +161,9 @@ class BorrowedBooks(generic.ListView):
 
 
 class EditBook(NewCategoryMixin, LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView):
+    """
+    View to edit a book added by the logged-in user
+    """
     model = Book
     form_class = BookForm
     template_name = 'edit_book.html'
@@ -200,6 +206,9 @@ def is_return_date_valid(selected_return_date):
 
 
 class BorrowBookView(LoginRequiredMixin, View):
+    """
+    View to handle the borrowing of a book
+    """
     def get(self, request, slug):
         book = get_object_or_404(Book, slug=slug)
 
@@ -256,6 +265,9 @@ class BorrowBookView(LoginRequiredMixin, View):
 
 
 class ReturnBookView(LoginRequiredMixin, View):
+    """
+    View to handle the return of a borrowed book
+    """
     def get(self, request, slug):
         book = get_object_or_404(Book, slug=slug)
 
