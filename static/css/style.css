@@ -537,4 +537,8 @@ section {
   .logo {
     margin-left: 0 !important;
   }
+
+  .navbar-toggler-icon {
+    font-size: medium;
+  }
 }
