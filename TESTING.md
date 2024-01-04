@@ -20,6 +20,7 @@
     - [JavaScript](#javascript)
     - [Python](#python)
     - [Lighthouse](#lighthouse)
+  - [Browser Testing](#browser-testing)
 
 ---
 
@@ -252,3 +253,11 @@ I conducted Lighthouse validation on all pages, including both mobile and deskto
 | Log in         |           95 |           100 |             100 | 100 |
 | Log out        |           95 |           100 |             100 | 100 |
 | Sign up        |           95 |           100 |             100 | 100 |
+
+## Browser Testing
+
+- The KidLit Swap website was tested on Google Chrome, Firefox, and Safari browsers, with no issues noted.
+
+
+
+   
