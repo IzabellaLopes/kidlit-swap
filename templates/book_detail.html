@@ -80,23 +80,31 @@
   <div class="modal-dialog">
       <div class="modal-content">
           <div class="modal-header">
-              <h1 class="modal-title fs-5" id="staticBackdropLabel">Confirm borrow details</h1>
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                  <i class="fas fa-info-circle"></i> Confirm borrow details
+              </h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <form id="borrowForm" method="post" action="{% url 'borrow_book' slug=book.slug %}">
               {% csrf_token %}
-              <label for="returnDate">Select return date:</label>
+              <label for="returnDate"><i class="far fa-calendar-alt"></i> Select return date:</label>
               <input type="date" id="returnDate" name="return_date" min="{% now 'Y-m-d' %}" required />
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Confirm</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                  <i class="fas fa-times"></i> Close
+                </button>
+                <button type="submit" class="btn btn-primary add-btn">
+                  <i class="fas fa-check"></i> Confirm
+                </button>
               </div>
             </form>
           </div>
       </div>
   </div>
 </div>
+<!-- End of Modal -->
+
 
 <script>
   // Add JavaScript to open the modal when the "Borrow This Book" button is clicked
