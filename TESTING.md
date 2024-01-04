@@ -27,6 +27,7 @@
     - [Home Page](#home-page)
     - [Books Page](#books-page)
     - [Book Details Page](#book-details-page)
+    - [My Books Page](#my-books-page)
 
 ---
 
@@ -356,6 +357,9 @@ I conducted Lighthouse validation on all pages, including both mobile and deskto
 | Category Dropdown	 | Hover         | Background color changes to green      	              | Pass      |
 | Category Dropdown	 | Hover         | Border color changes to dark-green       	            | Pass      |
 | Book Cards         | Click	       | Redirect to the detailed page of the book	            | Pass      |
+| Book Cards	       | Order	       | Displayed in alphabetical order based on book titles	  | Pass      |
+| Book Cards	       | Order	       | Available books displayed first, followed by Borrowed books | Pass |
+| Book Cards         | Hover         | Zoom effect                                            | Pass      |
 | Book Image	       | Display	     | Show book image	                                      | Pass      |
 | Book Title	       | Display	     | Show the title of the book	                            | Pass      |
 | Author	           | Display	     | Show the author of the book	                          | Pass      |
@@ -398,6 +402,30 @@ I conducted Lighthouse validation on all pages, including both mobile and deskto
 | Modal Confirm Button | Click       | Success message fades after 3 seconds                   | Pass      |
 
 
+### My Books Page
 
-   
-   
+| Element            | Action        | Expected Result                                        | Pass/Fail |
+|--------------------|---------------|--------------------------------------------------------|-----------|
+| User Authentication| Check         | Visible only when the user is authenticated            | Pass      |
+| "Added Books" Section	| Display	   | Show a title "Added Books"	                            | Pass      |
+| Book Cards	       | Display	     | Show cards for each book added by the authenticated user | Pass    |
+| Book Cards	       | Order	       | Displayed in alphabetical order based on book titles	  | Pass      |
+| Book Cards         | Hover         | Zoom effect                                            | Pass      |
+| Book Image	       | Display	     | Show the image of the book on each card	              | Pass      |
+| Book Title	       | Display	     | Show the title of the book on each card	              | Pass      |
+| Author	           | Display	     | Show the author of the book on each card	              | Pass      |
+| Book Status	       | Display       | Show the status of the book (Available/Borrowed) on each card | Pass  |
+| "View Details" Button	| Click	     | Redirect to the Book Details page for the selected book| Pass      |
+| "View Details" Button	| Display	   | Visible on each card for the authenticated user	      | Pass      |
+| "View Details" Button	| Hover	     | Background color changes to navy-blue on hover	        | Pass      |
+| "Edit" Button	     | Click	       | Redirect to the Edit Book page for the selected book	  | Pass      |
+| "Edit" Button	     | Display	     | Visible on each card for the authenticated user	      | Pass      |
+| "Edit" Button	     | Hover	       | Background color changes to secondary color on hover 	| Pass      |
+| "Delete" Button    | Click         | Redirect to the Delete Book page for the selected book	| Pass      |
+| "Delete" Button	   | Display	     | Visible on each card for the authenticated user	      | Pass      |
+| "Delete" Button	   | Hover	       | Background color changes to dark-red on hover	        | Pass      |
+|                    |               |                                                        |           |
+| Non-authenticated User |
+| Book Cards	| Display	| No cards displayed when the user is not authenticated	| Pass      |
+| Log In Prompt	| Display	| Display a prompt to log in when the user is not authenticated	| Pass      |
+| "Log In" Button	| Click	| Redirect to the log in page when clicked	| Pass      |
