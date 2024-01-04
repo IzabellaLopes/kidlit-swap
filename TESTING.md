@@ -26,6 +26,7 @@
     - [Site Navigation](#site-navigation)
     - [Home Page](#home-page)
     - [Books Page](#books-page)
+    - [Book Details Page](#book-details-page)
 
 ---
 
@@ -297,7 +298,8 @@ I conducted Lighthouse validation on all pages, including both mobile and deskto
 | Profile Link          | Display    | Only visible if user in session                                    | Pass      |
 | Log Out Link          | Click      | Open log out confirm page                                          | Pass      |
 | Log Out Link          | Display    | Only visible if user in session                                    | Pass      |
-| All Nav Links         | Hover      | Color change to darkblue and zoom effect                           | Pass      |
+| All Nav Links         | Hover      | Color change to darkblue                                           | Pass      |
+| All Nav Links         | Hover      | Zoom effect                                                        | Pass      |
 | Home Link             | Active     | Blue box border                                                    | Pass      |
 | Books Link            | Active     | Blue box border                                                    | Pass      |
 |                       |            |                                                                    |           |
@@ -350,17 +352,52 @@ I conducted Lighthouse validation on all pages, including both mobile and deskto
 |--------------------|---------------|--------------------------------------------------------|-----------|
 | Category Dropdown  | Click         | Display dropdown with available categories	            | Pass      |
 | Category Dropdown	 | Display       | Contains a list of available categories                | Pass      |
+| Category Dropdown	 | Hover         | Text color changes to light-grey       	              | Pass      |
+| Category Dropdown	 | Hover         | Background color changes to green      	              | Pass      |
+| Category Dropdown	 | Hover         | Border color changes to dark-green       	            | Pass      |
 | Book Cards         | Click	       | Redirect to the detailed page of the book	            | Pass      |
 | Book Image	       | Display	     | Show book image	                                      | Pass      |
 | Book Title	       | Display	     | Show the title of the book	                            | Pass      |
 | Author	           | Display	     | Show the author of the book	                          | Pass      |
-| Book Status	       | Display	     | Show the status of the book (Available/Borrowed)	      | Pass      | 
-| Added by	         | Display	     | Show the username of the user who added the book	      | Pass      | 
+| Book Status	       | Display	     | Show the status of the book (Available/Borrowed)	      | Pass      |
+| Added by	         | Display	     | Show the username of the user who added the book	      | Pass      |
 | Paginator	         | Click	       | Navigate to other pages	                              | Pass      |
 | Paginator	         | Display	     | Show pagination links	                                | Pass      |
 | Add Book Button    | Click	       | Open the Add Book page                                 | Pass      |
 | Add Book Button	   | Display	     | Visible, encouraging users to add a book	              | Pass      |
 
 
+### Book Details Page
 
+| Element            | Action        | Expected Result                                        | Pass/Fail |
+|--------------------|---------------|--------------------------------------------------------|-----------|
+| Book Image	       | Display	     | Show the image of the book	                            | Pass      |
+| Book Title	       | Display	     | Show the title of the book	                            | Pass      |
+| Author	           | Display	     | Show the author of the book	                          | Pass      |
+| Description	       | Display	     | Show the description of the book	                      | Pass      |
+| Category	         | Display	     | Show the category of the book	                        | Pass      |
+| Book Status	       | Display	     | Show the status of the book (Available/Borrowed)     	| Pass      |
+| Added by	         | Display	     | Show the username of the user who added the book	      | Pass      |
+| Log In Prompt      | Click	       | Redirect to the login page	                            | Pass      |
+| Log In Prompt      | Display	     | Visible only if the book is available and user is not authenticated	| Pass      |
+| Log In Button      | Click	       | Redirect to the login page	                            | Pass      |          
+| Log In Button 	   | Display	     | Visible only if the book is available and user is not authenticated	| Pass      |
+| Borrow This Book Button | Click	   | Open a modal to confirm borrowing details	            | Pass      |
+| Borrow This Book Button | Display	 | Visible only if the book is available and user is authenticated	| Pass      |
+| Borrow This Book Button | Hover	   | Background color changes to navy-blue	                | Pass      |
+| Borrowed Book Message	| Display	   | Show a message if the book is currently borrowed	      | Pass      |
+| Back to Book List	 | Click	       | Redirect to the Book List page	                        | Pass      |
+| Back to Book List	 | Display	     | Visible as a button to go back to the Book List page	  | Pass      |
+| Back to Book List	 | Hover         | Text color changes to light-grey       	              | Pass      |
+| Back to Book List	 | Hover         | Background color changes to green      	              | Pass      |
+| Back to Book List	 | Hover         | Border color changes to dark-green       	            | Pass      |
+| Modal	             | Close         | Close the modal when "Close" button is clicked       	| Pass      |
+| Modal	             | Confirm	     | Submit the borrow details form and close the modal    	| Pass      |
+| Modal Confirm Button | Hover	     | Background color changes to navy-blue	                | Pass      |
+| Modal Confirm Button | Click       | Success message appears informing 'You have successfully borrowed the book "title of the book" | Pass      |
+| Modal Confirm Button | Click       | Success message fades after 3 seconds                   | Pass      |
+
+
+
+   
    
