@@ -18,6 +18,7 @@
     - [HTML](#html)
     - [CSS](#css)
     - [JavaScript](#javascript)
+    - [Python](#python)
 
 ---
 
@@ -175,3 +176,42 @@ No errors were detected upon validating my JavaScript through [JS Hint](https://
 
 ![JS Hint](testing/testing_images/jshint.png)
 </details>
+
+### Python
+All Python files were run through [Code Institute Python Linter](https://pep8ci.herokuapp.com/#) and no errors were detected
+
+<details>
+
+<summary>admin.py</summary>
+
+![admin.py](testing/testing_images/pep8ci.admin.png)
+</details>
+
+<details>
+
+<summary>forms.py</summary>
+
+![forms.py](testing/testing_images/pep8ci.forms.png)
+</details>
+
+<details>
+
+<summary>models.py</summary>
+
+![models.py](testing/testing_images/pep8ci.models.png)
+</details>
+
+<details>
+
+<summary>urls.py</summary>
+
+![urls.py](testing/testing_images/pep8ci.urls.png)
+</details>
+
+<details>
+
+<summary>views.py</summary>
+
+![views.py](testing/testing_images/pep8ci.views.png)
+</details>
+
