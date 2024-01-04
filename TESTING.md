@@ -19,6 +19,7 @@
     - [CSS](#css)
     - [JavaScript](#javascript)
     - [Python](#python)
+    - [Lighthouse](#lighthouse)
 
 ---
 
@@ -215,3 +216,39 @@ All Python files were run through [Code Institute Python Linter](https://pep8ci.
 ![views.py](testing/testing_images/pep8ci.views.png)
 </details>
 
+### Lighthouse
+
+I conducted Lighthouse validation on all pages, including both mobile and desktop versions, to assess accessibility and performance. Initially, a warning was flagged regarding 'Background and foreground colors do not have a sufficient contrast ratio' in elements such as `nav-link`, `category button`, `Back to Book List button`, and the `Available and Borrowed status`. I addressed this issue by modifying the colors, referencing the [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/), to achieve the recommended Contrast Ratio. Subsequently, I implemented style adjustments based on Lighthouse recommendations, resulting in the following improved scores.
+
+| Page           | Performance  | Accessibility | Best Practices  | SEO |
+|----------------|:------------:|:-------------:|:---------------:|:---:|
+|                |              |               |                 |     |
+| Desktop        |              |               |                 |     |
+| Home           |          100 |           100 |             100 | 100 |
+| Book List      |           98 |           100 |             100 | 100 |
+| Book Details   |           99 |            99 |             100 | 100 |
+| Books Category |           99 |            98 |             100 | 100 |
+| My Books       |           98 |           100 |             100 | 100 |
+| Borrowed Books |           99 |           100 |             100 | 100 |
+| Add Book       |           99 |           100 |             100 | 100 |
+| Edit Book      |           99 |            98 |             100 | 100 |
+| Delete Book    |           99 |           100 |             100 | 100 |
+| Profile        |           99 |           100 |             100 | 100 |
+| Log in         |           99 |           100 |             100 | 100 |
+| Log out        |           99 |           100 |             100 | 100 |
+| Sign up        |           99 |           100 |             100 | 100 |
+|                |              |               |                 |     |
+| Mobile         |              |               |                 |     |
+| Home           |           94 |           100 |             100 | 100 |
+| Book List      |           94 |           100 |             100 | 100 |
+| Book Details   |           93 |            98 |             100 | 100 |
+| Books Category |           86 |            98 |             100 | 100 |
+| My Books       |           94 |           100 |             100 | 100 |
+| Borrowed Books |           95 |           100 |             100 | 100 |
+| Add Book       |           95 |           100 |             100 | 100 |
+| Edit Book      |           93 |            98 |             100 | 100 |
+| Delete Book    |           94 |           100 |             100 | 100 |
+| Profile        |           94 |           100 |             100 | 100 |
+| Log in         |           95 |           100 |             100 | 100 |
+| Log out        |           95 |           100 |             100 | 100 |
+| Sign up        |           95 |           100 |             100 | 100 |
