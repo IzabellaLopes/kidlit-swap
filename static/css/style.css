@@ -235,9 +235,15 @@ section {
 --------------------------------------------------------------*/
 
 .btn-green {
-  color: #005700;
+  color: var(--dark-green);
   border-color: var(--green);
-  background-color: #f8f9fa;
+  background-color: var(--light-grey);
+}
+
+.btn-green:hover {
+  color: var(--light-grey);
+  background-color: var(--green);
+  border-color: var(--dark-green);
 }
 
 .cards__container {
