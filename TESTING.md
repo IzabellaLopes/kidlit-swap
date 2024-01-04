@@ -21,6 +21,7 @@
     - [Python](#python)
     - [Lighthouse](#lighthouse)
   - [Browser Testing](#browser-testing)
+  - [Device Testing](#device-testing)
 
 ---
 
@@ -257,6 +258,20 @@ I conducted Lighthouse validation on all pages, including both mobile and deskto
 ## Browser Testing
 
 - The KidLit Swap website was tested on Google Chrome, Firefox, and Safari browsers, with no issues noted.
+
+## Device Testing
+
+- The KidLit Swap website was tested on a variety of devices, including Desktop, Laptop, iPhone 8, iPhone XR, and iPad, to ensure responsiveness across different screen sizes in both portrait and landscape modes. The website performed as intended, and the responsive design was checked using Chrome developer tools on multiple devices, maintaining structural integrity for various sizes.
+
+
+
+
+ 
+
+
+
+
+
 
 
 
