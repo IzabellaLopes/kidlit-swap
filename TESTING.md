@@ -25,6 +25,7 @@
   - [Manual Testing](#manual-testing)
     - [Site Navigation](#site-navigation)
     - [Home Page](#home-page)
+    - [Books Page](#books-page)
 
 ---
 
@@ -343,8 +344,22 @@ I conducted Lighthouse validation on all pages, including both mobile and deskto
 | Hero 'Add Book" Button| Display | Only visible if user in session | Pass      |
 
 
+### Books Page
 
-
+| Element            | Action        | Expected Result                                        | Pass/Fail |
+|--------------------|---------------|--------------------------------------------------------|-----------|
+| Category Dropdown  | Click         | Display dropdown with available categories	            | Pass      |
+| Category Dropdown	 | Display       | Contains a list of available categories                | Pass      |
+| Book Cards         | Click	       | Redirect to the detailed page of the book	            | Pass      |
+| Book Image	       | Display	     | Show book image	                                      | Pass      |
+| Book Title	       | Display	     | Show the title of the book	                            | Pass      |
+| Author	           | Display	     | Show the author of the book	                          | Pass      |
+| Book Status	       | Display	     | Show the status of the book (Available/Borrowed)	      | Pass      | 
+| Added by	         | Display	     | Show the username of the user who added the book	      | Pass      | 
+| Paginator	         | Click	       | Navigate to other pages	                              | Pass      |
+| Paginator	         | Display	     | Show pagination links	                                | Pass      |
+| Add Book Button    | Click	       | Open the Add Book page                                 | Pass      |
+| Add Book Button	   | Display	     | Visible, encouraging users to add a book	              | Pass      |
 
 
 
