@@ -33,6 +33,7 @@
     - [Borrowed Books Page](#borrowed-books-page)
     - [Add Book Page](#add-book-page)
     - [Profile Page](#profile-page)
+    - [Django All Auth Pages](#django-all-auth-pages)
 
 ---
 
@@ -595,3 +596,57 @@ I conducted Lighthouse validation on all pages, including both mobile and deskto
 |                       |            |                                                                    |           |
 | Responsive Design	| Check	| Confirm the responsiveness of the page on different screen sizes	| Pass |
 
+### Django All Auth Pages
+
+| Element                    | Action                                    | Expected Result                            | Pass/Fail |
+|----------------------------|-------------------------------------------|--------------------------------------------|-----------|
+| Sign Up                    |                                           |                                            |           |
+| Page Title         | Display |	Show the title "Sign Up" at the top of the page	| Pass |
+| Have an account? Log in        | Display |	Display Have an account? Log in (link)	| Pass |
+| Log in link               | Click                                     | Redirect to Log in page                     | Pass      |
+| Username field             | Leave empty                               | On submit: form won't submit               | Pass      |
+| Username field             | Leave empty                               | Error message displays                     | Pass      |
+| Username field             | Insert correct format                     | On submit: form submit                     | Pass      |
+| Username field             | Insert duplicate username                 | On submit: form won't submit               | Pass      |
+| Username field             | Insert duplicate username                 | Error message displays                     | Pass      |
+| Email field                | Insert incorrect format                   | On submit: form won't submit               | Pass      |
+| Email field                | Insert incorrect format                   | Error message displays                     | Pass      |
+| Email field                | Insert correct format                     | On submit: form submit                     | Pass      |
+| Email field                | Leave empty                               | On submit: form submit                     | Pass      |
+| Email field                | Insert duplicate email                    | On submit: form won't submit               | Pass      |
+| Email field                | Insert duplicate email                    | Error message displays                     | Pass      |
+| Password field             | Insert incorrect format                   | On submit: form won't submit               | Pass      |
+| Password field             | Insert incorrect format                   | Error message displays                     | Pass      |
+| Password field             | Passwords don't match                     | On submit: form won't submit               | Pass      |
+| Password field             | Passwords don't match                     | Error message displays                     | Pass      |
+| Password field             | Insert correct format and passwords match | On submit: form submit                     | Pass      |
+| Sign Up button(form valid) | Click                                     | Form submit                                | Pass      |
+| Sign Up button(form valid) | Click                                     | Redirect to home page                      | Pass      |
+| Sign Up button(form valid) | Click                                     | Success message confirming login appears   | Pass      |
+| Sign Up button(form valid) | Click                                     | Success message fades after 3 seconds      | Pass      |
+|                            |                                           |                                            |           |
+| Log in                     |                                           |                                            |           |
+| Page Title         | Display |	Show the title "Log In" at the top of the page	| Pass |
+| Welcome to KidLit Swap! Don't have an account? Sign up  | Display |	Display Welcome to KidLit Swap! Don't have an account? Sign up (link)	| Pass |
+| Sign up link               | Click                                     | Redirect to sign up page                   | Pass      |
+| Username field             | Leave empty                               | On submit: form won't submit               | Pass      |
+| Username field             | Leave empty                               | Error message displays                     | Pass      |
+| Username field             | Insert wrong username                     | On submit: form won't submit               | Pass      |
+| Username field             | Insert wrong username                     | Error message displays                     | Pass      |
+| Password field             | Leave empty                               | On submit: form won't submit               | Pass      |
+| Password field             | Leave empty                               | Error message displays                     | Pass      |
+| Password field             | Insert wrong password                     | On submit: form won't submit               | Pass      |
+| Password field             | Insert wrong password                     | Error message displays                     | Pass      |
+| Login button(form valid)   | Click                                     | Form submit                                | Pass      |
+| Login button(form valid)   | Click                                     | Redirect to home page                      | Pass      |
+| Login button(form valid)   | Click                                     | Success message confirming login appears   | Pass      |
+| Login button(form valid)   | Click                                     | Success message fades after 3 seconds      | Pass      |
+|                            |                                           |                                            |           |
+| Log Out Confirmation       |                                           |                                            |           |
+| Page Title         | Display |	Show the title "Log Out" at the top of the page	| Pass |
+| Log Out button              | Click                                     | Redirect to homepage                       | Pass      |
+| Log Out button              | Click                                     | Success message confirming log out appears | Pass      |
+| Log Out button              | Click                                     | Success message fades after 3 seconds      | Pass      |
+| Cancel button | Click | Redirect to homepage                       | Pass      |
+|                       |            |                                                                    |           |
+| Responsive Design	| Check	| Confirm the responsiveness of the page on different screen sizes	| Pass |
