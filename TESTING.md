@@ -29,6 +29,7 @@
     - [Book Details Page](#book-details-page)
     - [My Books Page](#my-books-page)
     - [Edit Book Page](#edit-book-page)
+    - [Delete Book Page](#delete-book-page)
 
 ---
 
@@ -464,3 +465,23 @@ I conducted Lighthouse validation on all pages, including both mobile and deskto
 | Save Changes Button	| Success	| Show a success message confirming the changes	| Pass | 
 | Save Changes Button	| Hover	| Background color changes to navy-blue |	Pass |
 | Save Changes Button	|Click	| Successfully saves changes and redirects to My Books page | Pass |
+
+### Delete Book Page
+
+| Element            | Action        | Expected Result                                        | Pass/Fail |
+|--------------------|---------------|--------------------------------------------------------|-----------|
+| Page Title         | Display |	Show the title "Delete Book" at the top of the page	| Pass |
+| Delete Confirmation	| Display	| Show a confirmation message to delete the book | Pass | 
+| Delete Button	| Click	| Delete the book and redirect to My Books page |	Pass | 
+| Cancel Button	| Click	| Redirect to My Books page without deletion | Pass | 
+| Unauthorized User	| Display	| Show an error message if the user can't delete | 	Pass | 
+| Unauthorized User	| Redirect	| Redirect to My Books with error message | 	Pass | 
+| User Authorized	| Display | Successfully delete the book if available | 	Pass | 
+| Borrowed Book	| Display | Prevent deletion and show error message	| Pass |
+
+*Note: Deletion is only allowed if the user is the owner of the book and the book is available. If the book is borrowed, deletion is not allowed, and an error message is displayed.*
+
+
+
+
+
