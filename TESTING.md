@@ -28,6 +28,7 @@
     - [Books Page](#books-page)
     - [Book Details Page](#book-details-page)
     - [My Books Page](#my-books-page)
+    - [Edit Book Page](#edit-book-page)
 
 ---
 
@@ -429,3 +430,37 @@ I conducted Lighthouse validation on all pages, including both mobile and deskto
 | Book Cards	| Display	| No cards displayed when the user is not authenticated	| Pass      |
 | Log In Prompt	| Display	| Display a prompt to log in when the user is not authenticated	| Pass      |
 | "Log In" Button	| Click	| Redirect to the log in page when clicked	| Pass      |
+
+### Edit Book Page
+
+| Element            | Action        | Expected Result                                        | Pass/Fail |
+|--------------------|---------------|--------------------------------------------------------|-----------|
+| Page Title         | Display |	Show the title "Edit Book" at the top of the page	| Pass |
+| Form Inputs	| Display	| Display form inputs for Title, Author, Description, Image, Category, and New Category	| Pass |
+| Title Input	| Fill	| Enter a valid book title	| Pass |
+| Author Input	| Fill	| Enter a valid author name	| Pass |
+| Description Input	| Fill	| Enter a valid book description	| Pass |
+| Image Input	| Upload	| Upload a valid image file	| Pass |
+| Image Input (Optional)	| Skip	| Form can be submitted without uploading an image, in which case a placeholder image is used	| Pass |
+| Image Upload Handling	| Cloudinary	| If an image is uploaded, it is stored on Cloudinary; if not, the placeholder image is used	| Pass |
+| Category Input	| Select	| Choose a category from the provided options	| Pass |
+| New Category Input	| Fill	| Enter a new category if selected "New Category"	| Pass |
+| New Category Input	| Optional	| Submit form without filling New Category, if not selected	| Pass |
+| Save Changes Button	| Click	| Submit the form with valid inputs	| Pass |
+| Submission	| Success	| Redirect to the My Books page for the newly edited book	| Pass |
+| Submission Redirect	| Check	| Confirm redirection to the My Books page for the edited book	| Pass |
+| Authentication	| Check	| Form and functionality only available when the user is authenticated	| Pass |
+| Authentication Prompt	| Check	| Redirect to login page if the user is not authenticated	| Pass |
+| Authentication Prompt	| Display	| Visible only when the user is not authenticated	| Pass
+| Authentication Prompt	| Click	| Redirect to log in page when clicked	| Pass |
+| Validation input	| Display	| Show error messages for invalid inputs	| Pass | 
+| Validation input	| Correct Error	| Correctly display error messages for invalid inputs	| Pass | 
+| New Category Input	| Optional	| Submit form without filling New Category, if not selected	| Pass | 
+| New Category Input	| Fill Optional	| Submit form with filling New Category, if selected	| Pass | 
+| New Category Input	| Category Added	| Confirm the addition of a new category in the system	| Pass | 
+| Save Changes Button	| Click	| Save the modifications made to the book details	| Pass | 
+| Save Changes Button	| Display	| Visible and accessible on the page	| Pass | 
+| Save Changes Button	| Redirect	| Redirect to the My Books page | Pass | 
+| Save Changes Button	| Success	| Show a success message confirming the changes	| Pass | 
+| Save Changes Button	| Hover	| Background color changes to navy-blue |	Pass |
+| Save Changes Button	|Click	| Successfully saves changes and redirects to My Books page | Pass |
