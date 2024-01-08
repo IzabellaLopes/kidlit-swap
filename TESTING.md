@@ -31,6 +31,7 @@
     - [Edit Book Page](#edit-book-page)
     - [Delete Book Page](#delete-book-page)
     - [Borrowed Books Page](#borrowed-books-page)
+    - [Add Book Page](#add-book-page)
 
 ---
 
@@ -514,3 +515,36 @@ I conducted Lighthouse validation on all pages, including both mobile and deskto
 | Return Book Button	| Redirect	| Redirect to Borrowed Books page | Pass |
 | Return Book Button	| Hover	| Background color changes to green |	Pass |
 
+### Add Book Page
+
+| Element            | Action        | Expected Result                                        | Pass/Fail |
+|--------------------|---------------|--------------------------------------------------------|-----------|
+| Page Title         | Display |	Show the title "Add Book" at the top of the page	| Pass |
+| Form Inputs	| Display	| Display form inputs for Title, Author, Description, Image, Category, and Do you want to add a new Category	| Pass |
+| Title Input	| Fill	| Enter a valid book title	| Pass |
+| Author Input	| Fill	| Enter a valid author name	| Pass |
+| Description Input	| Fill	| Enter a valid book description	| Pass |
+| Image Input	| Upload	| Upload a valid image file	| Pass |
+| Image Input (Optional)	| Skip	| Form can be submitted without uploading an image, in which case a placeholder image is used	| Pass |
+| Image Upload Handling	| Cloudinary	| If an image is uploaded, it is stored on Cloudinary; if not, the placeholder image is used	| Pass |
+| Category Input	| Select	| Choose a category from the provided options	| Pass |
+| Do you want to add a new Category Input	| Fill	| Enter a new category if selected "Do you want to add a new Category?"	| Pass |
+| Do you want to add a new Category Input	| Optional	| Submit form without filling Do you want to add a new Category, if not selected	| Pass |
+| Add Book Button	| Click	| Submit the form with valid inputs	| Pass |
+| Submission	| Success	| Redirect to the Book List page for the newly added book	| Pass |
+| Submission Redirect	| Check	| Confirm redirection to the Book List page for the added book	| Pass |
+| Authentication	| Check	| Form and functionality only available when the user is authenticated	| Pass |
+| Authentication Prompt	| Check	| Redirect to log in page if the user is not authenticated	| Pass |
+| Authentication Prompt	| Display	| Visible only when the user is not authenticated	| Pass
+| Authentication Prompt	| Click	| Redirect to log in page when clicked	| Pass |
+| Validation input	| Display	| Show error messages for invalid inputs	| Pass | 
+| Validation input	| Correct Error	| Correctly display error messages for invalid inputs	| Pass | 
+| Do you want to add a new Category Input	| Optional	| Submit form without filling New Category, if not selected	| Pass | 
+| Do you want to add a new Category Input	| Fill Optional	| Submit form with filling New Category, if selected	| Pass | 
+| Do you want to add a new Category Input	| Category Added	| Confirm the addition of a new category in the system	| Pass | 
+| Add Book Button	| Click	| Save the details of the new book		| Pass | 
+| Add Book Button	| Display	| Visible and accessible on the page	| Pass | 
+| Add Book Button	| Redirect	| Redirect to the Book List page | Pass | 
+| Add Book Button	| Success	| Show a success message confirming the addition		| Pass | 
+| Add Book Button	| Hover	| Background color changes to navy-blue |	Pass |
+| Add Book Button	| Click	| Successfully add a new book and redirects to Book List page | Pass |
