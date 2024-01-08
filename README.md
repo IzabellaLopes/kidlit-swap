@@ -4,6 +4,8 @@
 
 KidLit Swap, derived from Kids' Literature Swap, is a vibrant online community where parents unite to share and exchange children's books. Originating from conversations among parents at my kids' school, it serves as a virtual clubhouse celebrating the enchantment of storytelling in the digital era.
 
+Our initial idea is to meet every first Saturday of the month at the school, starting at 9:00 AM, to bring the books we want to add to the website. This way, we would kick off with a designated day, time, and location to commence our process of exchanging children's books. Soon, I plan to introduce a feature where the book's owner will be notified about a loan request and can coordinate a convenient location and time for both parties.
+
 KidLit Swap's purpose is clear – to encourage the sharing and borrowing of kids' literature, fostering a love for reading in young minds. You can share your favorite stories, borrow books from others, and be part of our growing library. It's a fun way to help your kids become great readers.
 
 Join KidLit Swap and let's make reading magical for our little ones!
