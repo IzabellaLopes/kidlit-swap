@@ -778,5 +778,9 @@ To clone the repository:
 I would like to express my gratitude to the following individuals who played significant roles in the successful completion of my fourth project:
 
 - I am grateful to my family for their consistent support and understanding throughout this period of intense studying.
-- I want to express my sincere thanks to my fellow peers from the April 2023 cohort at Code Institute. Their invaluable contributions in bug testing are deeply appreciated.
+- I want to express my sincere thanks to my fellow peers from the April 2023 cohort at Code Institute. 
 - Jubril Akolade, my mentor from the Code Institute.
+
+[Back to Contents](#contents)
+
+---
