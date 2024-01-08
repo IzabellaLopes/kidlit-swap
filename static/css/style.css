@@ -65,7 +65,7 @@ h6 {
 --------------------------------------------------------------*/
 
 .navbar-nav li.nav-item {
-    margin-right: 20px;
+  margin-right: 20px;
 }
 
 .navbar-nav .nav-link {
@@ -550,5 +550,9 @@ section {
 
   .navbar-toggler-icon {
     font-size: medium;
+  }
+
+  .break-lg {
+    width: 200px !important;
   }
 }
