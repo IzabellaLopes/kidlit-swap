@@ -270,13 +270,25 @@ I conducted Lighthouse validation on all pages, including both mobile and deskto
 | Log out        |           95 |           100 |             100 | 100 |
 | Sign up        |           95 |           100 |             100 | 100 |
 
+[Back to Contents](#contents)
+
+---
+
 ## Browser Testing
 
 - The KidLit Swap website was tested on Google Chrome, Firefox, and Safari browsers, with no issues noted.
 
+[Back to Contents](#contents)
+
+---
+
 ## Device Testing
 
 - The KidLit Swap website was tested on a variety of devices, including Desktop, Laptop, iPhone 8, iPhone XR, and iPad, to ensure responsiveness across different screen sizes in both portrait and landscape modes. The website performed as intended, and the responsive design was checked using Chrome developer tools on multiple devices, maintaining structural integrity for various sizes.
+
+[Back to Contents](#contents)
+
+---
 
 ## Manual Testing
 
@@ -654,6 +666,8 @@ I conducted Lighthouse validation on all pages, including both mobile and deskto
 |                       |            |                                                                    |           |
 | Responsive Design	| Check	| Confirm the responsiveness of the page on different screen sizes	| Pass |
 
+[Back to Contents](#contents)
+
 ---
 
 ## Bugs 
@@ -670,3 +684,7 @@ I conducted Lighthouse validation on all pages, including both mobile and deskto
 | **UNSOLVED BUG** | **DESCRIBE THE BUG**  | **ATTEMPTS TO RESOLVE**|
 | ------- | ------- | ------- |
 | Dropdown Not Staying Active	with the blue box | The dropdown menu doesn't stay active with the blue box, unlike the "Home" and "Books" dropdowns | Implemented JavaScript to add an "nav-active" class to the closest parent "nav-item" when the corresponding link is the active one. This solution works for "Home" and "Books" but doesn't appear to resolve the issue with dropdowns such as "My Account," "Manage Books," and the user's profile dropdown. Investigated possible conflicts with Bootstrap's dropdown behavior. Checked if the dropdown functionality was affected by the way it's nested inside the "navbar" structure. Reviewed Bootstrap documentation for dropdowns to ensure correct usage |
+
+[Back to Contents](#contents)
+
+---

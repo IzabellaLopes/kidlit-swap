@@ -62,7 +62,6 @@ Join KidLit Swap and let's make reading magical for our little ones!
     - [Languages Used](#languages-used)
     - [Frameworks - Libraries - Programs Used](#frameworks---libraries---programs-used)
   - [Testing](#testing)
-    - [Bugs](#bugs)
   - [Deployment](#deployment)
     - [Code Institute Python Essentials Template](#code-institute-python-essentials-template)
     - [Deployment process](#deployment-process)
@@ -642,11 +641,6 @@ In addition to the user stories outlined in the "Future Features," I also plan t
 ## Testing
 
 Please refer to [TESTING.md](TESTING.md) file for a comprehensive overview of all conducted testing procedures.
-
-### Bugs
-
-| **BUG** | **DESCRIBE THE BUG**  | **HOW I SOLVED**|
-| ------- | ------- | ------- |
 
 
 [Back to Contents](#contents)
