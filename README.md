@@ -630,7 +630,7 @@ In addition to the user stories outlined in the "Future Features," I also plan t
 - [Jshint](https://jshint.com/) - Used to validate Javascript.
 - [Responsinator](http://www.responsinator.com/) - Used to verify responsiveness of website on different devices.
 - [Techsini](https://techsini.com/multi-mockup/index.php) - To display the website image across various devices.
-- [Chat GPT](https://chat.openai.com/) - Enhance Readme.md readability; streamline content for effective communication.
+- [ChatGPT by OpenAI](https://chat.openai.com/) - Enhance Readme.md readability; streamline content for effective communication.
 - [Web Disability Simulator](https://chrome.google.com/webstore/detail/web-disability-simulator/olioanlbgbpmdlgjnnampnnlohigkjla) - A Google Chrome extension that allows you to view your site as people with accessibility needs would see it.
 
 
@@ -742,30 +742,36 @@ To clone the repository:
 
 ## Credits
 
-- [W3Schools](https://www.w3schools.com/)
-- [Django Docs](https://docs.djangoproject.com/en/4.0/)
-- [Bootstrap 4.6 Docs](https://getbootstrap.com/docs/4.6/getting-started/introduction/)
-- [Stack Overflow](https://stackoverflow.com/)
-- [Update View](https://pytutorial.com/django-updateview-example)
-- [Pagination](https://docs.djangoproject.com/en/2.2/topics/pagination/#using-paginator-in-a-view)
-- [AutoSlugField](https://django-extensions.readthedocs.io/en/latest/field_extensions.html)
-- [Code Institute - Blog Walkthrough Project](https://github.com/Code-Institute-Solutions/Django3blog)
-
 ### Code
 
+- [Code Institute Full Template](https://github.com/Code-Institute-Org/ci-full-template) - Utilized the Code Institute Full Template as the starting point for my fourth portfolio project, providing a structured foundation.
+- [I Think Therefore I Blog](https://docs.google.com/document/d/1xk8YHCy4psMngEZeYhh3ok2HLUk7cWf7whdHbHubrqY/edit#heading=h.5s9novsydyp1) - "I Think Therefore I Blog", from Code Institute, was essential for setting up a basic Django project, deploying to Heroku, and handling messages.
+- [README.md examples from kera-cudmore](https://github.com/kera-cudmore/readme-examples/tree/main) - I wish to express my gratitude to Kera Cudmore for furnishing the foundational structure of a README file. Since my first project, I have been using her README examples as a robust foundation for composing my own.
+- [Alison O'Keeffe - PP4 My Meal Planner](https://github.com/AliOKeeffe/PP4_My_Meal_Planner) - I would like to thank Alison O'Keeffe; even though the concept of her PP4 differs from mine, her splendid work served as a foundation and inspiration for me.
+- [Django Docs](https://docs.djangoproject.com/en/3.2/) - Referenced the official Django documentation for comprehensive guidance on Django features and functionality.
+- [Django All Auth Documentation](https://docs.allauth.org/en/latest/installation/quickstart.html) - Utilized Django All Auth documentation for incorporating authentication features into the project.
+- [Bootstrap v5.1 Docs](https://getbootstrap.com/docs/5.1/getting-started/introduction/) - Consulted Bootstrap v5.1 documentation for implementing responsive and visually appealing design elements.
+- [W3Schools](https://www.w3schools.com/) - Utilized W3Schools as a valuable resource for learning and implementing web development concepts.
+- [Stack Overflow](https://stackoverflow.com/) - Leveraged Stack Overflow for troubleshooting and finding solutions to specific coding challenges.
+- [AutoSlugField](https://django-extensions.readthedocs.io/en/latest/field_extensions.html) - Implemented AutoSlugField from Django Extensions for generating slugs automatically.
+- [Cloudinary](https://cloudinary.com/) - Integrated Cloudinary for efficient image management and optimization.
+- [Pagination](https://docs.djangoproject.com/en/2.2/topics/pagination/#using-paginator-in-a-view) - Followed Django documentation on Pagination for managing and displaying large datasets in a user-friendly manner.
 
 ### Content
 
 - Content for the website was written by Izabella Lopes.
+- [ChatGPT by OpenAI](https://chat.openai.com/) - Enhance Readme.md readability.
+
 
 ### Media
 
-Include credits for Imagery
-[Lexica Art](https://lexica.art/)
-[Oxford Owl](https://www.oxfordowl.co.uk/)
-[Canva](https://www.canva.com/)
+- [Lexica Art](https://lexica.art/) - Incorporated artistic visuals obtained from Lexica Art.
+- [Oxford Owl](https://www.oxfordowl.co.uk/) - Utilized book images provided by Oxford Owl.
+- [Canva](https://www.canva.com/) - I individually created media elements, including the logo and placeholder image, using Canva.
 
+[Back to Contents](#contents)
 
+---
 
 ## Acknowledgments
 
