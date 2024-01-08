@@ -34,6 +34,9 @@
     - [Add Book Page](#add-book-page)
     - [Profile Page](#profile-page)
     - [Django All Auth Pages](#django-all-auth-pages)
+  - [Bugs](#bugs)
+    - [Solved Bugs](#solved-bugs)
+    - [Unsolved Bugs](#unsolved-bugs)
 
 ---
 
@@ -650,3 +653,20 @@ I conducted Lighthouse validation on all pages, including both mobile and deskto
 | Cancel button | Click | Redirect to homepage                       | Pass      |
 |                       |            |                                                                    |           |
 | Responsive Design	| Check	| Confirm the responsiveness of the page on different screen sizes	| Pass |
+
+---
+
+## Bugs 
+
+### Solved Bugs
+
+| **BUG** | **DESCRIBE THE BUG**  | **HOW I SOLVED**|
+| ------- | ------- | ------- |
+| A glitch in the borrowing system allowed users to request borrowings for past dates | Users could request borrowings for dates in the past due to a logic flaw in the system | Resolved the bug by adding min="{% now 'Y-m-d' %}" to the returnDate input in borrow_book.html |
+| Login errors were not displaying properly | The issue arose when login errors were not being presented appropriately to users. The error messages were not clearly visible | To address this bug, I modified the login error display in the HTML template. The revised code now ensures that login errors are prominently shown in a container with an alert style. This enhancement offers users a clearer understanding of any issues during the login process. The solution involves using Bootstrap's alert component and iterating through login errors to present them individually in a more readable format |
+
+### Unsolved Bugs
+
+| **UNSOLVED BUG** | **DESCRIBE THE BUG**  | **ATTEMPTS TO RESOLVE**|
+| ------- | ------- | ------- |
+| Dropdown Not Staying Active	with the blue box | The dropdown menu doesn't stay active with the blue box, unlike the "Home" and "Books" dropdowns | Implemented JavaScript to add an "nav-active" class to the closest parent "nav-item" when the corresponding link is the active one. This solution works for "Home" and "Books" but doesn't appear to resolve the issue with dropdowns such as "My Account," "Manage Books," and the user's profile dropdown. Investigated possible conflicts with Bootstrap's dropdown behavior. Checked if the dropdown functionality was affected by the way it's nested inside the "navbar" structure. Reviewed Bootstrap documentation for dropdowns to ensure correct usage |
