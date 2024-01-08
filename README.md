@@ -63,7 +63,7 @@ Join KidLit Swap and let's make reading magical for our little ones!
     - [Frameworks - Libraries - Programs Used](#frameworks---libraries---programs-used)
   - [Testing](#testing)
   - [Deployment](#deployment)
-    - [Code Institute Python Essentials Template](#code-institute-python-essentials-template)
+    - [Code Institute Template](#code-institute-template)
     - [Deployment process](#deployment-process)
     - [Local Development](#local-development)
       - [How to Fork](#how-to-fork)
@@ -651,16 +651,66 @@ Please refer to [TESTING.md](TESTING.md) file for a comprehensive overview of al
 
 The website has been successfully deployed on Heroku. You can access the live site [here](https://kidlit-swap-96ca222a1195.herokuapp.com/).
 
-### Code Institute Python Essentials Template 
+### Code Institute Template 
 
-To create a terminal-based user interface using the Code Institute Python Essentials Template and display Python code output:
+To create a terminal-based user interface using the Code Institute Template:
 
-1. Go to the [Code Institute Essentials Template](https://github.com/Code-Institute-Org/python-essentials-template) and click on "Use this template."
+1. Go to the [Code Institute Full Template](https://github.com/Code-Institute-Org/ci-full-template) and click on "Use this template."
 2. Choose "Create a new repository."
 
 ### Deployment process
 
-Vide Txt
+1. GitHub Setup
+   - Log in to [Github](https://github.com/).
+   - Access the repository for deployment. The repository for the website can be found [here](https://github.com/IzabellaLopes/kidlit-swap).
+
+2. Heroku Setup
+   - Log in to [Heroku](https://www.heroku.com/). 
+   - Click the "New" button located in the top right corner..
+   - Select "Create New App."
+   - Provide a name for the app (kidlit-swap) and choose a region (Europe).
+   - Click the "Create app" button.
+   - Navigate to the "Deploy" section in the navigation bar. Under "Deployment Method," choose GitHub/Connect to GitHub.
+   - In the "Connect to GitHub" section, enter the repository name (kidlit-swap) and click the search button.
+   - Upon the repository link appearing in the search results, click the "Connect" button.
+    ![App information](documentation/app-information.png)
+
+3. Attach the Postgres database:
+   - In the Resources tab, under add-ons, type in Postgres and select the Heroku Postgres option.
+   - Copy the DATABASE_URL located in Config Vars in the Settings Tab.
+
+4. Prepare the environment and settings.py file:
+   - In your GitPod workspace, create an env.py file in the main directory.
+   - Add the DATABASE_URL value and your chosen SECRET_KEY value to the env.py file. 
+   - Update the settings.py file to import the env.py file and add the SECRETKEY and DATABASE_URL file paths.
+   - Comment out the default database configuration.
+   - Save files and make migrations.
+   - Add Cloudinary URL to env.py
+   - Add the Cloudinary libraries to the list of installed apps.
+   - Add the STATIC files settings - the url, storage path, directory path, root path, media url and default file storage path.
+   - Link the file to the templates directory in Heroku.
+   - Change the templates directory to TEMPLATES_DIR.
+   - Add Heroku to the ALLOWED_HOSTS list the format ['app_name.heroku.com', 'localhost'].
+
+5. Create files / directories
+   - Create requirements.txt file
+   - Create three directories in the main directory; media, storage and templates.
+   - Create a file named "Procfile" in the main directory and add the following: web: gunicorn project-name.wsgi
+
+6. Update Heroku Config Vars
+Add the following Config Vars in Heroku:
+   - SECRET_KEY value 
+   - CLOUDINARY_URL
+   - PORT = 8000
+   - DISABLE_COLLECTSTATIC = 1
+
+7. Deploy
+   - NB: Ensure in Django settings, DEBUG is False
+   - Go to the deploy tab on Heroku and connect to GitHub, then to the required repository. 
+   - Scroll to the bottom of the deploy page and either click Enable Automatic Deploys for automatic deploys or Deploy Branch to deploy manually. Manually deployed branches will need re-deploying each time the repo is updated.
+   - Click View to view the deployed site.
+
+The site is now live and operational. 
 
 
 ### Local Development
