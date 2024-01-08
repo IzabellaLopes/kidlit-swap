@@ -1,6 +1,6 @@
-# KidLit Swap
+# KidLit Swap | Testing
 
-![Home Page](documentation/home-page.png)
+![Home Page](documentation/readme_images/features/devices.png)
 
 
 [KidLit Swap Live Page](https://kidlit-swap-96ca222a1195.herokuapp.com/)
@@ -8,7 +8,7 @@
 
 ## CONTENTS
 
-- [KidLit Swap](#kidlit-swap)
+- [KidLit Swap | Testing](#kidlit-swap--testing)
   - [CONTENTS](#contents)
   - [User Story Testing](#user-story-testing)
     - [EPIC: Book Management System](#epic-book-management-system)

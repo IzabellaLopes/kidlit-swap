@@ -1,6 +1,6 @@
 # KidLit Swap
 
-![Home Page](documentation/home-page.png)
+![Home Page](documentation/readme_images/features/devices.png)
 
 KidLit Swap, derived from Kids' Literature Swap, is a vibrant online community where parents unite to share and exchange children's books. Originating from conversations among parents at my kids' school, it serves as a virtual clubhouse celebrating the enchantment of storytelling in the digital era.
 
