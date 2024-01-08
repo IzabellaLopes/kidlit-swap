@@ -32,6 +32,7 @@
     - [Delete Book Page](#delete-book-page)
     - [Borrowed Books Page](#borrowed-books-page)
     - [Add Book Page](#add-book-page)
+    - [Profile Page](#profile-page)
 
 ---
 
@@ -339,6 +340,8 @@ I conducted Lighthouse validation on all pages, including both mobile and deskto
 |                       |            |                                                                    |           |
 | Footer                |            |                                                                    |           |
 | All links             | Click      | Open in new tab and to correct location                            | Pass      |
+|                       |            |                                                                    |           |
+| Responsive Design	| Check	| Confirm the responsiveness of the page on different screen sizes	| Pass |
 
  
 ### Home Page
@@ -349,6 +352,8 @@ I conducted Lighthouse validation on all pages, including both mobile and deskto
 | Hero 'Sign Up' Button | Display | Not visible if user in session  | Pass      |
 | Hero 'Add Book" Button| Click   | Open Add Book page              | Pass      |
 | Hero 'Add Book" Button| Display | Only visible if user in session | Pass      |
+|                       |            |                                                                    |           |
+| Responsive Design	| Check	| Confirm the responsiveness of the page on different screen sizes	| Pass |
 
 
 ### Books Page
@@ -373,6 +378,8 @@ I conducted Lighthouse validation on all pages, including both mobile and deskto
 | Paginator	         | Display	     | Show pagination links	                                | Pass      |
 | Add Book Button    | Click	       | Open the Add Book page                                 | Pass      |
 | Add Book Button	   | Display	     | Visible, encouraging users to add a book	              | Pass      |
+|                       |            |                                                                    |           |
+| Responsive Design	| Check	| Confirm the responsiveness of the page on different screen sizes	| Pass |
 
 
 ### Book Details Page
@@ -404,6 +411,8 @@ I conducted Lighthouse validation on all pages, including both mobile and deskto
 | Modal Confirm Button | Hover	     | Background color changes to navy-blue	                | Pass      |
 | Modal Confirm Button | Click       | Success message appears informing 'You have successfully borrowed the book "title of the book" | Pass      |
 | Modal Confirm Button | Click       | Success message fades after 3 seconds                   | Pass      |
+|                       |            |                                                                    |           |
+| Responsive Design	| Check	| Confirm the responsiveness of the page on different screen sizes	| Pass |
 
 
 ### My Books Page
@@ -428,6 +437,8 @@ I conducted Lighthouse validation on all pages, including both mobile and deskto
 | "Delete" Button    | Click         | Redirect to the Delete Book page for the selected book	| Pass      |
 | "Delete" Button	   | Display	     | Visible on each card for the authenticated user	      | Pass      |
 | "Delete" Button	   | Hover	       | Background color changes to dark-red on hover	        | Pass      |
+|                       |            |                                                                    |           |
+| Responsive Design	| Check	| Confirm the responsiveness of the page on different screen sizes	| Pass |
 |                    |               |                                                        |           |
 | Non-authenticated User |
 | Book Cards	| Display	| No cards displayed when the user is not authenticated	| Pass      |
@@ -467,6 +478,8 @@ I conducted Lighthouse validation on all pages, including both mobile and deskto
 | Save Changes Button	| Success	| Show a success message confirming the changes	| Pass | 
 | Save Changes Button	| Hover	| Background color changes to navy-blue |	Pass |
 | Save Changes Button	|Click	| Successfully saves changes and redirects to My Books page | Pass |
+|                       |            |                                                                    |           |
+| Responsive Design	| Check	| Confirm the responsiveness of the page on different screen sizes	| Pass |
 
 ### Delete Book Page
 
@@ -484,6 +497,8 @@ I conducted Lighthouse validation on all pages, including both mobile and deskto
 | Unauthorized User	| Redirect	| Redirect to My Books with error message | 	Pass | 
 | User Authorized	| Display | Successfully delete the book if available | 	Pass | 
 | Borrowed Book	| Display | Prevent deletion and show error message	| Pass |
+|                       |            |                                                                    |           |
+| Responsive Design	| Check	| Confirm the responsiveness of the page on different screen sizes	| Pass |
 
 *Note: Deletion is only allowed if the user is the owner of the book and the book is available. If the book is borrowed, deletion is not allowed, and an error message is displayed.*
 
@@ -514,6 +529,8 @@ I conducted Lighthouse validation on all pages, including both mobile and deskto
 | Return Book Button	| Click	| Return the book. Book status changes from Borrowed to Available. Redirect to Borrowed Books page | Pass |
 | Return Book Button	| Redirect	| Redirect to Borrowed Books page | Pass |
 | Return Book Button	| Hover	| Background color changes to green |	Pass |
+|                       |            |                                                                    |           |
+| Responsive Design	| Check	| Confirm the responsiveness of the page on different screen sizes	| Pass |
 
 ### Add Book Page
 
@@ -548,3 +565,33 @@ I conducted Lighthouse validation on all pages, including both mobile and deskto
 | Add Book Button	| Success	| Show a success message confirming the addition		| Pass | 
 | Add Book Button	| Hover	| Background color changes to navy-blue |	Pass |
 | Add Book Button	| Click	| Successfully add a new book and redirects to Book List page | Pass |
+|                       |            |                                                                    |           |
+| Responsive Design	| Check	| Confirm the responsiveness of the page on different screen sizes	| Pass |
+
+### Profile Page
+
+| Element            | Action        | Expected Result                                        | Pass/Fail |
+|--------------------|---------------|--------------------------------------------------------|-----------|
+| Page Title         | Display |	Show the title "Profile" at the top of the page	| Pass |
+| Welcome User	| Display	| Display a welcome message addressing the user by their username	| Pass | 
+| Books Added Card	| Display	| Show a card with the title "Books Added"	| Pass | 
+| Books Added Card	| Hover	| Zoom effect 	| Pass | 
+| Books Added Count	| Display	| Display the count of books added by the user	| Pass | 
+| Books Added Count (Zero)	|  Display	| Display "0 books" if the user hasn't added any books	| Pass | 
+| View My Books Button	| Click	| Redirect to the My Books page	| Pass | 
+| View My Books Button	| Redirect	| Redirect to the My Books page	| Pass |
+| View My Books Button	| Hover	| Background color changes to navy-blue	| Pass | 
+| Books Borrowed Card	| Display	| Show a card with the title "Books Borrowed"	| Pass | 
+| Books Borrowed Card	| Hover	| Zoom effect 	| Pass |
+| Books Borrowed Count	| Display	| Display the count of books borrowed by the user	| Pass | 
+| Books Borrowed Count (Zero)	| Display	| Display "0 books" if the user hasn't borrowed any books	| Pass | 
+| View Borrowed Books Button	| Click	| Redirect to the Borrowed Books page	| Pass | 
+| View Borrowed Books Button	| Redirect	| Redirect to the Borrowed Books page	| Pass | 
+| Cards Container	| Display	| Show a rounded container for the cards	| Pass | 
+| Authentication	| Check	| Profile page accessible only when the user is authenticated	| Pass | 
+| Authentication Prompt	| Check	| Redirect to log in page if the user is not authenticated	| Pass | 
+| Authentication Prompt	| Display	| Visible only when the user is not authenticated	| Pass | 
+| Authentication Prompt	| Click	| Redirect to log in page when clicked	| Pass | 
+|                       |            |                                                                    |           |
+| Responsive Design	| Check	| Confirm the responsiveness of the page on different screen sizes	| Pass |
+
