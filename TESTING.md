@@ -30,6 +30,7 @@
     - [My Books Page](#my-books-page)
     - [Edit Book Page](#edit-book-page)
     - [Delete Book Page](#delete-book-page)
+    - [Borrowed Books Page](#borrowed-books-page)
 
 ---
 
@@ -451,7 +452,7 @@ I conducted Lighthouse validation on all pages, including both mobile and deskto
 | Submission	| Success	| Redirect to the My Books page for the newly edited book	| Pass |
 | Submission Redirect	| Check	| Confirm redirection to the My Books page for the edited book	| Pass |
 | Authentication	| Check	| Form and functionality only available when the user is authenticated	| Pass |
-| Authentication Prompt	| Check	| Redirect to login page if the user is not authenticated	| Pass |
+| Authentication Prompt	| Check	| Redirect to log in page if the user is not authenticated	| Pass |
 | Authentication Prompt	| Display	| Visible only when the user is not authenticated	| Pass
 | Authentication Prompt	| Click	| Redirect to log in page when clicked	| Pass |
 | Validation input	| Display	| Show error messages for invalid inputs	| Pass | 
@@ -471,6 +472,10 @@ I conducted Lighthouse validation on all pages, including both mobile and deskto
 | Element            | Action        | Expected Result                                        | Pass/Fail |
 |--------------------|---------------|--------------------------------------------------------|-----------|
 | Page Title         | Display |	Show the title "Delete Book" at the top of the page	| Pass |
+| Authentication	| Check	| Functionality only available when the user is authenticated	and is the owner of the book | Pass |
+| Authentication Prompt	| Check	| Redirect to log in page if the user is not authenticated	| Pass |
+| Authentication Prompt	| Display	| Visible only when the user is not authenticated	| Pass
+| Authentication Prompt	| Click	| Redirect to log in page when clicked	| Pass |
 | Delete Confirmation	| Display	| Show a confirmation message to delete the book | Pass | 
 | Delete Button	| Click	| Delete the book and redirect to My Books page |	Pass | 
 | Cancel Button	| Click	| Redirect to My Books page without deletion | Pass | 
@@ -481,7 +486,31 @@ I conducted Lighthouse validation on all pages, including both mobile and deskto
 
 *Note: Deletion is only allowed if the user is the owner of the book and the book is available. If the book is borrowed, deletion is not allowed, and an error message is displayed.*
 
+### Borrowed Books Page
 
-
-
+| Element            | Action        | Expected Result                                        | Pass/Fail |
+|--------------------|---------------|--------------------------------------------------------|-----------|
+| Page Title         | Display |	Show the title "Borrowed Books" at the top of the page	| Pass |
+| Authentication	| Check	| Functionality only available when the user is authenticated | Pass |
+| Authentication Prompt	| Check	| Redirect to log in page if the user is not authenticated	| Pass |
+| Authentication Prompt	| Display	| Visible only when the user is not authenticated	| Pass
+| Authentication Prompt	| Click	| Redirect to log in page when clicked	| Pass |
+| | | | |
+| No Borrowed Books	| Display | Show a message if the user has no borrowed books |	Pass |
+| Do you want to borrow a book Button	| Display | Only display if the user has no borrowed books |	Pass |
+| Do you want to borrow a book Button	| Click | Redirect to Book list page |	Pass |
+| Do you want to borrow a book Button	| Redirect | Redirect to Book list page |	Pass |
+| Do you want to borrow a book Button	| Hover | Background color changes to navy-blue |	Pass |
+| | | | |
+| User Borrowed Books	| Display	| Display a list of books borrowed by the user | Pass |
+| Book Cards         | Hover         | Zoom effect                                            | Pass      |
+| Book Card	| Display	| Show each borrowed book with its details |	Pass |
+| Book Image	| Display	| Show the image of the borrowed book |	Pass | 
+| Book Title	| Display	| Show the title of the borrowed book | Pass | 
+| Owner	| Display	| Show the username of the book owner | Pass | 
+| Return Date	| Display	| Show the return date of the borrowed book | Pass | 
+| Return Book Button |	Display	 | Visible only for borrowed books |	Pass |
+| Return Book Button	| Click	| Return the book. Book status changes from Borrowed to Available. Redirect to Borrowed Books page | Pass |
+| Return Book Button	| Redirect	| Redirect to Borrowed Books page | Pass |
+| Return Book Button	| Hover	| Background color changes to green |	Pass |
 
