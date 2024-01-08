@@ -208,6 +208,10 @@ class EditBook(
     def test_func(self):
         return self.request.user == self.get_object().added_by
 
+    def form_valid(self, form):
+        messages.success(self.request, 'Book successfully updated.')
+        return super().form_valid(form)
+
 
 class DeleteBook(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
     """
@@ -318,9 +322,12 @@ class ReturnBookView(LoginRequiredMixin, View):
             book.save()
 
             messages.success(
-                request,
-                f'You have successfully returned the book "{book.title.upper()}"'
-                )
+                request, (
+                    f'You have successfully returned the book '
+                    f'"{book.title.upper()}"'
+                    )
+            )
+
         else:
             messages.error(request, 'This book cannot be returned.')
 
