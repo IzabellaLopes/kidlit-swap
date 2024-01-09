@@ -19,32 +19,32 @@
                         {% csrf_token %}
                         <!-- Title Input -->
                         <div class="mb-3">
-                            <label for="{{ form.title.id }}" class="form-label">Title*</label>
+                            <label for="id_title" class="form-label">Title*</label>
                             {{ form.title }}
                         </div>
                         <!-- Author Input -->
                         <div class="mb-3">
-                            <label for="{{ form.author.id }}" class="form-label">Author*</label>
+                            <label for="id_author" class="form-label">Author*</label>
                             {{ form.author }}
                         </div>
                         <!-- Description Input -->
                         <div class="mb-3">
-                            <label for="{{ form.description.id }}" class="form-label">Description*</label>
+                            <label for="id_description" class="form-label">Description*</label>
                             {{ form.description }}
                         </div>
                         <!-- Image Input -->
                         <div class="mb-3">
-                            <label for="{{ form.image.id }}" class="form-label">Image</label>
+                            <label for="id_image" class="form-label">Image</label>
                             {{ form.image }}
                         </div>
                         <!-- Category Input -->
                         <div class="mb-3">
-                            <label for="{{ form.category.id }}" class="form-label">Category</label>
+                            <label for="id_category" class="form-label">Category</label>
                             {{ form.category }}
                         </div>
                         <!-- New Category Input -->
                         <div class="mb-3 new-category">
-                            <label for="{{ form.new_category.id }}" class="form-label">Do you want to add a new Category?</label>
+                            <label for="id_new_category" class="form-label">Do you want to add a new Category?</label>
                             {{ form.new_category }}
                         </div>
                         <!-- Submit Button -->
