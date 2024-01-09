@@ -229,7 +229,7 @@ class EditBook(
         return self.request.user == self.get_object().added_by
 
     def form_valid(self, form):
-        messages.success(self.request, 'Book successfully updated.')
+        messages.success(self.request, 'Book successfully updated')
         return super().form_valid(form)
 
 
@@ -296,7 +296,7 @@ class BorrowBookView(LoginRequiredMixin, View):
         else:
             messages.error(
                 request,
-                'This book is not available for borrowing.'
+                'This book is not available for borrowing'
             )
             return redirect('book_detail', slug=slug)
 
@@ -327,14 +327,14 @@ class BorrowBookView(LoginRequiredMixin, View):
                 return redirect('book_detail', slug=slug)
             else:
                 messages.error(
-                    request, 'Invalid form data. Please try again.'
+                    request, 'Invalid form data. Please try again'
                     )
                 return render(
                     request, 'book_detail.html', {'book': book, 'form': form}
                     )
         else:
             messages.error(
-                request, 'This book is not available for borrowing.'
+                request, 'This book is not available for borrowing'
                 )
             return redirect('book_detail', slug=slug)
 
@@ -361,7 +361,7 @@ class ReturnBookView(LoginRequiredMixin, View):
             )
 
         else:
-            messages.error(request, 'This book cannot be returned.')
+            messages.error(request, 'This book cannot be returned')
 
         return redirect('borrowed_books')
 
@@ -395,14 +395,14 @@ class CustomSignupView(SignupView):
             if 'at least 8 characters' in error:
                 error_messages.append(
                     'This password is too short. '
-                    'It must contain at least 8 characters.'
+                    'It must contain at least 8 characters'
                 )
             elif 'too common' in error:
                 error_messages.append(
-                    'This password is too common. Try another one.'
+                    'This password is too common. Try another one'
                 )
             elif 'numeric' in error:
-                error_messages.append('This password is entirely numeric.')
+                error_messages.append('This password is entirely numeric')
 
         # Check if passwords do not match
         if (
@@ -410,7 +410,7 @@ class CustomSignupView(SignupView):
             !=
             form.cleaned_data.get('password2')
         ):
-            error_messages.append('Passwords do not match.')
+            error_messages.append('Passwords do not match')
 
         # Check for existing username or blank/whitespace
         if (
@@ -419,7 +419,7 @@ class CustomSignupView(SignupView):
         ):
             error_messages.append(
                 'Username error: '
-                'Check availability and avoid blank or whitespace characters.'
+                'Check availability and avoid blank or whitespace characters'
             )
 
         # Display all error messages
