@@ -255,6 +255,18 @@ class DeleteBook(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
             return redirect('my_books')
         return super().get(request, *args, **kwargs)
 
+    def delete(self, request, *args, **kwargs):
+        response = super().delete(request, *args, **kwargs)
+
+        # Display success message
+        messages.success(
+            self.request,
+            f'You have successfully deleted the book '
+            f'"{self.object.title.upper()}"'
+        )
+
+        return response
+
 # Date validation
 
 
