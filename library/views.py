@@ -157,20 +157,24 @@ class AddBook(
         return self.request.user.is_authenticated
 
     def form_valid(self, form):
-        # Check if title, author, and description are filled
-        title = form.cleaned_data.get('title')
-        author = form.cleaned_data.get('author')
-        description = form.cleaned_data.get('description')
-
-        if not title or not title.strip() \
-            or not author or not author.strip() \
-                or not description or not description.strip():
-            messages.error(self.request, 'Please fill in all required fields.')
-            return self.form_invalid(form)
-
         form.instance.added_by = self.request.user
 
-        return super().form_valid(form)
+        # Save the form instance
+        response = super().form_valid(form)
+
+        # Display success message
+        messages.success(
+            self.request,
+            f'You have successfully added the book '
+            f'"{form.cleaned_data["title"].upper()}"'
+        )
+
+        return response
+
+    def form_invalid(self, form):
+        # Manually add error message for any additional validation checks
+        messages.error(self.request, 'Please fill in all required fields')
+        return super().form_invalid(form)
 
 
 class MyBooks(LoginRequiredMixin, generic.ListView):
