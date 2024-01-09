@@ -155,21 +155,23 @@ class AddBook(
 
     def test_func(self):
         return self.request.user.is_authenticated
-    
+
     def form_valid(self, form):
-        # Check if title, author, and description are filled and not just whitespace
+        # Check if title, author, and description are filled
         title = form.cleaned_data.get('title')
         author = form.cleaned_data.get('author')
         description = form.cleaned_data.get('description')
 
-        if not title.strip() or not author.strip() or not description.strip():
+        if not title or not title.strip() \
+            or not author or not author.strip() \
+                or not description or not description.strip():
             messages.error(self.request, 'Please fill in all required fields.')
             return self.form_invalid(form)
 
         form.instance.added_by = self.request.user
 
         return super().form_valid(form)
-    
+
 
 class MyBooks(LoginRequiredMixin, generic.ListView):
     """
