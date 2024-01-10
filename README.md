@@ -481,7 +481,9 @@ The 'About' section provides a concise overview of the site's offerings, summari
 
 - The Book Details page displays comprehensive information about the book, including title, author, description, category, status, and the owner of the book (added by).
 
-- Additionally, the page features three types of messages in the bottom corner:
+- Additionally, the page features four types of messages in the bottom corner:
+  - If the user is not logged in and the status is Available, a prompt will appear: "Would you like to borrow this book?" along with a button to redirect the user to the log in page.
+ ![Book Details - Non logged](documentation/readme_images/features/detail_nonlogged.png)
 
   - If the logged-in user is the owner of the book (added by) and the status is Available, a message will express gratitude for sharing the book ("Thank you for sharing your book on KidLit Swap!").
   ![Book Details - Owner](documentation/readme_images/features/detail_owner.png)
