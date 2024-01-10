@@ -34,7 +34,7 @@
               <!-- Book Status -->
               <p class="status fw-bold text-center {% if book.status == 'Available' %}available{% elif book.status == 'Borrowed' %}borrowed{% endif %}">Status: {{ book.status }}</p>
               <!-- Added by -->
-              <p class="card-text added text-center text- px-1 py-0 rounded">Added by: {{ book.added_by.username }}</p>
+              <p class="card-text added text-center text- px-1 py-0 rounded">Added by: {{ book.added_by.username|upper }}</p>
               <!-- Borrow Book -->
               {% if request.user == book.added_by and book.status == 'Available' %}
               <!-- Display a message for the book owner -->
@@ -59,7 +59,7 @@
               <div class="alert alert-secondary message-no-fade text-center" role="alert">
                   <p class="mb-0">
                       This book is currently borrowed by
-                      <span class="fw-bold">{{ book.borrower.username }}</span>
+                      <span class="fw-bold">{{ book.borrower.username|upper }}</span>
                       and is expected to be returned on
                       <span class="fst-italic">{{ book.return_date|date:'F j, Y' }}.</span>
                   </p>

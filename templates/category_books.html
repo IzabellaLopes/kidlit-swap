@@ -37,7 +37,7 @@
                                     {% elif book.status == 'Borrowed' %}borrowed{% endif %}">
                     Status: {{ book.status }}</p>
                   <!-- Added by -->
-                  <p class="card-text added text-truncate px-1 py-0 rounded">Added by: {{ book.added_by }}</p>
+                  <p class="card-text added text-truncate px-1 py-0 rounded">Added by: {{ book.added_by|upper }}</p>
                 </div>
               </div>
             </div>

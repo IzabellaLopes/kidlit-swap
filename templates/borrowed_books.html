@@ -30,7 +30,7 @@
                   <!-- Book Title -->
                   <p class="card-title fw-bold text-center text-uppercase text-truncate px-2 py-2">{{ book.title }}</p>
                   <!-- Owner -->
-                  <p class="owner text-truncate py-0 mb-3">Owner: {{ book.added_by.username }}</p>
+                  <p class="owner text-truncate py-0 mb-3">Owner: {{ book.added_by.username|upper }}</p>
                   <!-- Return Date -->
                   <p class="return-date fw-bold py-0 mb-3">Return Date: {{ book.return_date }}</p>
                 </div>
