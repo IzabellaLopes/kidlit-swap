@@ -764,8 +764,6 @@ To clone the repository:
 ### Content
 
 - Content for the website was written by Izabella Lopes.
-- [ChatGPT by OpenAI](https://chat.openai.com/) - Enhance Readme.md readability.
-
 
 ### Media
 
