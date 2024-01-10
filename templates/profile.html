@@ -15,7 +15,7 @@
         <div class="col-12 col-md-6 w-90">
           <div class="static-card text-center mb-3">
             <div class="card-body">
-              <h2 class="card-title">Welcome, {{ user.username }}!</h2>
+              <h2 class="card-title">Welcome, {{ user.username|upper }}!</h2>
             </div>
           </div>
         </div>
@@ -29,7 +29,7 @@
               <div class="card h-100">
                 <div class="card-body text-center">
                   <h2 class="card-title">Books Added</h2>
-                  <p class="card-text">You've added {{ books_added_count }} book{{ books_added_count|pluralize:'s' }} to the library</p>
+                  <p class="card-text pt-2">You've added {{ books_added_count }} book{{ books_added_count|pluralize:'s' }} to the library</p>
                   <a href="{% url 'my_books' %}" class="btn btn-primary add-btn mt-3">View My Books</a>
                 </div>
               </div>
@@ -38,7 +38,7 @@
               <div class="card h-100">
                 <div class="card-body text-center">
                   <h2 class="card-title">Books Borrowed</h2>
-                  <p class="card-text">You've borrowed {{ user.borrowed_books.count }} book{{ user.borrowed_books.count|pluralize:'s' }}</p>
+                  <p class="card-text pt-2">You've borrowed {{ user.borrowed_books.count }} book{{ user.borrowed_books.count|pluralize:'s' }}</p>
                   <a href="{% url 'borrowed_books' %}" class="btn btn-primary add-btn mt-3">View Borrowed Books</a>
                 </div>
               </div>
