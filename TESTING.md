@@ -242,14 +242,14 @@ I conducted Lighthouse validation on all pages, including both mobile and deskto
 |----------------|:------------:|:-------------:|:---------------:|:---:|
 |                |              |               |                 |     |
 | Desktop        |              |               |                 |     |
-| Home           |          100 |           100 |             100 | 100 |
+| Home           |           98 |           100 |             100 | 100 |
 | Book List      |           98 |           100 |             100 | 100 |
-| Book Details   |           99 |            99 |             100 | 100 |
-| Books Category |           99 |            98 |             100 | 100 |
+| Book Details   |           99 |           100 |             100 | 100 |
+| Books Category |           99 |           100 |             100 | 100 |
 | My Books       |           98 |           100 |             100 | 100 |
 | Borrowed Books |           99 |           100 |             100 | 100 |
 | Add Book       |           99 |           100 |             100 | 100 |
-| Edit Book      |           99 |            98 |             100 | 100 |
+| Edit Book      |           99 |           100 |             100 | 100 |
 | Delete Book    |           99 |           100 |             100 | 100 |
 | Profile        |           99 |           100 |             100 | 100 |
 | Log in         |           99 |           100 |             100 | 100 |
@@ -259,12 +259,12 @@ I conducted Lighthouse validation on all pages, including both mobile and deskto
 | Mobile         |              |               |                 |     |
 | Home           |           94 |           100 |             100 | 100 |
 | Book List      |           94 |           100 |             100 | 100 |
-| Book Details   |           93 |            98 |             100 | 100 |
-| Books Category |           86 |            98 |             100 | 100 |
+| Book Details   |           93 |           100 |             100 | 100 |
+| Books Category |           86 |           100 |             100 | 100 |
 | My Books       |           94 |           100 |             100 | 100 |
 | Borrowed Books |           95 |           100 |             100 | 100 |
 | Add Book       |           95 |           100 |             100 | 100 |
-| Edit Book      |           93 |            98 |             100 | 100 |
+| Edit Book      |           93 |           100 |             100 | 100 |
 | Delete Book    |           94 |           100 |             100 | 100 |
 | Profile        |           94 |           100 |             100 | 100 |
 | Log in         |           95 |           100 |             100 | 100 |
