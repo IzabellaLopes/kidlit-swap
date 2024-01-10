@@ -250,7 +250,7 @@ class DeleteBook(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
             messages.error(
                 self.request,
                 f'You cannot delete this book because it is borrowed to '
-                f'{book.borrower.username}'
+                f'{book.borrower.username.upper()}'
             )
             return redirect('my_books')
         return super().get(request, *args, **kwargs)
