@@ -56,7 +56,8 @@
 - All tests conducted for this user story on KidLit Swap were successfully completed. 
 - The books are displayed in alphabetical order, with available books appearing first, followed by borrowed books.
  ![Book List - page 1](testing/testing_images/books_1.png)
- ![Book List - page 3](testing/testing_images/books_2.png)
+ ![Book List - page 2](testing/testing_images/books_2.png)
+ ![Book List - page 3](testing/testing_images/books_3.png)
 - This ensures a well-organized and user-friendly presentation of the library inventory for efficient management.
 
 *As a User / Admin I can view details of a specific book so that I can get comprehensive information about a particular book*
